@@ -1,0 +1,29 @@
+{
+  "name": "@repo/shared-config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "모노레포 전체에서 사용하는 공통 설정들 (ESLint, TypeScript, Prettier 등)",
+  "main": "index.js",
+  "files": [
+    "eslint.config.js",
+    "tsconfig.base.json",
+    ".prettierrc.js"
+  ],
+  "dependencies": {
+    "@eslint/js": "^9.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1"
+  }
+}
