@@ -1,0 +1,11 @@
+@use '@/styles/var.scss' as *;
+
+.logo {
+  a {
+    display: block;
+    border-radius: $borderRadius;
+    img {
+      height: convertRem(48);
+    }
+  }
+}
