@@ -15,6 +15,12 @@ const SCHEDULE_TYPE_LABELS = {
   CALENDAR: '캘린더',
 } as const;
 
+// 🔧 타입 안전한 아이콘 매핑
+const SCHEDULE_TYPE_ICONS = {
+  DDAY: 'dday',
+  CALENDAR: 'calendar',
+} as const;
+
 /**
  * 스케줄 메시지를 표시하는 컴포넌트
  * 디데이와 캘린더 두 가지 타입의 이벤트를 지원
@@ -121,7 +127,7 @@ export default function ScheduleMessage({ event, type }: ScheduleMessageProps) {
       </p>
 
       <button type="button" className={styles.button}>
-        <Icons name={type.toLowerCase()} /> 내 {SCHEDULE_TYPE_LABELS[type]}에
+        <Icons name={SCHEDULE_TYPE_ICONS[type]} /> 내 {SCHEDULE_TYPE_LABELS[type]}에
         등록
       </button>
     </div>
