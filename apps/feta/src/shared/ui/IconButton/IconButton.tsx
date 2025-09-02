@@ -1,9 +1,9 @@
 import { forwardRef, ButtonHTMLAttributes } from 'react';
-import Icons, { IconType } from '../Icons';
+import Icons, { IconName } from '../Icons';
 import styles from './IconButton.module.scss';
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  name: IconType;
+  name: IconName;
   size?: number;
   text: string;
 }
