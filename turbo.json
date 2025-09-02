@@ -3,17 +3,52 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "check-types"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*",
+        "!README.md",
+        "!**/*.test.*"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**",
+        "build/**"
+      ]
+    },
+    "build:dev": {
+      "dependsOn": ["^build:dev"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", "build/**"]
+    },
+    "build:prod": {
+      "dependsOn": ["^build:prod"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**", "build/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".eslintrc.*",
+        ".eslintignore"
+      ]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^check-types"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "tsconfig.json",
+        "**/*.ts",
+        "**/*.tsx"
+      ]
     },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
       "cache": false,
       "persistent": true
     }

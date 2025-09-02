@@ -3,10 +3,15 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:dev": "turbo run build:dev",
+    "build:prod": "turbo run build:prod",
     "dev": "turbo run dev",
+    "start": "turbo run start",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "check-types": "turbo run check-types",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "type-check": "turbo run check-types"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
