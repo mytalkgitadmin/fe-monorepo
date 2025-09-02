@@ -1,0 +1,58 @@
+# Dependency directories
+node_modules/
+dist/
+dist-ssr/
+dev-dist/
+build/
+
+# Environment files
+# .env*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# TypeScript build files
+*.tsbuildinfo
+
+# Temporary files
+*.tmp
+*.bak
+
+
+# Testing
+coverage/
+*.coverage
+*.lcov
+
+# Caches
+.cache/
+.vite/
+
+# Package lock files
+package-lock.json
+.cert/cert.pem
+.cert/key.pem
