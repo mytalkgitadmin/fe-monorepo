@@ -1,0 +1,29 @@
+{
+  // 저장시 자동 실행
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // ESLint/Prettier 연동
+  "eslint.workingDirectories": ["./"],
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "prettier.requireConfig": true,
+
+  // FSD Import 경로 제어
+  "typescript.preferences.importModuleSpecifier": "relative", // 슬라이스 내부는 상대경로 우선
+  "typescript.suggest.autoImports": true, // 자동 import 활성화
+  "typescript.updateImportsOnFileMove.enabled": "always", // 파일 이동시 경로 자동 수정
+
+  // 순환 참조 방지
+  "typescript.preferences.includePackageJsonAutoImports": "off", // 불필요한 패키지 import 방지
+
+  // FSD 구조 시각화
+  "explorer.fileNesting.enabled": true, // 관련 파일 그룹핑
+  "explorer.fileNesting.patterns": {
+    "index.tsx": "index.module.scss, index.stories.tsx, index.test.tsx", // 컴포넌트 관련 파일들 중첩
+    "index.ts": "index.test.ts, index.d.ts" // 모듈 관련 파일들 중첩
+  },
+  "explorer.sortOrder": "foldersNestsFiles" // 폴더 우선 정렬 (FSD 레이어 구조 명확화)
+}
