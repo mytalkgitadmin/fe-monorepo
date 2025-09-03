@@ -21,6 +21,6 @@ import { twMerge } from 'tailwind-merge';
  * // → 'px-4 py-2' (마지막 값이 우선)
  * ```
  */
-export function cn(...inputs: ClassValue[]) {
+export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }

@@ -25,5 +25,22 @@
     "index.tsx": "index.module.scss, index.stories.tsx, index.test.tsx", // 컴포넌트 관련 파일들 중첩
     "index.ts": "index.test.ts, index.d.ts" // 모듈 관련 파일들 중첩
   },
-  "explorer.sortOrder": "foldersNestsFiles" // 폴더 우선 정렬 (FSD 레이어 구조 명확화)
+  "explorer.sortOrder": "foldersNestsFiles", // 폴더 우선 정렬 (FSD 레이어 구조 명확화)
+
+  // Git 커밋 메시지 설정
+  "git.inputValidation": true, // 커밋 메시지 검증 활성화
+  "git.inputValidationSubjectLength": 50, // 제목 길이 제한
+  "git.inputValidationLength": 72, // 본문 줄 길이 제한
+  "git.useCommitInputAsStashMessage": true, // 스태시 메시지로 커밋 메시지 사용
+  "git.verboseCommit": true, // 커밋 시 상세 정보 표시
+  
+  // Gitmoji 확장프로그램 설정
+  "gitmoji.onlyUseCustomEmojis": false,
+  "gitmoji.addCustomEmoji": [
+    {
+      "emoji": "🎯",
+      "code": ":dart:",
+      "description": "목표 달성 또는 중요한 기능"
+    }
+  ]
 }

@@ -164,36 +164,56 @@ function MyComponent() {
 프로젝트를 더 잘 이해하려면 이 문서들을 읽어보세요:
 
 - **[📖 MONOREPO_GUIDE.md](./docs/MONOREPO_GUIDE.md)** - 모노레포 시스템 상세 가이드
-- **[� QUICK_START.md](./docs/QUICK_START.md)** - 빠른 시작 가이드
+- **[🚀 QUICK_START.md](./docs/QUICK_START.md)** - 빠른 시작 가이드  
 - **[⚡ TURBO_CONFIG.md](./docs/TURBO_CONFIG.md)** - Turborepo 설정 가이드
+- **[📝 COMMIT_CONVENTION.md](./docs/COMMIT_CONVENTION.md)** - 커밋 메시지 컨벤션 가이드
 
 ## 🎨 커밋 메시지 규칙
 
-현재 프로젝트에서 사용 중인 **Conventional Commits** 스타일입니다:
+이 프로젝트는 **Gitmoji + Conventional Commits** 스타일을 사용합니다:
 
 ```bash
-# 한글로 작성하는 컨벤션 (현재 적용 중)
-git commit -m "✨ Feat(feta): 로그인 페이지 추가"
-git commit -m "🐛 Fix(shared-ui): Button 컴포넌트 스타일 수정"
-git commit -m "📦 Chore(root): 패키지 의존성 업데이트"
-git commit -m "♻️ Refactor(packages): shared-ui 컴포넌트 구조 개선"
-git commit -m "📝 Docs(root): README 및 가이드 문서 업데이트"
+# ✅ 권장 패턴 (Gitmoji + 타입)
+git commit -m "✨ feat(auth): 구글 OAuth 로그인 추가"
+git commit -m "🐛 fix(feta): 채팅 메시지 전송 버그 수정"  
+git commit -m "📝 docs(root): 커밋 컨벤션 가이드 추가"
+git commit -m "� chore(deps): ESLint 플러그인 업데이트"
+git commit -m "♻️ refactor(shared): FSD 아키텍처 적용"
+
+# ✅ 기존 한글 패턴도 지원
+git commit -m "✨ Feat(feta): 새로운 기능 추가"
+git commit -m "� Fix(shared-ui): 버그 수정"
 ```
 
-**타입 + 이모지 조합:**
+### 🎯 Gitmoji 사용법
 
-- `✨ Feat`: 새로운 기능 추가
-- `🐛 Fix`: 버그 수정
-- `📦 Chore`: 설정, 빌드 관련 수정
-- `♻️ Refactor`: 코드 개선 (기능 변경 없음)
-- `📝 Docs`: 문서 수정
-- `🚀 Setting`: 초기 설정
+```bash
+# 대화형 gitmoji 커밋 (권장)
+npm run gitmoji
+
+# 수동으로 이모지 + 타입 조합
+✨ feat    🐛 fix     📝 docs    🔧 chore
+⚡ perf    🎨 style   ♻️ refactor  🧪 test
+```
+
+- `✨ feat`: 새로운 기능 추가
+- `🐛 fix`: 버그 수정  
+- `⚡ perf`: 성능 개선
+- `🎨 style`: 코드 스타일 변경 (UI/UX 개선 포함)
+- `♻️ refactor`: 코드 리팩토링
+- `📝 docs`: 문서 변경
+- `� chore`: 빌드/설정 관련 변경
+- `🧪 test`: 테스트 코드 추가/수정
+- `🚧 wip`: 작업 진행 중
+- `🔥 remove`: 코드/파일/기능 삭제
 
 **범위 (Scope) 예시:**
 
-- `(feta)`, `(web)`, `(docs)` - 특정 앱
-- `(packages)`, `(shared-ui)` - 패키지
-- `(root)` - 루트 레벨 변경사항
+- `(root)` - 루트 레벨 변경 (package.json, 설정 등)
+- `(feta)` - feta 앱 관련
+- `(packages)` - packages 폴더 내 모든 패키지
+- `(docs)` - 문서 관련
+- `(config)` - 설정 파일 (ESLint, Prettier 등)
 
 ---
 

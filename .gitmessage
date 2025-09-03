@@ -1,0 +1,37 @@
+# 🎯 Gitmoji + 타입(스코프): 제목 (#티켓번호)
+# 
+# 예시:
+# ✨ feat(feta): 새로운 채팅 기능 추가 (#TICKET-123)
+# 🐛 fix(packages): shared-ui 버튼 컴포넌트 수정
+# 📝 docs(docs): API 문서 업데이트
+# 🔧 chore(config): ESLint 규칙 추가
+# ♻️ refactor(root): 모노레포 구조 개선
+#
+# --- 본문 (선택사항) ---
+# 무엇을, 왜 변경했는지 설명
+# - 변경사항 1
+# - 변경사항 2
+# - 변경사항 3
+#
+# --- 푸터 (선택사항) ---
+# Closes #이슈번호
+# BREAKING CHANGE: 설명
+#
+# 📋 타입 (Type):
+# ✨ feat     - 새로운 기능 추가
+# 🐛 fix      - 버그 수정
+# ⚡ perf     - 성능 개선
+# 🎨 style    - 코드 스타일/UI 변경
+# ♻️ refactor - 코드 리팩토링
+# 📝 docs     - 문서 변경
+# 🔧 chore    - 빌드/설정 관련
+# 🧪 test     - 테스트 추가/수정
+# 🚧 wip      - 작업 진행 중
+# 🔥 remove   - 코드/파일/기능 삭제
+#
+# 📂 스코프 (Scope):
+# root     - 루트 레벨 변경
+# feta     - feta 앱 관련  
+# packages - packages 폴더 내 패키지
+# docs     - 문서 관련
+# config   - 설정 파일
