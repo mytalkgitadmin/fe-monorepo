@@ -7,7 +7,7 @@
   },
 
   // ESLint/Prettier 연동
-  "eslint.workingDirectories": [".", "apps/feta", "apps/web", "apps/docs"],
+  "eslint.workingDirectories": [".", "apps/*", "packages/*"],
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
   "prettier.requireConfig": true,
 
