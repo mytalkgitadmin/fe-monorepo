@@ -1,7 +1,7 @@
 # 🏗️ Turborepo 모노레포
 
-> **모노레포란?** 여러 개의 프로젝트를 하나의 저장소에서 관리하는 방식입니다.
-> 공통 코드를 재사용하고, 의존성을 통합 관리할 수 있어요!
+> **모노레포란?** 여러 개의 프로젝트를 하나의 저장소에서 관리하는 방식입니다. 공통 코드를
+> 재사용하고, 의존성을 통합 관리할 수 있어요!
 
 [![Turborepo](https://img.shields.io/badge/Built%20with-Turborepo-blueviolet)](https://turborepo.com)
 [![TypeScript](https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white)](https://typescriptlang.org)
@@ -164,7 +164,7 @@ function MyComponent() {
 프로젝트를 더 잘 이해하려면 이 문서들을 읽어보세요:
 
 - **[📖 MONOREPO_GUIDE.md](./docs/MONOREPO_GUIDE.md)** - 모노레포 시스템 상세 가이드
-- **[🚀 QUICK_START.md](./docs/QUICK_START.md)** - 빠른 시작 가이드  
+- **[🚀 QUICK_START.md](./docs/QUICK_START.md)** - 빠른 시작 가이드
 - **[⚡ TURBO_CONFIG.md](./docs/TURBO_CONFIG.md)** - Turborepo 설정 가이드
 - **[📝 COMMIT_CONVENTION.md](./docs/COMMIT_CONVENTION.md)** - 커밋 메시지 컨벤션 가이드
 
@@ -175,7 +175,7 @@ function MyComponent() {
 ```bash
 # ✅ 권장 패턴 (Gitmoji + 타입)
 git commit -m "✨ feat(auth): 구글 OAuth 로그인 추가"
-git commit -m "🐛 fix(feta): 채팅 메시지 전송 버그 수정"  
+git commit -m "🐛 fix(feta): 채팅 메시지 전송 버그 수정"
 git commit -m "📝 docs(root): 커밋 컨벤션 가이드 추가"
 git commit -m "� chore(deps): ESLint 플러그인 업데이트"
 git commit -m "♻️ refactor(shared): FSD 아키텍처 적용"
@@ -197,7 +197,7 @@ npm run gitmoji
 ```
 
 - `✨ feat`: 새로운 기능 추가
-- `🐛 fix`: 버그 수정  
+- `🐛 fix`: 버그 수정
 - `⚡ perf`: 성능 개선
 - `🎨 style`: 코드 스타일 변경 (UI/UX 개선 포함)
 - `♻️ refactor`: 코드 리팩토링
@@ -260,3 +260,5 @@ npm run build --force      # 강제 빌드 (캐시 무시)
 ---
 
 **🎯 이 프로젝트는 Turborepo 2.5.6 기반으로 구축되었습니다.**
+
+담당자: 강혜진
