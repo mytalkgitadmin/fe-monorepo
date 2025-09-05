@@ -1,27 +1,27 @@
 {
   "recommendations": [
     // Code Quality & Formatting
-    "esbenp.prettier-vscode",           // Prettier - Code formatter
-    "dbaeumer.vscode-eslint",           // ESLint
-    "bradlc.vscode-tailwindcss",        // Tailwind CSS IntelliSense
-    
+    "esbenp.prettier-vscode", // Prettier - Code formatter
+    "dbaeumer.vscode-eslint", // ESLint
+    "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense
+
     // TypeScript & React
     "ms-vscode.vscode-typescript-next", // TypeScript Importer
-    "ms-vscode.vscode-json",            // JSON support
-    
+    "ms-vscode.vscode-json", // JSON support
+
     // Git & Commit
-    "seatonjiang.gitmoji-vscode",       // 🎯 Gitmoji support
+    "seatonjiang.gitmoji-vscode", // 🎯 Gitmoji support
     "vivaxy.vscode-conventional-commits", // Conventional Commits
-    "redjue.git-commit-plugin",         // Git Commit Plugin (한국어 지원)
-    "joshbolduc.commitlint",            // Commitlint integration
-    
-    // Productivity  
-    "ms-vscode.vscode-package-json",    // Package.json support
-    "bradlc.vscode-tailwindcss",        // Tailwind IntelliSense
-    "formulahendry.auto-rename-tag",    // Auto rename paired HTML tags
-    
+    "redjue.git-commit-plugin", // Git Commit Plugin (한국어 지원)
+    "joshbolduc.commitlint", // Commitlint integration
+
+    // Productivity
+    "ms-vscode.vscode-package-json", // Package.json support
+    "bradlc.vscode-tailwindcss", // Tailwind IntelliSense
+    "formulahendry.auto-rename-tag", // Auto rename paired HTML tags
+
     // Monorepo
-    "ms-vscode.vscode-workspace",       // Workspace support
-    "ms-vscode.vscode-mono-debug"       // Monorepo debugging
+    "ms-vscode.vscode-workspace", // Workspace support
+    "ms-vscode.vscode-mono-debug" // Monorepo debugging
   ]
 }
