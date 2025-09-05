@@ -12,6 +12,8 @@
     // Git & Commit
     "seatonjiang.gitmoji-vscode",       // 🎯 Gitmoji support
     "vivaxy.vscode-conventional-commits", // Conventional Commits
+    "redjue.git-commit-plugin",         // Git Commit Plugin (한국어 지원)
+    "joshbolduc.commitlint",            // Commitlint integration
     
     // Productivity  
     "ms-vscode.vscode-package-json",    // Package.json support
