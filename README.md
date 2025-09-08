@@ -54,11 +54,12 @@ function MyComponent() {
 }
 ```
 
+
 ## 📚 문서
 
 - [monorepo-guide.md](./docs/monorepo-guide.md)
-- [quick-start.md](./docs/quick-start.md)
-- [turbo-config.md](./docs/turbo-config.md)
+- [setting-prettier.md](./docs/setting-prettier.md)
+- [setting-turbo.md](./docs/setting-turbo.md)
 - [commit-convention.md](./docs/commit-convention.md)
 
 ## 💬 커밋 메시지 규칙
