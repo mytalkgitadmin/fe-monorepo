@@ -31,7 +31,6 @@
    npm install
    ```
 3. 환경설정
-
    - `.env` 파일을 프로젝트 루트에 생성하고 필요한 환경변수 설정
 
    ```
@@ -64,10 +63,12 @@
 
 프로젝트는 다음과 같은 FSD 계층 구조를 따름
 
-- FSD: 특성 기반 설계(Feature-Sliced Design). 프론트엔드 아키텍처 방법론. 비즈니스 기능(feature)을 중심으로 구성
+- FSD: 특성 기반 설계(Feature-Sliced Design). 프론트엔드 아키텍처 방법론. 비즈니스 기능(feature)을
+  중심으로 구성
 
 - 슬라이스(Slice): 하나의 비즈니스 기능 또는 도메인을 담당하는 독립적인 모듈
-- 계층(Layer): 애플리케이션의 추상화 수준에 따라 구분된 계층 (예: entities, features, widgets, pages)
+- 계층(Layer): 애플리케이션의 추상화 수준에 따라 구분된 계층 (예: entities, features, widgets,
+  pages)
 - 세그먼트(Segment): 각 계층 내에서 기능적으로 관련된 코드 묶음
 
 ```

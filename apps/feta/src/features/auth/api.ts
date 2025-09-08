@@ -1,13 +1,15 @@
-import { API_ENDPOINTS, apiRequest } from '@/shared/api';
-import { useAuthStore } from './authStore';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from '@tanstack/react-router';
+
+import { API_ENDPOINTS, apiRequest } from '@/shared/api';
+
+import { useAuthStore } from './authStore';
 import {
-  RequestLogin,
-  ResponseLogin,
   RefreshTokenRequest,
   RefreshTokenResponse,
+  RequestLogin,
+  ResponseLogin,
 } from './model';
-import { useNavigate } from '@tanstack/react-router';
 
 /**
  * 폰번호 로그인 API 요청
@@ -91,11 +93,11 @@ export const useUserProfile = (options = {}) => {
  * @returns 새로운 토큰 정보를 포함한 Promise
  */
 export const refreshTokenApi = (
-  data: RefreshTokenRequest,
+  data: RefreshTokenRequest
 ): Promise<RefreshTokenResponse> => {
   return apiRequest<RefreshTokenResponse>(
     API_ENDPOINTS.AUTH.REFRESH_TOKEN,
-    data,
+    data
   );
 };
 

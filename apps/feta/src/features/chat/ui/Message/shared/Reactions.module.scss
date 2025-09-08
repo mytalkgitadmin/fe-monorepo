@@ -1,11 +1,11 @@
-@use '@/styles/var.scss' as *;
+@use "@/styles/var.scss" as *;
 
 .reactions {
   display: flex;
   align-items: center;
   gap: 0.3em;
 
-  [class*='my_message'] & {
+  [class*="my_message"] & {
     justify-content: flex-end;
   }
 

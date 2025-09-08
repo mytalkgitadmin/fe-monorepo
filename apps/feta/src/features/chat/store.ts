@@ -12,6 +12,6 @@ export const useChannelStore = create<ChannelState>()(
     {
       name: 'last-channel',
       storage: createJSONStorage(() => sessionStorage),
-    },
-  ),
+    }
+  )
 );

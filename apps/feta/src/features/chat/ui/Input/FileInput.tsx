@@ -1,24 +1,25 @@
-import { useFileUploadAcceptList } from '@/features/chat/api';
 import Icons from '@/shared/ui/Icons';
 import Loading from '@/shared/ui/Loading';
 
-import { FileValidationConfig, ProcessedFile } from './types';
+import { useFileUploadAcceptList } from '@/features/chat/api';
+
+import styles from './FileInput.module.scss';
+import { FileValidationModal } from './components';
 import { DEFAULT_FILE_CONFIG } from './constants';
 import {
-  validateFileList,
-  processValidFiles,
-  handleValidationResult,
-  showFileUploadError,
-  categorizeFiles,
-  getUploadStrategy,
-} from './utils';
-import {
-  useImageGroupUpload,
   useFileUpload,
   useFileUploadHandlers,
+  useImageGroupUpload,
 } from './hooks';
-import { FileValidationModal } from './components';
-import styles from './FileInput.module.scss';
+import { FileValidationConfig, ProcessedFile } from './types';
+import {
+  categorizeFiles,
+  getUploadStrategy,
+  handleValidationResult,
+  processValidFiles,
+  showFileUploadError,
+  validateFileList,
+} from './utils';
 
 export default function FileInput() {
   const { data: acceptFileExtensions } = useFileUploadAcceptList('CHAT_FILE');
@@ -98,13 +99,13 @@ export default function FileInput() {
       const canProceed = handleValidationResult(
         validationResult,
         setValidationResult,
-        setShowValidationModal,
+        setShowValidationModal
       );
 
       if (canProceed) {
         // 3단계: 파일 처리(변환, 메타데이터 추출)
         const processResult = await processValidFiles(
-          validationResult.validFiles,
+          validationResult.validFiles
         );
 
         if (processResult.successCount === 0) {
@@ -134,7 +135,7 @@ export default function FileInput() {
 
     try {
       const processResult = await processValidFiles(
-        validationResult.validFiles,
+        validationResult.validFiles
       );
 
       if (processResult.successCount === 0) {
@@ -156,17 +157,17 @@ export default function FileInput() {
   return (
     <div className={styles.fileInput}>
       <input
-        id="icon-button-file"
-        type="file"
+        id='icon-button-file'
+        type='file'
         multiple={true}
         accept={acceptFileExtensions}
         onChange={onChangeFile}
         disabled={totalUploading}
       />
 
-      <label htmlFor="icon-button-file" className={styles.button}>
-        {totalUploading ? <Loading /> : <Icons name="clip" />}
-        <span className="a11y-hidden">
+      <label htmlFor='icon-button-file' className={styles.button}>
+        {totalUploading ? <Loading /> : <Icons name='clip' />}
+        <span className='a11y-hidden'>
           {totalUploading ? '파일 전송 중' : '파일 전송'}
         </span>
       </label>

@@ -1,8 +1,9 @@
-import { useAuth } from '@/features/auth';
-
 import { useCallback, useEffect, useState } from 'react';
-import { FILE_INPUT_CONFIG } from '@/features/chat/ui/Input/constants';
+
+import { useAuth } from '@/features/auth';
 import { ProfileImg } from '@/features/chat/model';
+import { FILE_INPUT_CONFIG } from '@/features/chat/ui/Input/constants';
+
 import { ProfileTextData } from '../types';
 import { useProfileUpdate } from './useProfileUpdate';
 
@@ -87,7 +88,7 @@ export default function useEditProfile() {
         profileThumbnail: '',
       }));
     },
-    [validateFile],
+    [validateFile]
   );
 
   const handleEmoticonSelect = useCallback((emoticonId: number) => {
@@ -139,7 +140,7 @@ export default function useEditProfile() {
       updateText,
       updateImage,
       updateEmoticon,
-    ],
+    ]
   );
 
   const resetState = useCallback(() => {

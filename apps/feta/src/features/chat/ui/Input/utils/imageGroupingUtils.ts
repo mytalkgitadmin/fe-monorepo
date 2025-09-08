@@ -7,7 +7,7 @@ interface ImageGroup {
   groupIndex: number;
 }
 export const createImageGroups = (
-  imageFiles: ProcessedFile[],
+  imageFiles: ProcessedFile[]
 ): ImageGroup[] => {
   const MAX_FILES_PER_GROUP = FILE_INPUT_CONFIG.LIMIT.MAX_FILES_PER_GROUP;
   const groups: ImageGroup[] = [];
@@ -24,7 +24,7 @@ export const createImageGroups = (
   }
   console.log(
     `${imageFiles.length}개 이미지를 ${groups.length}개 그룹으로 분할:`,
-    groups.map((g) => `${g.groupId}(${g.files.length}개)`).join(', '),
+    groups.map((g) => `${g.groupId}(${g.files.length}개)`).join(', ')
   );
   return groups;
 };

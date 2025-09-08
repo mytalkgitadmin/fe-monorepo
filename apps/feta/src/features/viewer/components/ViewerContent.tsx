@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useState } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -6,12 +5,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { ViewerContentProps } from '../types';
-import { getMediaType } from '../utils/mediaUtils';
+
+import { useCallback, useEffect, useState } from 'react';
 
 import styles from '../Viewer.module.scss';
-import VideoItem from './VideoItem';
+import { ViewerContentProps } from '../types';
+import { getMediaType } from '../utils/mediaUtils';
 import ImageItem from './ImageItem';
+import VideoItem from './VideoItem';
 
 export default function ViewerContent({
   data,
@@ -65,7 +66,7 @@ export default function ViewerContent({
     (index: number) => {
       return mediaStates[index] || { loaded: false, error: false };
     },
-    [mediaStates],
+    [mediaStates]
   );
 
   return (

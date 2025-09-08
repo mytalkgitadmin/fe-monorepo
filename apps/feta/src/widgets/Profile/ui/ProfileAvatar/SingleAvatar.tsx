@@ -1,6 +1,8 @@
-import { RelationType } from '@/features/chat/model';
-import styles from './SingleAvatar.module.scss';
 import Icons from '@/shared/ui/Icons';
+
+import { RelationType } from '@/features/chat/model';
+
+import styles from './SingleAvatar.module.scss';
 
 interface SingleAvatarProps {
   imageUrl: string;
@@ -19,11 +21,11 @@ export default function SingleAvatar({
   return (
     <div className={styles.avatarWrap}>
       <div className={styles.circle} style={{ width: size, height: size }}>
-        {imageUrl && <img src={imageUrl} alt="" width={size} height={size} />}
+        {imageUrl && <img src={imageUrl} alt='' width={size} height={size} />}
         {relationType &&
           (relationType === 'NONE' || relationType === 'DELETE') && (
             <span className={styles.add}>
-              <Icons name="question-mark" />
+              <Icons name='question-mark' />
             </span>
           )}
       </div>

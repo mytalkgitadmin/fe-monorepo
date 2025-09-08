@@ -1,9 +1,11 @@
-import Icons from '@/shared/ui/Icons';
-import styles from './ProfileBody.module.scss';
 import { memo } from 'react';
+
 import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
+import Icons from '@/shared/ui/Icons';
+
 import { ProcessedHistory } from '../../../types/viewer.types';
 import { ProfileGallery } from '../ProfileGallery';
+import styles from './ProfileBody.module.scss';
 
 interface ProfileBodyProps {
   profileImageUrl: string;
@@ -46,9 +48,9 @@ const ProfileBody = memo<ProfileBodyProps>(
             <h2 className={styles.nickname}>
               {profileName}{' '}
               {!isMyProfile && (
-                <button type="button" aria-label="프로필 수정">
-                  <Icons name="edit" />
-                  <span className="sr-only">수정</span>
+                <button type='button' aria-label='프로필 수정'>
+                  <Icons name='edit' />
+                  <span className='sr-only'>수정</span>
                 </button>
               )}
             </h2>
@@ -61,14 +63,14 @@ const ProfileBody = memo<ProfileBodyProps>(
             {/* 관심사 */}
             {interests && (
               <p>
-                <Icons name="heart" /> {interests}
+                <Icons name='heart' /> {interests}
               </p>
             )}
 
             {/* 생일 */}
             {birthday && (
               <p>
-                <Icons name="cake" />
+                <Icons name='cake' />
                 {formatDate(birthday, DATE_FORMATS.YEAR_MONTH_DAY)}
               </p>
             )}
@@ -78,7 +80,7 @@ const ProfileBody = memo<ProfileBodyProps>(
         <ProfileGallery onImageClick={onImageClick} histories={histories} />
       </>
     );
-  },
+  }
 );
 ProfileBody.displayName = 'ProfileBody';
 export default ProfileBody;

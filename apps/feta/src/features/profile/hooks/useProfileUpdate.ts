@@ -1,8 +1,10 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { updateProfileApi, updateGroupProfile } from '../api';
+
 import { ProfileImg } from '@/features/chat/model';
-import useProfileFileUpload from './useProfileFileUpload';
+
+import { updateGroupProfile, updateProfileApi } from '../api';
 import { ProfileTextData, UpdateProfileRequest } from '../types';
+import useProfileFileUpload from './useProfileFileUpload';
 
 export interface ExtendedUpdateProfileRequest extends UpdateProfileRequest {
   profileImage?: ProfileImg;

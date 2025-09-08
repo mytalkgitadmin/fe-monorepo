@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useMediaQuery(breakpoint: number = 500): boolean {
   const [isMatch, setIsMatch] = useState(false);

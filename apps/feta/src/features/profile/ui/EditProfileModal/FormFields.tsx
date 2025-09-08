@@ -1,30 +1,32 @@
-import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
-import Icons from '@/shared/ui/Icons';
-
+import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
+import { Textarea } from '@/components/ui/textarea';
+
+import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
+import Icons from '@/shared/ui/Icons';
+
+import { ProfileFormData } from '../../types';
+import styles from './EditProfileModal.module.scss';
 
 interface FormFieldsProps {
   formData: ProfileFormData;
   handleInputChange: (
     field: keyof ProfileFormData,
-    value: ProfileFormData[keyof ProfileFormData],
+    value: ProfileFormData[keyof ProfileFormData]
   ) => void;
   calendarOpen: boolean;
   setCalendarOpen: (open: boolean) => void;
   handleDateSelect: (date: Date | undefined) => void;
 }
-import styles from './EditProfileModal.module.scss';
-import { ProfileFormData } from '../../types';
+
 export default function FormFields({
   formData,
   handleInputChange,
@@ -34,68 +36,68 @@ export default function FormFields({
 }: FormFieldsProps) {
   return (
     <>
-      <Label htmlFor="profile-name">프로필 이름</Label>
+      <Label htmlFor='profile-name'>프로필 이름</Label>
       <Input
-        id="profile-name"
+        id='profile-name'
         value={formData.profileName}
         onChange={(e) => handleInputChange('profileName', e.target.value)}
-        placeholder="프로필 이름을 입력하세요"
+        placeholder='프로필 이름을 입력하세요'
       />
 
-      <Label htmlFor="profile-message">상태메시지</Label>
+      <Label htmlFor='profile-message'>상태메시지</Label>
       <Input
-        id="profile-message"
+        id='profile-message'
         value={formData.profileMessage}
         onChange={(e) => handleInputChange('profileMessage', e.target.value)}
-        placeholder="상태메시지를 입력하세요"
+        placeholder='상태메시지를 입력하세요'
       />
 
-      <Label htmlFor="interests">관심사</Label>
+      <Label htmlFor='interests'>관심사</Label>
       <Input
-        id="interests"
+        id='interests'
         value={formData.interests}
         onChange={(e) => handleInputChange('interests', e.target.value)}
-        placeholder="관심사를 입력하세요"
+        placeholder='관심사를 입력하세요'
       />
 
-      <Label htmlFor="birthday">생일</Label>
+      <Label htmlFor='birthday'>생일</Label>
 
       <div className={styles.flex}>
         <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
           <PopoverTrigger asChild>
-            <Button variant="outline" id="birthday" className={styles.birth}>
+            <Button variant='outline' id='birthday' className={styles.birth}>
               {formData.birthday
                 ? formatDate(formData.birthday.getTime(), DATE_FORMATS.DOT)
                 : '날짜를 선택하세요'}
-              <Icons name="chevron-down" />
+              <Icons name='chevron-down' />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-auto overflow-hidden p-0" align="center">
+          <PopoverContent className='w-auto overflow-hidden p-0' align='center'>
             <Calendar
-              mode="single"
+              mode='single'
               selected={formData.birthday}
-              captionLayout="dropdown"
+              captionLayout='dropdown'
               onSelect={handleDateSelect}
             />
           </PopoverContent>
         </Popover>
 
         {/* 양력/음력 구분 */}
-        <div className="flex items-center space-x-2">
+        <div className='flex items-center space-x-2'>
           <Switch
-            id="solar"
+            id='solar'
             checked={formData.solar}
             onCheckedChange={(checked) => handleInputChange('solar', checked)}
           />
-          <Label htmlFor="solar">음력</Label>
+          <Label htmlFor='solar'>음력</Label>
         </div>
       </div>
 
       {/* 내 소개 */}
-      <Label htmlFor="introduction">내 소개</Label>
+      <Label htmlFor='introduction'>내 소개</Label>
       <Textarea
-        id="introduction"
-        placeholder="자기소개를 입력하세요"
+        id='introduction'
+        placeholder='자기소개를 입력하세요'
         value={formData.introduction}
         onChange={(e) => handleInputChange('introduction', e.target.value)}
         rows={3}

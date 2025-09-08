@@ -1,4 +1,4 @@
-@use '@/styles/var.scss' as *;
+@use "@/styles/var.scss" as *;
 
 .buttons {
   position: absolute;
@@ -9,7 +9,7 @@
   color: var(--text2);
 }
 
-[data-slot='dialog-close'],
+[data-slot="dialog-close"],
 .buttons button {
   width: 36px;
   height: 36px;

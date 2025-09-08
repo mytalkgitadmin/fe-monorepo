@@ -1,10 +1,11 @@
+import defaultSmallProfile from '@/assets/profile/bemilyDefaultProfile.webp';
+
 import { useAuth } from '@/features/auth';
 import { Member, Profile } from '@/features/chat/model';
-
-import defaultSmallProfile from '@/assets/profile/bemilyDefaultProfile.webp';
-import SingleAvatar from './SingleAvatar';
-import styles from './GroupAvatar.module.scss';
 import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
+
+import styles from './GroupAvatar.module.scss';
+import SingleAvatar from './SingleAvatar';
 
 interface GroupAvatarProps {
   members: Member[];

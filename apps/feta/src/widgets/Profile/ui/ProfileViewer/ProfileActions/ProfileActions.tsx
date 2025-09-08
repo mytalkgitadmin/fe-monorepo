@@ -1,20 +1,22 @@
-import { memo } from 'react';
-import Icons from '@/shared/ui/Icons';
 import { Button } from '@/components/ui/button';
-
-import { RelationType } from '@/features/chat/model';
-import styles from './ProfileActions.module.scss';
-import useProfileActions from './useProfileActions';
-import PrimaryActions from './PrimaryActions';
-import useCreateChat from '@/features/chat/hooks/useCreateChat';
-
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+
+import { memo } from 'react';
+
 import { IconButton } from '@/shared/ui/IconButton';
+import Icons from '@/shared/ui/Icons';
+
+import useCreateChat from '@/features/chat/hooks/useCreateChat';
+import { RelationType } from '@/features/chat/model';
+
+import PrimaryActions from './PrimaryActions';
+import styles from './ProfileActions.module.scss';
+import useProfileActions from './useProfileActions';
 
 interface ProfileActionsProps {
   userData: any;
@@ -50,7 +52,7 @@ const ProfileActions = memo<ProfileActionsProps>(
 
     return (
       <>
-        <div className="w-full flex gap-2">
+        <div className='w-full flex gap-2'>
           <PrimaryActions
             userData={userData}
             friendId={friendId}
@@ -69,19 +71,19 @@ const ProfileActions = memo<ProfileActionsProps>(
             <div className={styles.buttons}>
               {/* 즐겨찾기 */}
               <Button
-                size="icon"
-                variant="ghost"
+                size='icon'
+                variant='ghost'
                 onClick={handleFavoriteToggle}
               >
                 {relationType === 'FAVORITE' ? (
                   <>
-                    <Icons name="star-filled" color="var(--warning)" />
-                    <span className="sr-only">즐겨찾기 해제</span>
+                    <Icons name='star-filled' color='var(--warning)' />
+                    <span className='sr-only'>즐겨찾기 해제</span>
                   </>
                 ) : (
                   <>
-                    <Icons name="star" />
-                    <span className="sr-only">즐겨찾기</span>
+                    <Icons name='star' />
+                    <span className='sr-only'>즐겨찾기</span>
                   </>
                 )}
               </Button>
@@ -90,8 +92,8 @@ const ProfileActions = memo<ProfileActionsProps>(
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <IconButton
-                    name="dots"
-                    text="더보기"
+                    name='dots'
+                    text='더보기'
                     className={styles.more}
                   />
                 </DropdownMenuTrigger>
@@ -130,7 +132,7 @@ const ProfileActions = memo<ProfileActionsProps>(
           )}
       </>
     );
-  },
+  }
 );
 
 ProfileActions.displayName = 'ProfileActions';

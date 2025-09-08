@@ -1,9 +1,11 @@
 import { Fragment, memo, useMemo } from 'react';
-import styles from './ProfileGallery.module.scss';
-import { ProfileGalleryProps } from '../../../types/viewer.types';
 
 import { VideoThumbnail } from '@/shared/ui/VideoThumbnail';
+
 import { getMediaType } from '@/features/viewer/utils/mediaUtils';
+
+import { ProfileGalleryProps } from '../../../types/viewer.types';
+import styles from './ProfileGallery.module.scss';
 
 const ProfileGallery = memo<ProfileGalleryProps>(
   ({ histories, onImageClick }) => {
@@ -13,7 +15,7 @@ const ProfileGallery = memo<ProfileGalleryProps>(
     // 더보기 버튼 표시 여부
     const showMoreButton = useMemo(
       () => histories.length > 3,
-      [histories.length],
+      [histories.length]
     );
 
     // 히스토리가 1개 이하면 갤러리를 표시하지 않음
@@ -35,12 +37,12 @@ const ProfileGallery = memo<ProfileGalleryProps>(
                   <VideoThumbnail
                     url={history.processedImageUrl}
                     onClick={() => onImageClick(index)}
-                    type="gallery"
+                    type='gallery'
                   />
                 ) : (
                   <img
                     src={history.processedImageUrl}
-                    alt=""
+                    alt=''
                     onClick={() => onImageClick(index)}
                   />
                 )}
@@ -49,14 +51,14 @@ const ProfileGallery = memo<ProfileGalleryProps>(
           })}
 
           {showMoreButton && (
-            <button type="button" onClick={() => onImageClick(3)}>
+            <button type='button' onClick={() => onImageClick(3)}>
               {histories.length - 3}+
             </button>
           )}
         </div>
       </div>
     );
-  },
+  }
 );
 
 ProfileGallery.displayName = 'ProfileGallery';

@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { ImgMsgInData } from '@/features/viewer/types';
+
+import { VideoThumbnail } from '@/shared/ui/VideoThumbnail';
 
 import { Viewer } from '@/features/viewer';
-import { VideoThumbnail } from '@/shared/ui/VideoThumbnail';
+import { ImgMsgInData } from '@/features/viewer/types';
 
 export default function VideoFile({
   messageInData,
@@ -20,7 +21,7 @@ export default function VideoFile({
       <VideoThumbnail
         url={thumbUrl}
         onClick={() => setViewerOpen(true)}
-        type="talk"
+        type='talk'
       />
       <Viewer
         open={viewerOpen}

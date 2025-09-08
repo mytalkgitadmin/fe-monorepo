@@ -1,7 +1,10 @@
-import { MESSAGE_LIMITS } from '@/features/chat/constants';
-import styles from './LongMessage.module.scss';
-import Icons from '@/shared/ui/Icons';
 import { useState } from 'react';
+
+import Icons from '@/shared/ui/Icons';
+
+import { MESSAGE_LIMITS } from '@/features/chat/constants';
+
+import styles from './LongMessage.module.scss';
 import MessageModal from './MessageModal';
 
 export default function LongMessage({ message }: { message: string }) {
@@ -19,7 +22,7 @@ export default function LongMessage({ message }: { message: string }) {
       {/* [TODO 모달: 전체 메시지] */}
       <button className={styles.more} onClick={toggleModal}>
         전체보기
-        <Icons name="chevronRight" />
+        <Icons name='chevronRight' />
       </button>
 
       <MessageModal

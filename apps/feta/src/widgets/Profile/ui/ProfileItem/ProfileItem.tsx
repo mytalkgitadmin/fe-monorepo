@@ -1,8 +1,10 @@
+import { useUIStore } from '@/shared/store/useUIStore';
+
+import { Profile, RelationType } from '@/features/chat/model';
 import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
+
 import { ProfileCard } from '../ProfileCard';
 import { ProfileViewer } from '../ProfileViewer';
-import { Profile, RelationType } from '@/features/chat/model';
-import { useUIStore } from '@/shared/store/useUIStore';
 
 export default function ProfileItem({
   profile,

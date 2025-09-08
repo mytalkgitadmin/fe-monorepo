@@ -1,12 +1,13 @@
+import defaultSmallProfile from '@/assets/profile/bemilyDefaultProfile.webp';
+
 import { BASE_URL } from '@/shared/api/endpoints';
+
 import {
-  isImgMsgData,
-  isProfileImgData,
   MediaType,
   ViewerItemData,
+  isImgMsgData,
+  isProfileImgData,
 } from '../types';
-
-import defaultSmallProfile from '@/assets/profile/bemilyDefaultProfile.webp';
 
 // === 이모티콘 관련 ===
 const createProfileImageMap = () => {
@@ -17,7 +18,7 @@ const createProfileImageMap = () => {
     {
       eager: true,
       as: 'url',
-    },
+    }
   );
 
   Object.entries(profileImages).forEach(([path, url]) => {

@@ -1,9 +1,12 @@
 // src/features/friend/ui/SelectFriends.tsx
-import { useState } from 'react';
-
-import { useCategorizedFriends } from '../hooks/useCategorizedFriends';
-import { Friend } from '@/features/friend/api';
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   Dialog,
   DialogClose,
@@ -13,23 +16,21 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
+
+import { useState } from 'react';
 
 import Icons from '@/shared/ui/Icons';
+
+import useCreateChat from '@/features/chat/hooks/useCreateChat';
+import { Friend } from '@/features/friend/api';
+import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
+
 import { ProfileCard } from '@/widgets/Profile/ui/ProfileCard';
 
-import styles from './SelectFriends.module.scss';
+import { useCategorizedFriends } from '../hooks/useCategorizedFriends';
 import useFriendSearch from '../hooks/useFriendSearch';
 import FriendSearchInput from './FriendSearchInput';
-import useCreateChat from '@/features/chat/hooks/useCreateChat';
-import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
+import styles from './SelectFriends.module.scss';
 
 export interface SelectFriendsProps {
   open: boolean;
@@ -49,7 +50,7 @@ export default function SelectFriends({
     const friendIds = selectedFriends.map((friend) => friend.accountId);
     handleStartChat(
       friendIds,
-      selectedFriends.length === 1 ? 'DIRECT' : 'GROUP',
+      selectedFriends.length === 1 ? 'DIRECT' : 'GROUP'
     );
     setSelectedFriends([]);
     favoriteSearch.clearSearch();
@@ -75,7 +76,7 @@ export default function SelectFriends({
       setSelectedFriends((prev) => [...prev, friend]);
     } else {
       setSelectedFriends((prev) =>
-        prev.filter((f) => f.accountId !== friend.accountId),
+        prev.filter((f) => f.accountId !== friend.accountId)
       );
     }
   };
@@ -87,7 +88,7 @@ export default function SelectFriends({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="max-w-md max-h-[80vh] overflow-hidden flex flex-col">
+      <DialogContent className='max-w-md max-h-[80vh] overflow-hidden flex flex-col'>
         <DialogHeader>
           <DialogTitle>대화방 만들기</DialogTitle>
           <DialogDescription>대화할 친구 선택하세요</DialogDescription>
@@ -100,7 +101,7 @@ export default function SelectFriends({
             favoriteSearch.setSearchQuery(value);
             allFriendsSearch.setSearchQuery(value);
           }}
-          placeholder="친구 이름으로 검색"
+          placeholder='친구 이름으로 검색'
         />
 
         {/* 선택된 친구들 */}
@@ -122,7 +123,7 @@ export default function SelectFriends({
                     onClick={() => removeSelectedFriend(friend.accountId)}
                     className={styles.removeBtn}
                   >
-                    <Icons name="x" />
+                    <Icons name='x' />
                   </button>
                 </div>
               ))}
@@ -132,10 +133,10 @@ export default function SelectFriends({
 
         {/* 친구 목록 */}
         <div className={styles.friendsList}>
-          <Accordion type="multiple" defaultValue={['favorite', 'all']}>
+          <Accordion type='multiple' defaultValue={['favorite', 'all']}>
             {/* 즐겨찾는 친구 */}
             {favoriteSearch.filteredFriends.length > 0 && (
-              <AccordionItem value="favorite">
+              <AccordionItem value='favorite'>
                 <AccordionTrigger>
                   <h3 className={styles.title}>
                     즐겨찾는 친구{' '}
@@ -143,13 +144,13 @@ export default function SelectFriends({
                   </h3>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="space-y-2">
+                  <div className='space-y-2'>
                     {favoriteSearch.filteredFriends.map((friend) => (
                       <FriendSelectItem
                         key={friend.accountId}
                         friend={friend}
                         isSelected={selectedFriends.some(
-                          (f) => f.accountId === friend.accountId,
+                          (f) => f.accountId === friend.accountId
                         )}
                         onSelect={handleFriendSelect}
                       />
@@ -161,7 +162,7 @@ export default function SelectFriends({
 
             {/* 전체 친구 */}
             {allFriendsSearch.filteredFriends.length > 0 ? (
-              <AccordionItem value="all">
+              <AccordionItem value='all'>
                 <AccordionTrigger>
                   <h3 className={styles.title}>
                     전체 친구{' '}
@@ -175,7 +176,7 @@ export default function SelectFriends({
                         key={friend.accountId}
                         friend={friend}
                         isSelected={selectedFriends.some(
-                          (f) => f.accountId === friend.accountId,
+                          (f) => f.accountId === friend.accountId
                         )}
                         onSelect={handleFriendSelect}
                       />
@@ -185,7 +186,7 @@ export default function SelectFriends({
               </AccordionItem>
             ) : (
               <div className={styles.nodata}>
-                <Icons name="mood-cry" />
+                <Icons name='mood-cry' />
                 <p>
                   <strong>{allFriendsSearch.searchQuery}</strong>라는 이름의
                   친구가 없어요
@@ -197,7 +198,7 @@ export default function SelectFriends({
 
         <DialogFooter className={styles.dialogFooter}>
           <DialogClose asChild>
-            <Button variant="outline" size="lg">
+            <Button variant='outline' size='lg'>
               닫기
             </Button>
           </DialogClose>

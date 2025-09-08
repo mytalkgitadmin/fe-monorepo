@@ -1,7 +1,9 @@
 // src/features/friend/hooks/useCategorizedFriends.ts
 import { useMemo } from 'react';
-import { Friend, useFriends } from '@/features/friend/api';
+
 import { isUpdatedProfile } from '@/shared/lib/dateFormatter';
+
+import { Friend, useFriends } from '@/features/friend/api';
 import { sortFriendsByName } from '@/features/friend/lib/friendUtils';
 
 interface CategorizedFriends {

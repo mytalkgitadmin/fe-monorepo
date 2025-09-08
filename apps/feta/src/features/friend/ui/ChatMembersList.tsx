@@ -1,16 +1,20 @@
-import { AccountProfile, Member } from '@/features/chat/model';
-import styles from './ChatMembersList.module.scss';
-import { ProfileItem } from '@/widgets/Profile/ui/ProfileItem';
-import { useAuth } from '@/features/auth';
-import { IconButton } from '@/shared/ui/IconButton';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuTrigger,
   DropdownMenuItem,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
+
+import { IconButton } from '@/shared/ui/IconButton';
+
+import { useAuth } from '@/features/auth';
+import { AccountProfile, Member } from '@/features/chat/model';
+
+import { ProfileItem } from '@/widgets/Profile/ui/ProfileItem';
+
 import { useFriendBlockCancel, useFriendHideCancel } from '../api';
+import styles from './ChatMembersList.module.scss';
 
 const isMember = (member: Member | AccountProfile): member is Member => {
   return 'participantType' in member;
@@ -28,7 +32,7 @@ export default function ChatMembersList({
   const friendBlockCancel = useFriendBlockCancel();
 
   const master = members.find(
-    (member) => isMember(member) && member.participantType === 'MASTER',
+    (member) => isMember(member) && member.participantType === 'MASTER'
   );
   const isMyGroup =
     channelCustomType === 'GROUP' &&
@@ -42,13 +46,13 @@ export default function ChatMembersList({
           isMember(member) &&
           member.participantType === 'MASTER';
         return (
-          <div className="flex items-center" key={member.accountId}>
+          <div className='flex items-center' key={member.accountId}>
             <ProfileItem
               profile={member.profile}
               accountId={member?.accountId}
               editedName={member.editedName}
               syncName={member.syncName}
-              type="talk"
+              type='talk'
               isMyProfile={member.accountId === userProfile?.accountId}
               relationType={member.relationType}
               isMaster={isMaster}
@@ -56,15 +60,15 @@ export default function ChatMembersList({
 
             {(member.relationType === 'NONE' ||
               member.relationType === 'DELETE') && (
-              <IconButton name="user-plus" text="친구 추가" />
+              <IconButton name='user-plus' text='친구 추가' />
             )}
 
             {isMyGroup && member.accountId !== userProfile?.accountId && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <IconButton name="dots" text="더보기" />
+                  <IconButton name='dots' text='더보기' />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
+                <DropdownMenuContent align='start'>
                   <DropdownMenuItem>방장이관</DropdownMenuItem>
                   <DropdownMenuItem>내보내기</DropdownMenuItem>
                 </DropdownMenuContent>
@@ -73,8 +77,8 @@ export default function ChatMembersList({
 
             {member.relationType === 'HIDE' && (
               <Button
-                size="sm"
-                variant="outline"
+                size='sm'
+                variant='outline'
                 onClick={() => friendHideCancel.mutate(member.accountId)}
               >
                 해제
@@ -82,8 +86,8 @@ export default function ChatMembersList({
             )}
             {member.relationType === 'BLOCK' && (
               <Button
-                size="sm"
-                variant="outline"
+                size='sm'
+                variant='outline'
                 onClick={() => friendBlockCancel.mutate(member.accountId)}
               >
                 해제

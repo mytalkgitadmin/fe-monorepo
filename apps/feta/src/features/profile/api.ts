@@ -1,5 +1,8 @@
-import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 import { useQuery } from '@tanstack/react-query';
+
+import { API_ENDPOINTS, apiRequest } from '@/shared/api';
+
+import { uploadFile } from '../chat/api/fileUploadApi';
 import {
   GroupProfileParams,
   UpdateGroupProfileResponse,
@@ -8,14 +11,13 @@ import {
   UserProfileResponse,
   UserSendbirdProfileResponse,
 } from './types';
-import { uploadFile } from '../chat/api/fileUploadApi';
 
 export const getSendbirdProfileApi = async (sendbirdId: string) => {
   const response = await apiRequest<UserSendbirdProfileResponse>(
     API_ENDPOINTS.USER.GET_PROFILE_SENDBIRD,
     undefined,
     undefined,
-    { sendbirdId },
+    { sendbirdId }
   );
   return response.resultData.accountProfile;
 };
@@ -33,7 +35,7 @@ export const getProfileApi = async (accountId: number) => {
     API_ENDPOINTS.USER.GET_PROFILE,
     undefined,
     undefined,
-    { accountId },
+    { accountId }
   );
   return response.resultData;
 };
@@ -50,7 +52,7 @@ export const useProfile = (accountId: number) => {
 export const updateProfileApi = async (profileData: UpdateProfileRequest) => {
   const response = await apiRequest<UpdateProfileResponse>(
     API_ENDPOINTS.AUTH.PATCH_MY_PROFILE,
-    profileData,
+    profileData
   );
   return response.resultData;
 };
@@ -59,7 +61,7 @@ export const updateGroupProfile = async (data: GroupProfileParams) => {
   try {
     const response = await apiRequest<UpdateGroupProfileResponse>(
       API_ENDPOINTS.AUTH.PUT_MY_PROFILE_IMAGE,
-      data,
+      data
     );
     return response.resultData;
   } catch (error) {

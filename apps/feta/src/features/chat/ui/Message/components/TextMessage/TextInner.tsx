@@ -1,6 +1,7 @@
 import { MESSAGE_LIMITS } from '@/features/chat/constants';
-import LongMessage from '../LongMessage/LongMessage';
 import { checkEditMessage, decryptData } from '@/features/chat/lib';
+
+import LongMessage from '../LongMessage/LongMessage';
 
 export default function TextInner({ message }: { message: string }) {
   const { convertMessage } = checkEditMessage(decryptData(message));

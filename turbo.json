@@ -4,18 +4,8 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build", "check-types"],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*",
-        "!README.md",
-        "!**/*.test.*"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        "dist/**",
-        "build/**"
-      ]
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "!README.md", "!**/*.test.*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"]
     },
     "build:dev": {
       "dependsOn": ["^build:dev"],
@@ -29,20 +19,11 @@
     },
     "lint": {
       "dependsOn": ["^build"],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".eslintrc.*",
-        ".eslintignore"
-      ]
+      "inputs": ["$TURBO_DEFAULT$", ".eslintrc.*", ".eslintignore"]
     },
     "check-types": {
       "dependsOn": ["^check-types"],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        "tsconfig.json",
-        "**/*.ts",
-        "**/*.tsx"
-      ]
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig.json", "**/*.ts", "**/*.tsx"]
     },
     "dev": {
       "cache": false,

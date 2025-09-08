@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import { IconButton } from '@/shared/ui/IconButton';
+
 import SelectFriends from '@/features/friend/ui/SelectFriends';
 
 import styles from './ChatListHeader.module.scss';
@@ -13,18 +15,18 @@ export default function ChatListHeader() {
         {/* 대화방 만들기 */}
         <>
           <IconButton
-            name="message-circle-plus"
-            text="대화방 만들기"
+            name='message-circle-plus'
+            text='대화방 만들기'
             onClick={() => setIsOpen(true)}
           />
           <SelectFriends open={isOpen} onOpenChange={() => setIsOpen(false)} />
         </>
 
         {/* 대화방 검색 */}
-        <IconButton name="search" text="대화방 검색" />
+        <IconButton name='search' text='대화방 검색' />
 
         {/* 대화방  */}
-        <IconButton name="settings" text="대화방 설정" />
+        <IconButton name='settings' text='대화방 설정' />
       </div>
     </header>
   );

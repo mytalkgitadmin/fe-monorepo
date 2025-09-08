@@ -1,16 +1,16 @@
 import { useCallback, useEffect } from 'react';
 
 import { useSendbird } from '@sendbird/uikit-react';
-import UserEventHandler from '@sendbird/uikit-react/handlers/UserEventHandler';
 import GroupChannelHandler from '@sendbird/uikit-react/handlers/GroupChannelHandler';
+import UserEventHandler from '@sendbird/uikit-react/handlers/UserEventHandler';
+
+import { useAppBadge } from '../hooks/useAppBadge';
 // import type { BaseChannel } from '@sendbird/chat';
 
 import { useFaviconBadge } from '../hooks/useFaviconBadge';
-import { useAppBadge } from '../hooks/useAppBadge';
-import { useTotalNotificationStore } from '../store/useTotalNotificationStore';
-
 // import { ExtendedBaseMessage } from '../model';
 import useInitialNotificationLoader from '../hooks/useInitialNotificationLoader';
+import { useTotalNotificationStore } from '../store/useTotalNotificationStore';
 
 const HANDLER_ID = 'UNREAD_COUNT_HANDLER';
 
@@ -63,7 +63,7 @@ export default function NotificationProvider() {
         clearFaviconBadge();
       }
     },
-    [setAppBadge, clearAppBadge, showFaviconBadge, clearFaviconBadge],
+    [setAppBadge, clearAppBadge, showFaviconBadge, clearFaviconBadge]
   );
 
   // 채팅 카운트 초기화
@@ -84,7 +84,7 @@ export default function NotificationProvider() {
   // 전체 알림 개수(실시간 업데이트)
   useEffect(() => {
     const unsubscribe = useTotalNotificationStore.subscribe(
-      ({ totalUnreadCount }) => updateNotificationUI(totalUnreadCount),
+      ({ totalUnreadCount }) => updateNotificationUI(totalUnreadCount)
     );
 
     return unsubscribe;

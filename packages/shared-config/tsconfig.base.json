@@ -19,20 +19,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    
+
     // 📁 경로 별칭 설정 (각 앱에서 확장해서 사용)
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  
+
   // 🚫 제외할 폴더들
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "*.config.js",
-    "*.config.ts"
-  ]
+  "exclude": ["node_modules", "dist", "build", "*.config.js", "*.config.ts"]
 }

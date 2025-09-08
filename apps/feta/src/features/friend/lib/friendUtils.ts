@@ -1,5 +1,6 @@
-import { Friend } from '@/features/friend/api';
 import { compareByName } from '@/shared/lib/sortUtils';
+
+import { Friend } from '@/features/friend/api';
 
 /**
  * 친구의 표시 이름을 가져오는 함수

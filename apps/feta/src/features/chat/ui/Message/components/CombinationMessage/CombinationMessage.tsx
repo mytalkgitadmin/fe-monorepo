@@ -1,8 +1,8 @@
 import { parseData } from '@/features/chat/lib';
-import { CoreMessageType } from '../FileMessage/FileMessage';
 
-import { ScheduleMessage } from './ScheduleMessage';
+import { CoreMessageType } from '../FileMessage/FileMessage';
 import { ContactMessage } from './ContactMessage';
+import { ScheduleMessage } from './ScheduleMessage';
 
 export default function CombinationMessage({
   messageContent,
@@ -21,11 +21,11 @@ export default function CombinationMessage({
 
     // 캘린더
     case 'MESSAGE_CALENDAR_EVENT':
-      return <ScheduleMessage event={messageInData.event} type="CALENDAR" />;
+      return <ScheduleMessage event={messageInData.event} type='CALENDAR' />;
 
     // 디데이
     case 'MESSAGE_DDAY_EVENT':
-      return <ScheduleMessage event={messageInData.event} type="DDAY" />;
+      return <ScheduleMessage event={messageInData.event} type='DDAY' />;
     default:
       return <>{messageContent.message}</>;
   }

@@ -1,14 +1,15 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
-import { RequestNotification, ResponseNotification } from './model';
 import { API_ENDPOINTS, apiRequest } from '@/shared/api';
+
+import { RequestNotification, ResponseNotification } from './model';
 import { useTotalNotificationStore } from './store/useTotalNotificationStore';
 
 export const getNotiApi = async (params?: { category?: string }) => {
   const response = await apiRequest<ResponseNotification>(
     API_ENDPOINTS.NOTI.GET_NOTI,
     undefined,
-    params,
+    params
   );
 
   return response.resultData.notifications;
@@ -31,7 +32,7 @@ export const patchNotiApi = (notificationId: string) => {
     undefined,
     {
       notification_id: notificationId,
-    },
+    }
   );
 };
 
@@ -43,7 +44,7 @@ export const deleteNotiApi = (notificationId: string) => {
     undefined,
     {
       notification_id: notificationId,
-    },
+    }
   );
 };
 

@@ -1,9 +1,13 @@
-import { useAuth } from '@/features/auth';
+import { useCallback } from 'react';
+
 import { useRouter } from '@tanstack/react-router';
+
+import { useUIStore } from '@/shared/store/useUIStore';
+
+import { useAuth } from '@/features/auth';
+
 import { useCreateChannel } from '../api/createChannel';
 import { useChannelStore } from '../store';
-import { useUIStore } from '@/shared/store/useUIStore';
-import { useCallback } from 'react';
 
 interface UseCreateChatProps {
   onSuccess?: (channelUrl: string) => void;
@@ -42,7 +46,7 @@ export default function useCreateChat({
             console.error('채널 생성 실패:', error);
             onError?.(error);
           },
-        },
+        }
       );
     },
     [
@@ -53,7 +57,7 @@ export default function useCreateChat({
       router,
       onError,
       onSuccess,
-    ],
+    ]
   );
 
   return { handleStartChat };

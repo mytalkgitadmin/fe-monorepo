@@ -1,5 +1,6 @@
-import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 import { useMutation } from '@tanstack/react-query';
+
+import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 
 interface CreateChannelRequest {
   accountIds: number[];
@@ -18,7 +19,7 @@ interface CreateChannelResponse {
 export const createChannelApi = async (data: CreateChannelRequest) => {
   const response = await apiRequest<CreateChannelResponse>(
     API_ENDPOINTS.CHANNEL.POST_CREATE_CHANNEL,
-    data,
+    data
   );
 
   return response.resultData;

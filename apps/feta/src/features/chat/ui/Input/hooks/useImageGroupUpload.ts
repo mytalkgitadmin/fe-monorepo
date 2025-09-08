@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import { uploadFile } from '@/features/chat/api/fileUploadApi';
+
 import { GroupUploadResult, ProcessedFile, UploadResult } from '../types';
 import { createImageGroups } from '../utils';
 
@@ -26,7 +28,7 @@ export default function useImageGroupUpload() {
   // 이미지 그룹 업로드 시작
   const startGroupUpload = async (
     imageFiles: ProcessedFile[],
-    options: GroupUploadOptions,
+    options: GroupUploadOptions
   ) => {
     setIsGroupUploading(true);
     try {
@@ -49,7 +51,7 @@ export default function useImageGroupUpload() {
       // 3. 각 그룹을 순차적 처리
       for (const group of ImageGroups) {
         console.log(
-          `그룹 ${group.groupId} 업로드 시작 (${group.files.length}개 파일)`,
+          `그룹 ${group.groupId} 업로드 시작 (${group.files.length}개 파일)`
         );
 
         const groupResults = await processImageGroup(group, options.channelUrl);
@@ -75,7 +77,7 @@ export default function useImageGroupUpload() {
     } catch (error) {
       console.error('그룹 업로드 실패:', error);
       options.onError?.(
-        error instanceof Error ? error.message : '그룹 업로드 실패',
+        error instanceof Error ? error.message : '그룹 업로드 실패'
       );
     } finally {
       setIsGroupUploading(false);
@@ -85,7 +87,7 @@ export default function useImageGroupUpload() {
   // 개별 그룹의 파일들을 순차 업로드
   const processImageGroup = async (
     group: { groupId: string; files: ProcessedFile[] },
-    channelUrl: string,
+    channelUrl: string
   ): Promise<UploadResult[]> => {
     const uploadResults: UploadResult[] = [];
 
@@ -95,7 +97,7 @@ export default function useImageGroupUpload() {
       try {
         console.log(
           `${group.groupId} - 파일 ${i + 1}/${group.files.length} 업로드:`,
-          processedFile.processedFile.name,
+          processedFile.processedFile.name
         );
         const uploadParams = {
           file: processedFile.processedFile,
@@ -124,12 +126,12 @@ export default function useImageGroupUpload() {
   // 그룹 상태 업데이트
   const updateGroupStatus = (
     groupId: string,
-    updates: Partial<GroupUploadStatus>,
+    updates: Partial<GroupUploadStatus>
   ) => {
     setGroupStatuses((prev) =>
       prev.map((status) =>
-        status.groupId === groupId ? { ...status, ...updates } : status,
-      ),
+        status.groupId === groupId ? { ...status, ...updates } : status
+      )
     );
   };
 

@@ -1,9 +1,11 @@
 import { memo } from 'react';
+
 import Icons from '@/shared/ui/Icons';
 import Loading from '@/shared/ui/Loading';
+
+import styles from '../Viewer.module.scss';
 import { ViewerItemData } from '../types';
 import { getOriginalUrl } from '../utils/mediaUtils';
-import styles from '../Viewer.module.scss';
 
 interface ImageItemProps {
   item: ViewerItemData;
@@ -26,7 +28,7 @@ function ImageItem({
     <>
       {mediaState.error ? (
         <div className={styles.error}>
-          <Icons name="alert" />
+          <Icons name='alert' />
           <p>이미지를 불러올 수 없습니다</p>
         </div>
       ) : (

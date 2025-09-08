@@ -1,5 +1,7 @@
-import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
+import { Outlet, createFileRoute, redirect } from '@tanstack/react-router';
+
 import { useAuthStore } from '@/features/auth/authStore';
+
 import { ProtectedLayout } from '@/widgets/layouts/ProtectedLayout';
 
 export const Route = createFileRoute('/_protected')({

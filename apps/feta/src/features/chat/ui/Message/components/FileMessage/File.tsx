@@ -1,7 +1,6 @@
-import { MessageInData } from '../../../Input/types';
-
-import styles from './FileMessage.module.scss';
 import FileCard from '../../../File/FileCard';
+import { MessageInData } from '../../../Input/types';
+import styles from './FileMessage.module.scss';
 
 export default function File({
   messageInData,

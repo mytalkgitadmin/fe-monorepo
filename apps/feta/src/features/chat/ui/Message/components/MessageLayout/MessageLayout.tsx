@@ -1,15 +1,16 @@
 import React from 'react';
-import { MessageContentProps } from '@sendbird/uikit-react/ui/MessageContent';
+
 import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
+import { MessageContentProps } from '@sendbird/uikit-react/ui/MessageContent';
 
 import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
+
 import { useAuth } from '@/features/auth';
 import { checkEditMessage, decryptData } from '@/features/chat/lib';
-import { MessageAvatar } from '../MessageAvatar';
 
 import OgCard from '../../shared/OgCard';
 import Reactions from '../../shared/Reactions';
-
+import { MessageAvatar } from '../MessageAvatar';
 import styles from './MessageLayout.module.scss';
 
 interface MessageLayoutProps {
@@ -60,7 +61,7 @@ export default function MessageLayout({
 
       <div className={styles.container}>
         {!isMyMessage && !chainTop && (
-          <button type="button" className={styles.nickname}>
+          <button type='button' className={styles.nickname}>
             {nickname}
           </button>
         )}

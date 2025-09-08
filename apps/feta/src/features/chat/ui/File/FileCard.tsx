@@ -1,7 +1,8 @@
-import Icons from '@/shared/ui/Icons';
-import styles from './FileCard.module.scss';
-import { formatBytes } from '../../lib';
 import { BASE_URL } from '@/shared/api/endpoints';
+import Icons from '@/shared/ui/Icons';
+
+import { formatBytes } from '../../lib';
+import styles from './FileCard.module.scss';
 
 export default function FileCard({
   fileType,
@@ -24,29 +25,29 @@ export default function FileCard({
     <a className={styles.fileCard} href={`${BASE_URL}${url}`} download>
       <span className={styles.icon}>
         {fileType && fileType === 'audio' ? (
-          <Icons name="mic" />
+          <Icons name='mic' />
         ) : (
           <>
             {extension === 'txt' ? (
-              <Icons name="fileTxt" />
+              <Icons name='fileTxt' />
             ) : extension === 'zip' ? (
-              <Icons name="fileZip" />
+              <Icons name='fileZip' />
             ) : extension === 'docx' ? (
-              <Icons name="fileDocx" />
+              <Icons name='fileDocx' />
             ) : extension === 'doc' ? (
-              <Icons name="fileDoc" />
+              <Icons name='fileDoc' />
             ) : extension === 'csv' ? (
-              <Icons name="fileCsv" />
+              <Icons name='fileCsv' />
             ) : extension === 'pdf' ? (
-              <Icons name="filePdf" />
+              <Icons name='filePdf' />
             ) : extension === 'xls' ? (
-              <Icons name="fileXls" />
+              <Icons name='fileXls' />
             ) : extension === 'ppt' || extension === 'pptx' ? (
-              <Icons name="filePpt" />
+              <Icons name='filePpt' />
             ) : extension === 'mp3' ? (
-              <Icons name="mic" />
+              <Icons name='mic' />
             ) : (
-              <Icons name="file" />
+              <Icons name='file' />
             )}
           </>
         )}

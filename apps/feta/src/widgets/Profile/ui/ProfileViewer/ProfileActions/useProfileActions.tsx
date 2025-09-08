@@ -1,5 +1,25 @@
 import { useCallback } from 'react';
+
 import { toast } from 'sonner';
+
+import { useUIStore } from '@/shared/store/useUIStore';
+import Icons from '@/shared/ui/Icons';
+
+import { useAuth } from '@/features/auth';
+import { RelationType } from '@/features/chat/model';
+import {
+  useFriendBlock,
+  useFriendBlockCancel,
+  useFriendDelete,
+  useFriendFavorite,
+  useFriendHide,
+  useFriendHideCancel,
+  useFriendJoin,
+  useFriendReject,
+  useFriendRequest,
+} from '@/features/friend/api';
+
+import styles from './ProfileActions.module.scss';
 
 export interface ApiErrorResponse {
   status: number;
@@ -15,24 +35,6 @@ export interface ApiErrorResponse {
     errorDetails: Record<string, unknown>;
   };
 }
-
-import Icons from '@/shared/ui/Icons';
-import { useUIStore } from '@/shared/store/useUIStore';
-import {
-  useFriendBlock,
-  useFriendBlockCancel,
-  useFriendDelete,
-  useFriendFavorite,
-  useFriendHide,
-  useFriendHideCancel,
-  useFriendJoin,
-  useFriendReject,
-  useFriendRequest,
-} from '@/features/friend/api';
-import { RelationType } from '@/features/chat/model';
-
-import styles from './ProfileActions.module.scss';
-import { useAuth } from '@/features/auth';
 
 interface UseProfileActionsProps {
   friendId: number;
@@ -69,7 +71,7 @@ export default function useProfileActions({
     openAlertDialog({
       title: (
         <>
-          <Icons name="mood-sad" />
+          <Icons name='mood-sad' />
           친구 숨김
         </>
       ),
@@ -102,7 +104,7 @@ export default function useProfileActions({
     openAlertDialog({
       title: (
         <>
-          <Icons name="mood-off" /> 친구 차단
+          <Icons name='mood-off' /> 친구 차단
         </>
       ),
       description: (
@@ -145,7 +147,7 @@ export default function useProfileActions({
     openAlertDialog({
       title: (
         <>
-          <Icons name="user-minus" /> 친구 삭제
+          <Icons name='user-minus' /> 친구 삭제
         </>
       ),
       description: (
@@ -185,7 +187,7 @@ export default function useProfileActions({
           console.error('차단 처리 중 오류:', error);
           toast('친구 수락에 실패했습니다');
         },
-      },
+      }
     );
   }, [joinMutation, friendId, groupId, closeAllModals]);
 
@@ -261,7 +263,7 @@ export default function useProfileActions({
         },
       });
     },
-    [],
+    []
   );
 
   return {

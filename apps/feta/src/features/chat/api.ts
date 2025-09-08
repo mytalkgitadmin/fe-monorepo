@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
 import { API_ENDPOINTS, apiRequest } from '@/shared/api';
+
 import {
   ResponseChannel,
   ResponseFileUploadAcceptList,
@@ -10,7 +11,7 @@ export const getChannelListApi = (params?: { channelUrl?: string }) => {
   return apiRequest<ResponseChannel>(
     API_ENDPOINTS.CHANNEL.GET_LIST,
     undefined,
-    params,
+    params
   );
 };
 
@@ -26,7 +27,7 @@ export const getFileUploadAcceptList = (subCategory: string) => {
     API_ENDPOINTS.FILE_UPLOAD.GET_ACCEPT_LIST,
     undefined,
     undefined,
-    { subCategory },
+    { subCategory }
   );
 };
 

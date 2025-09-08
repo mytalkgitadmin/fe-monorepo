@@ -1,7 +1,9 @@
-import qs from 'qs';
 import axios, { AxiosInstance } from 'axios';
-import { API_ENDPOINTS, BASE_API_URL } from './endpoints';
+import qs from 'qs';
+
 import { useAuthStore } from '@/features/auth/authStore';
+
+import { API_ENDPOINTS, BASE_API_URL } from './endpoints';
 
 /**
  * 기본 axios 인스턴스 생성
@@ -76,7 +78,7 @@ const refreshToken = async (): Promise<boolean> => {
               'Accept-Language': 'ko-KR,ko;',
               'X-DOMAIN-SERVICE': 'FETA',
             },
-          },
+          }
         );
 
         if (response.data) {
@@ -134,7 +136,7 @@ axiosInstance.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error),
+  (error) => Promise.reject(error)
 );
 
 /**
@@ -207,7 +209,7 @@ axiosInstance.interceptors.response.use(
       useAuthStore.getState().logout();
       return Promise.reject(refreshError);
     }
-  },
+  }
 );
 
 /**
@@ -234,7 +236,7 @@ export function createFileUploadInstance(): AxiosInstance {
       }
       return config;
     },
-    (error) => Promise.reject(error),
+    (error) => Promise.reject(error)
   );
 
   return instance;

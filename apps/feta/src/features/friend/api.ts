@@ -1,5 +1,6 @@
-import { API_ENDPOINTS, apiRequest, RequestParams } from '@/shared/api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+
+import { API_ENDPOINTS, RequestParams, apiRequest } from '@/shared/api';
 
 export type FriendType =
   | 'NORMAL'
@@ -96,7 +97,7 @@ export const getFriendListApi = async (params: FriendListParams) => {
   const response = await apiRequest<FriendListResponse>(
     API_ENDPOINTS.FRIEND.GET_FRIENDS_LIST,
     undefined,
-    params,
+    params
   );
 
   return response.resultData;
@@ -118,7 +119,7 @@ export const useFriendFavorite = () => {
     mutationFn: async (data: { friendId: number; isFavorite: boolean }) =>
       await apiRequest<FriendListResponse>(
         API_ENDPOINTS.FRIEND.PUT_FRIEND_FAVORITE,
-        data,
+        data
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -136,7 +137,7 @@ export const useFriendHide = () => {
     mutationFn: async (friendId: number) =>
       await apiRequest<FriendListResponse>(
         API_ENDPOINTS.FRIEND.PUT_FRIEND_HIDE,
-        { friendId },
+        { friendId }
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -153,7 +154,7 @@ export const useFriendHideCancel = () => {
     mutationFn: async (friendId: number) =>
       await apiRequest<FriendListResponse>(
         API_ENDPOINTS.FRIEND.PUT_FRIEND_HIDE_CANCEL,
-        { friendId },
+        { friendId }
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -171,7 +172,7 @@ export const useFriendBlock = () => {
     mutationFn: async (friendId: number) =>
       await apiRequest<FriendListResponse>(
         API_ENDPOINTS.FRIEND.PUT_FRIEND_BLOCK,
-        { friendId },
+        { friendId }
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -188,7 +189,7 @@ export const useFriendBlockCancel = () => {
     mutationFn: async (friendId: number) =>
       await apiRequest<FriendListResponse>(
         API_ENDPOINTS.FRIEND.PUT_FRIEND_BLOCK_CANCEL,
-        { friendId },
+        { friendId }
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -210,7 +211,7 @@ export const useFriendDelete = () => {
         undefined,
         {
           friendId,
-        },
+        }
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -237,7 +238,7 @@ export const useFriendJoin = () => {
         {
           friendId,
           groupId,
-        },
+        }
       );
     },
     onSuccess: () => {
@@ -258,7 +259,7 @@ export const useFriendReject = () => {
         API_ENDPOINTS.FRIEND.PUT_FRIEND_REJECT,
         {
           friendId,
-        },
+        }
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -275,7 +276,7 @@ export const useFriendRequest = () => {
     mutationFn: async (data: FriendRequestData) =>
       await apiRequest<FriendListResponse>(
         API_ENDPOINTS.FRIEND.POST_FRIEND,
-        data,
+        data
       ),
     onSuccess: () => {
       queryClient.invalidateQueries({

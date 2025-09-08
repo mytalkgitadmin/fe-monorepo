@@ -6,7 +6,7 @@ export function useFaviconBadge() {
 
   useEffect(() => {
     const linkElement = document.querySelector(
-      'link[rel="icon"]',
+      'link[rel="icon"]'
     ) as HTMLLinkElement;
     if (linkElement) {
       originalFavicon.current = linkElement.href;

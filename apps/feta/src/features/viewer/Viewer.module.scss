@@ -1,4 +1,4 @@
-@use '@/styles/var.scss' as *;
+@use "@/styles/var.scss" as *;
 
 $layoutHeight: convertRem(60);
 
@@ -53,7 +53,7 @@ $layoutHeight: convertRem(60);
 .viewerContainer {
   .carousel {
     height: 100%;
-    [data-slot='carousel-content'] {
+    [data-slot="carousel-content"] {
       height: 100%;
       .carouselContent {
         height: 100%;

@@ -15,12 +15,14 @@
 ### 작성법
 
 #### 제목
+
 - commit 타입(이모지 포함)을 함께 작성. 첫글자 대문자로 시작 (ex. ✨ Feat)
 - 과거 시제를 사용하지 않고 명령조로 작성 (ex. 회원가입 이메일 인증 기능 추가)
 - 제목 끝에 마침표 X
 - 티켓 번호가 있다면 작성
 
 #### 본문
+
 - 제목과 본문은 한 줄 띄워 분리
 - 어떻게(How)보다 무엇을, 왜(What, Why)에 초점을 맞춰 작성
 
@@ -39,29 +41,29 @@
 
 ### Gitmoji 사용 🎯
 
-| 타입 | 이모지 | 설명 |
-|------|--------|------|
-| **✨ Feat** | `:sparkles:` | 새로운 기능 추가 |
-| **⚡ Perf** | `:zap:` | 성능 개선(속도/메모리/용량) |
-| **🐛 Fix** | `:bug:` | 버그 수정 |
-| **🎨 UI/UX** | `:art:` | 사용자 인터페이스 변경 (CSS 수정이 아닌 실제 UI/UX 개선) |
-| **🚨 Style** | `:rotating_light:` | 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없는 경우) |
-| **➕ Add** | `:heavy_plus_sign:` | 의존성 추가 |
-| **♻️ Refactor** | `:recycle:` | 코드 리팩토링 |
-| **🔧 Chore** | `:wrench:` | 기타 변경사항 (빌드 스크립트 수정 등) |
-| **🏗️ Build** | `:building_construction:` | 빌드 관련 파일 수정 |
-| **💚 CI** | `:green_heart:` | CI관련 설정 수정 |
-| **📝 Docs** | `:memo:` | 문서 (문서 추가, 수정, 삭제) |
-| **🔥 Remove** | `:fire:` | 코드/파일/기능 삭제 |
-| **🔍 SEO** | `:mag:` | 검색 엔진 최적화 관련 변경 |
-| **🚧 WIP** | `:construction:` | 작업 진행 중 (Work In Progress) |
-| **♿ A11y** | `:wheelchair:` | 접근성 개선 |
-| **🧪 Test** | `:test_tube:` | 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없는 경우) |
+| 타입            | 이모지                    | 설명                                                                  |
+| --------------- | ------------------------- | --------------------------------------------------------------------- |
+| **✨ Feat**     | `:sparkles:`              | 새로운 기능 추가                                                      |
+| **⚡ Perf**     | `:zap:`                   | 성능 개선(속도/메모리/용량)                                           |
+| **🐛 Fix**      | `:bug:`                   | 버그 수정                                                             |
+| **🎨 UI/UX**    | `:art:`                   | 사용자 인터페이스 변경 (CSS 수정이 아닌 실제 UI/UX 개선)              |
+| **🚨 Style**    | `:rotating_light:`        | 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없는 경우)     |
+| **➕ Add**      | `:heavy_plus_sign:`       | 의존성 추가                                                           |
+| **♻️ Refactor** | `:recycle:`               | 코드 리팩토링                                                         |
+| **🔧 Chore**    | `:wrench:`                | 기타 변경사항 (빌드 스크립트 수정 등)                                 |
+| **🏗️ Build**    | `:building_construction:` | 빌드 관련 파일 수정                                                   |
+| **💚 CI**       | `:green_heart:`           | CI관련 설정 수정                                                      |
+| **📝 Docs**     | `:memo:`                  | 문서 (문서 추가, 수정, 삭제)                                          |
+| **🔥 Remove**   | `:fire:`                  | 코드/파일/기능 삭제                                                   |
+| **🔍 SEO**      | `:mag:`                   | 검색 엔진 최적화 관련 변경                                            |
+| **🚧 WIP**      | `:construction:`          | 작업 진행 중 (Work In Progress)                                       |
+| **♿ A11y**     | `:wheelchair:`            | 접근성 개선                                                           |
+| **🧪 Test**     | `:test_tube:`             | 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없는 경우) |
 
 ### 추가 타입들
 
 - **⏪ Revert**: 변경사항 되돌리기
-- **🔀 Merge**: 브랜치 병합  
+- **🔀 Merge**: 브랜치 병합
 - **🚑 Hotfix**: 긴급 수정
 - **🔒 Security**: 보안 이슈 수정
 - **⚙️ Config**: 설정 파일 수정
@@ -95,6 +97,7 @@
 ```bash
 npm run commit:guided
 ```
+
 - 단계별 가이드로 커밋 메시지 생성
 - 타입, 스코프, 제목을 순서대로 입력
 - 티켓 번호와 본문도 추가 가능
@@ -106,6 +109,7 @@ npm run commit
 # 또는
 npm run gitmoji
 ```
+
 - gitmoji-cli를 사용한 대화형 커밋
 - 이모지 선택 + 메시지 입력
 
@@ -114,6 +118,7 @@ npm run gitmoji
 ```bash
 npm run commit:help
 ```
+
 - 커밋 컨벤션 빠른 참조
 
 ### 4. Git 템플릿 사용
@@ -121,6 +126,7 @@ npm run commit:help
 ```bash
 git commit
 ```
+
 - `.gitmessage` 템플릿이 자동으로 로드됨
 - 예시와 가이드가 포함된 템플릿
 
@@ -170,6 +176,7 @@ echo "✨ feat(auth): 로그인 기능 추가" | npm run commit-msg
 ## 실제 예시들
 
 ### 기능 추가
+
 ```bash
 ✨ feat(auth): OAuth 구글 로그인 연동 (#AUTH-001)
 
@@ -180,6 +187,7 @@ echo "✨ feat(auth): 로그인 기능 추가" | npm run commit-msg
 ```
 
 ### 버그 수정
+
 ```bash
 🐛 fix(chat): 메시지 전송 시 특수문자 깨짐 현상 수정 (#BUG-042)
 
@@ -189,6 +197,7 @@ echo "✨ feat(auth): 로그인 기능 추가" | npm run commit-msg
 ```
 
 ### 성능 개선
+
 ```bash
 ⚡ perf(feta): 이미지 로딩 속도 50% 개선 (#PERF-015)
 
@@ -199,6 +208,7 @@ echo "✨ feat(auth): 로그인 기능 추가" | npm run commit-msg
 ```
 
 ### 리팩토링
+
 ```bash
 ♻️ refactor(shared): 공통 컴포넌트 FSD 구조로 재구성 (#REFACTOR-008)
 
@@ -215,9 +225,10 @@ Feature-Sliced Design 아키텍처에 맞게 코드를 재구성했습니다.
    - Windows: `Win + ;` 또는 `Win + .`
 
 2. **자주 사용하는 이모지**
+
    ```
    ✨ :sparkles: (feat)
-   🐛 :bug: (fix)  
+   🐛 :bug: (fix)
    📝 :memo: (docs)
    🔧 :wrench: (chore)
    ♻️ :recycle: (refactor)
@@ -232,6 +243,7 @@ Feature-Sliced Design 아키텍처에 맞게 코드를 재구성했습니다.
 ## 예외 상황
 
 다음 커밋들은 자동으로 무시됩니다:
+
 - Merge 커밋
-- Revert 커밋  
+- Revert 커밋
 - "Initial commit"

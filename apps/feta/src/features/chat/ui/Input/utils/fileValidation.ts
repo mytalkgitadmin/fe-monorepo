@@ -21,7 +21,7 @@ export const validateFileSize = (file: File): string => {
 // 파일 타입 검증
 export const validateFileType = (
   file: File,
-  acceptedExtensions: string[],
+  acceptedExtensions: string[]
 ): boolean => {
   // 비어 있는 경우 모든 타입 허용
   if (acceptedExtensions.length === 0) return true;
@@ -35,7 +35,7 @@ export const validateFileType = (
 
 export const validateFileList = (
   files: FileList | File[],
-  config: FileValidationConfig,
+  config: FileValidationConfig
 ): FileValidationResult => {
   const fileArray = Array.from(files);
   const validFiles: File[] = [];

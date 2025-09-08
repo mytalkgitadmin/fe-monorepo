@@ -1,5 +1,6 @@
-import { Member } from '@/features/chat/model';
 import { compareByName } from '@/shared/lib/sortUtils';
+
+import { Member } from '@/features/chat/model';
 
 /**
  * 멤버 이름을 가져오는 함수
@@ -65,7 +66,7 @@ const getMemberPriority = (member: Member, channelType?: string): number => {
  */
 export function sortMembersByPriority(
   members: Member[],
-  channelType?: string,
+  channelType?: string
 ): Member[] {
   if (!members || members.length === 0) return members;
 

@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+
 import { FileValidationResult } from '../types';
 
 export default function useFileUpload() {
@@ -22,25 +23,25 @@ export default function useFileUpload() {
       if (isValid) {
         // 유효한 파일 배열에서 제거
         newValidationResult.validFiles = validationResult.validFiles.filter(
-          (_, index) => index !== fileIndex,
+          (_, index) => index !== fileIndex
         );
       } else {
         // 무효한 파일 배열에서 제거
         newValidationResult.invalidFiles = validationResult.invalidFiles.filter(
-          (_, index) => index !== fileIndex,
+          (_, index) => index !== fileIndex
         );
       }
 
       // 총 용량 재계산
       newValidationResult.totalSize = newValidationResult.validFiles.reduce(
         (total, file) => total + file.size,
-        0,
+        0
       );
       newValidationResult.totalSize =
         newValidationResult.totalSize +
         newValidationResult.invalidFiles.reduce(
           (total, error) => total + error.file.size,
-          0,
+          0
         );
 
       setValidationResult(newValidationResult);
@@ -53,7 +54,7 @@ export default function useFileUpload() {
         closeValidationModal();
       }
     },
-    [validationResult, closeValidationModal],
+    [validationResult, closeValidationModal]
   );
 
   /**

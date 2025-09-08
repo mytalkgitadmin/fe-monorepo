@@ -1,5 +1,7 @@
-import type { Reaction } from '@sendbird/chat/message';
 import { getEmojiUrl } from '@/assets/emojiMap';
+
+import type { Reaction } from '@sendbird/chat/message';
+
 import styles from './Reactions.module.scss';
 
 export default function Reactions({

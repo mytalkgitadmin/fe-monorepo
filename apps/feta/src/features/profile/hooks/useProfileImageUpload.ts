@@ -1,6 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
-import { FileValidationError, ProfileImageFile } from '../model/fileTypes';
+
 import { showFileUploadError } from '@/features/chat/ui/Input/utils';
+
+import { FileValidationError, ProfileImageFile } from '../model/fileTypes';
 
 export default function useProfileImageUpload({
   acceptedTypes,
@@ -12,7 +14,7 @@ export default function useProfileImageUpload({
   onImageChange: (file: File | null) => void;
 }) {
   const [selectedImage, setSelectedImage] = useState<ProfileImageFile | null>(
-    null,
+    null
   );
   const [isUploading, setIsUploading] = useState(false);
   const [validationError, setValidationError] =
@@ -30,7 +32,7 @@ export default function useProfileImageUpload({
     if (acceptedTypes.length > 0) {
       const fileExtension = file.name.split('.').pop()?.toLocaleLowerCase();
       const isValidType = acceptedTypes.some((type) =>
-        type.toLocaleLowerCase().includes(fileExtension || ''),
+        type.toLocaleLowerCase().includes(fileExtension || '')
       );
 
       if (!isValidType) {
@@ -95,7 +97,7 @@ export default function useProfileImageUpload({
       maxFileSize,
       onImageChange,
       cleanupPreviewUrl,
-    ],
+    ]
   );
 
   // 이미지 제거

@@ -1,16 +1,16 @@
 import type { GroupChannel } from '@sendbird/chat/groupChannel';
 
-import Icons from '@/shared/ui/Icons';
 import { formatChatListTime } from '@/shared/lib/dateFormatter';
-import { GroupAvatar } from '@/widgets/Profile/ui/ProfileAvatar';
+import Icons from '@/shared/ui/Icons';
 
 import { MESSAGE_LIMITS } from '@/features/chat/constants';
-
-import { renderMessageContent } from '@/features/chat/ui/Message/shared/MessageRenderer';
-import { useChatLayoutStore } from '../../../ChatView/store/useChatLayoutStore';
-
-import styles from './ChatListItem.module.scss';
 import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
+import { renderMessageContent } from '@/features/chat/ui/Message/shared/MessageRenderer';
+
+import { GroupAvatar } from '@/widgets/Profile/ui/ProfileAvatar';
+
+import { useChatLayoutStore } from '../../../ChatView/store/useChatLayoutStore';
+import styles from './ChatListItem.module.scss';
 
 export default function ChatListItem({
   channel,
@@ -46,7 +46,7 @@ export default function ChatListItem({
         <div className={styles.texts}>
           <p className={styles.title}>
             {customType === 'FAMILY' && (
-              <Icons name="homeFilled" color={'var(--primary)'} />
+              <Icons name='homeFilled' color={'var(--primary)'} />
             )}
             <strong className={`${styles.channelTitle}`}>
               {channelInfo.channelName}
@@ -71,7 +71,7 @@ export default function ChatListItem({
           )}
           {channel.unreadMessageCount > 0 && (
             <p className={styles.unread}>
-              <span className="a11y-hidden">읽지 않은 메시지 개수</span>
+              <span className='a11y-hidden'>읽지 않은 메시지 개수</span>
               {channel.unreadMessageCount > 999
                 ? '999+'
                 : channel.unreadMessageCount}

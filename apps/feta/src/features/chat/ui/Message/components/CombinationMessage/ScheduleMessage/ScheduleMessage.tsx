@@ -1,5 +1,6 @@
-import Icons from '@/shared/ui/Icons';
 import { formatDotFull, formatScheduleTime } from '@/shared/lib/dateFormatter';
+import Icons from '@/shared/ui/Icons';
+
 import { CalendarEvent, DDayEvent } from '@/features/chat/model';
 
 import styles from '../CombinationMessage.module.scss';
@@ -30,13 +31,13 @@ export default function ScheduleMessage({ event, type }: ScheduleMessageProps) {
 
   // 타입 가드 함수들
   const isDDayEvent = (
-    event: DDayEvent | CalendarEvent,
+    event: DDayEvent | CalendarEvent
   ): event is DDayEvent => {
     return 'previewLabel' in event && 'subjectDate' in event;
   };
 
   const isCalendarEvent = (
-    event: DDayEvent | CalendarEvent,
+    event: DDayEvent | CalendarEvent
   ): event is CalendarEvent => {
     return (
       'recordStartDate' in event &&
@@ -126,9 +127,9 @@ export default function ScheduleMessage({ event, type }: ScheduleMessageProps) {
         {timeText && <span>{timeText}</span>}
       </p>
 
-      <button type="button" className={styles.button}>
-        <Icons name={SCHEDULE_TYPE_ICONS[type]} /> 내 {SCHEDULE_TYPE_LABELS[type]}에
-        등록
+      <button type='button' className={styles.button}>
+        <Icons name={SCHEDULE_TYPE_ICONS[type]} /> 내{' '}
+        {SCHEDULE_TYPE_LABELS[type]}에 등록
       </button>
     </div>
   );

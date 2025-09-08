@@ -1,16 +1,17 @@
 'use client';
 
-import { CoreMessageType } from '../FileMessage/FileMessage';
+import { useGroupChannel } from '@sendbird/uikit-react/GroupChannel/context';
 
 import Icons from '@/shared/ui/Icons';
-import { useAuth } from '@/features/auth';
-import { useGroupChannel } from '@sendbird/uikit-react/GroupChannel/context';
-import { MessageInDataType } from '@/features/chat/model';
-import { parseData } from '@/features/chat/lib';
-import { renderMessageContent } from '../../shared/MessageRenderer';
-import { TextInner } from '../TextMessage';
-import { BubbleInner } from '../BubbleMessage';
 
+import { useAuth } from '@/features/auth';
+import { parseData } from '@/features/chat/lib';
+import { MessageInDataType } from '@/features/chat/model';
+
+import { renderMessageContent } from '../../shared/MessageRenderer';
+import { BubbleInner } from '../BubbleMessage';
+import { CoreMessageType } from '../FileMessage/FileMessage';
+import { TextInner } from '../TextMessage';
 import styles from './ReplyMessage.module.scss';
 
 export default function ReplyMessage({
@@ -57,7 +58,7 @@ export default function ReplyMessage({
         {/* 원본 메시지 */}
         <div className={styles.top}>
           <button
-            type="button"
+            type='button'
             className={styles.sender}
             onClick={handleScrollToMessage}
           >
@@ -67,7 +68,7 @@ export default function ReplyMessage({
             <span className={styles.right}>
               {/* 닉네임 */}
               <span className={styles.nickname}>
-                <Icons name="reply" />
+                <Icons name='reply' />
                 {nickname}에게 답장
               </span>
 

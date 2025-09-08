@@ -1,6 +1,8 @@
 import Icons from '@/shared/ui/Icons';
-import { MessageType } from '@/features/chat/model';
+
 import { convertEditMessage, decryptData } from '@/features/chat/lib';
+import { MessageType } from '@/features/chat/model';
+
 import { CoreMessageType } from '../components/FileMessage/FileMessage';
 
 /* 
@@ -17,7 +19,7 @@ import { CoreMessageType } from '../components/FileMessage/FileMessage';
  */
 export const renderMessageContent = (
   messageContent: CoreMessageType,
-  num?: number,
+  num?: number
 ) => {
   if (!messageContent) return;
   const { messageType, message } = messageContent;
@@ -34,7 +36,7 @@ export const renderMessageContent = (
     case 'CUSTOM_MESSAGE':
       return (
         <>
-          <Icons name="phone" />
+          <Icons name='phone' />
           연락처
         </>
       );
@@ -42,7 +44,7 @@ export const renderMessageContent = (
     case '디데이':
       return (
         <>
-          <Icons name="dday" />
+          <Icons name='dday' />
           디데이
         </>
       );
@@ -50,7 +52,7 @@ export const renderMessageContent = (
     case '캘린더':
       return (
         <>
-          <Icons name="calendar" />
+          <Icons name='calendar' />
           캘린더
         </>
       );
@@ -58,7 +60,7 @@ export const renderMessageContent = (
     case 'EMOTICON':
       return (
         <>
-          <Icons name="emoticon" />
+          <Icons name='emoticon' />
           이모티콘
         </>
       );
@@ -82,7 +84,7 @@ const renderFileMessage = (message: string): React.ReactNode => {
   if (isImageFile(message)) {
     return (
       <>
-        <Icons name="picture" />
+        <Icons name='picture' />
         사진
       </>
     );
@@ -92,7 +94,7 @@ const renderFileMessage = (message: string): React.ReactNode => {
   if (isAudioFile(message)) {
     return (
       <>
-        <Icons name="mic" />
+        <Icons name='mic' />
         오디오
       </>
     );
@@ -102,7 +104,7 @@ const renderFileMessage = (message: string): React.ReactNode => {
   if (isVideoFile(message)) {
     return (
       <>
-        <Icons name="video" />
+        <Icons name='video' />
         비디오
       </>
     );
@@ -111,7 +113,7 @@ const renderFileMessage = (message: string): React.ReactNode => {
   // 기타 파일
   return (
     <>
-      <Icons name="file" />
+      <Icons name='file' />
       파일: {message}
     </>
   );

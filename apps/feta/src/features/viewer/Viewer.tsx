@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { CarouselApi } from '@/components/ui/carousel';
 import {
   Dialog,
   DialogContent,
@@ -8,20 +9,18 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
+import { useEffect, useState } from 'react';
+
 import Icons from '@/shared/ui/Icons';
-import { Button } from '@/components/ui/button';
-import { CarouselApi } from '@/components/ui/carousel';
-
-import { MediaViewerProps } from './types';
-
-import {
-  getOriginalUrl,
-  isDownloadable,
-  getFileName,
-} from './utils/mediaUtils';
 
 import styles from './Viewer.module.scss';
 import ViewerContent from './components/ViewerContent';
+import { MediaViewerProps } from './types';
+import {
+  getFileName,
+  getOriginalUrl,
+  isDownloadable,
+} from './utils/mediaUtils';
 
 export default function Viewer({
   open,
@@ -64,21 +63,21 @@ export default function Viewer({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className={styles.dialog}>
         <DialogHeader className={styles.header}>
-          <DialogTitle className="sr-only">
+          <DialogTitle className='sr-only'>
             {getFileName(currentItem)}
           </DialogTitle>
 
           <DialogDescription>
             <Button
               className={styles.download}
-              variant="ghost"
-              size="icon"
+              variant='ghost'
+              size='icon'
               onClick={handleDownload}
               disabled={!isDownloadable(currentItem)}
               title={isDownloadable(currentItem) ? '다운로드' : '다운로드 불가'}
             >
-              <Icons name="download" />
-              <span className="sr-only">다운로드</span>
+              <Icons name='download' />
+              <span className='sr-only'>다운로드</span>
             </Button>
           </DialogDescription>
         </DialogHeader>

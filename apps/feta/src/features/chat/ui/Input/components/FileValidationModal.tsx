@@ -1,20 +1,21 @@
-import Icons from '@/shared/ui/Icons';
 import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogDescription,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
+
+import Icons from '@/shared/ui/Icons';
+
 import { formatBytes } from '@/features/chat/lib';
 
 import { FileValidationResult } from '../types';
 import FilePreview from './FilePreview';
-
 import styles from './FileValidationModal.module.scss';
 
 interface FileValidationModalProps {
@@ -50,7 +51,7 @@ export default function FileValidationModal({
           <AlertDialogDescription className={styles.desc}>
             {invalidFiles.length > 0 ? (
               <p>
-                <Icons name="alert" />
+                <Icons name='alert' />
                 {validFiles.length + invalidFiles.length}개 중{' '}
                 <strong>{invalidFiles.length}개</strong>의 파일에 문제가
                 있습니다.
@@ -82,17 +83,17 @@ export default function FileValidationModal({
                         </span>
                       </p>
                       <p className={styles.error}>
-                        <Icons name="alert" /> {error.message}
+                        <Icons name='alert' /> {error.message}
                       </p>
                     </div>
 
                     <Button
-                      variant="outline"
-                      size="sm"
+                      variant='outline'
+                      size='sm'
                       className={styles.right}
                       onClick={() => handleRemoveInvalidFile(index)}
                     >
-                      <Icons name="trash" />
+                      <Icons name='trash' />
                       삭제
                     </Button>
                   </li>
@@ -109,7 +110,7 @@ export default function FileValidationModal({
                 {/* 유효한 파일들 */}
                 {validFiles.map((file, index) => {
                   const convertInfo = convertibleFiles.find(
-                    (cf) => cf.file === file,
+                    (cf) => cf.file === file
                   );
 
                   return (
@@ -122,19 +123,19 @@ export default function FileValidationModal({
 
                         {convertInfo && (
                           <p className={styles.info}>
-                            <Icons name="info" />
+                            <Icons name='info' />
                             {convertInfo.reason}
                           </p>
                         )}
                       </div>
 
                       <Button
-                        variant="outline"
-                        size="sm"
+                        variant='outline'
+                        size='sm'
                         className={styles.right}
                         onClick={() => handleRemoveValidFile(index)}
                       >
-                        <Icons name="trash" />
+                        <Icons name='trash' />
                         삭제
                       </Button>
                     </li>

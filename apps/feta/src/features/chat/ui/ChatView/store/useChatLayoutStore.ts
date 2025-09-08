@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+
 interface ChatLayoutState {
   isChatListVisible: boolean;
   toggleChatList: () => void;
@@ -36,6 +37,6 @@ export const useChatLayoutStore = create<ChatLayoutState>()(
           sessionStorage.removeItem(name);
         },
       },
-    },
-  ),
+    }
+  )
 );

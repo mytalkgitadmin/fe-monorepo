@@ -1,4 +1,5 @@
 import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
+
 import styles from './DateSeparator.module.scss';
 
 export default function DateSeparator({ createdAt }: { createdAt: number }) {

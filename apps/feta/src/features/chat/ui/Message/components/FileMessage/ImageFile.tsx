@@ -1,7 +1,9 @@
 import { useState } from 'react';
+
 import { BASE_URL } from '@/shared/api/endpoints';
-import { ImgMsgInData } from '@/features/viewer/types';
+
 import { Viewer } from '@/features/viewer';
+import { ImgMsgInData } from '@/features/viewer/types';
 
 import styles from './ImageFile.module.scss';
 
@@ -33,7 +35,7 @@ export default function ImageFile({
       {displayImages.map((image, index) => {
         const { fileType, originalUrl, thumbUrl, originalFileName } = image;
         const ratio = parseFloat(
-          parseFloat(thumbUrl?.split('sizeRate=')[1] || '1').toFixed(2),
+          parseFloat(thumbUrl?.split('sizeRate=')[1] || '1').toFixed(2)
         );
 
         const imageSrc =
@@ -52,7 +54,7 @@ export default function ImageFile({
             style={{
               maxWidth: 'min(300px, 50vw)',
             }}
-            loading="lazy"
+            loading='lazy'
           />
         );
       })}

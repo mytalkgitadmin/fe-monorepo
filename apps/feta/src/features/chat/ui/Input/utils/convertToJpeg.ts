@@ -1,4 +1,5 @@
 import heic2any from 'heic2any';
+
 import { ConvertibleFile } from '../types';
 
 const isHeic = (file: File): boolean => {
@@ -37,13 +38,13 @@ const convertHeicToJpeg = async (file: File): Promise<File | null> => {
     const convertedFile = new File(
       [blobToUse],
       file.name.replace(/\.(heic|heif)$/i, '.jpg'),
-      { type: 'image/jpeg' },
+      { type: 'image/jpeg' }
     );
     return convertedFile;
   } catch (error) {
     console.error('HEIC 변환 오류:', error);
     throw new Error(
-      `HEIC 파일 변환에 실패했습니다: ${error instanceof Error ? error.message : '알 수 없는 오류'}`,
+      `HEIC 파일 변환에 실패했습니다: ${error instanceof Error ? error.message : '알 수 없는 오류'}`
     );
   }
 };
@@ -104,7 +105,7 @@ const convertSvgToJpeg = async (file: File): Promise<File | null> => {
             resolve(jpegFile);
           },
           'image/jpeg',
-          0.9, // 품질 설정 (0.0 ~ 1.0)
+          0.9 // 품질 설정 (0.0 ~ 1.0)
         );
       };
 

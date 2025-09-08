@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
-import { Notification } from '@/features/notifications/model';
-import { NotificationCard } from '../NotificationCard';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 
+import { useEffect, useState } from 'react';
+
+import { Notification } from '@/features/notifications/model';
+
+import { NotificationCard } from '../NotificationCard';
 import styles from './NotificationList.module.scss';
+
 export default function NotificationList({
   notiList,
 }: {
@@ -22,25 +25,25 @@ export default function NotificationList({
 
   return (
     <div className={styles.list}>
-      <div className="w-full flex items-center justify-between ">
+      <div className='w-full flex items-center justify-between '>
         <p>알림({isAll ? notiList.length : unReadData.length})</p>
 
-        <div className="flex items-center gap-1">
+        <div className='flex items-center gap-1'>
           <Checkbox
-            id="terms"
+            id='terms'
             checked={!isAll}
             onCheckedChange={() => setIsAll((prev) => !prev)}
           />
-          <Label htmlFor="terms">읽지 않은 메시지만 보기</Label>
+          <Label htmlFor='terms'>읽지 않은 메시지만 보기</Label>
         </div>
       </div>
 
       {isAll ? (
-        <div className="w-full">
+        <div className='w-full'>
           {!notiList || notiList.length === 0 ? (
             <>알림이 없습니다</>
           ) : (
-            <ul className="flex flex-col gap-3">
+            <ul className='flex flex-col gap-3'>
               {notiList.map((noti) => (
                 <NotificationCard key={noti.id} noti={noti} />
               ))}
@@ -48,11 +51,11 @@ export default function NotificationList({
           )}
         </div>
       ) : (
-        <div className="w-full">
+        <div className='w-full'>
           {!unReadData || unReadData.length === 0 ? (
             <>알림이 없습니다</>
           ) : (
-            <ul className="flex flex-col gap-3">
+            <ul className='flex flex-col gap-3'>
               {unReadData.map((noti) => (
                 <NotificationCard noti={noti} />
               ))}

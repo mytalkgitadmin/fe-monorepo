@@ -34,6 +34,6 @@ export const uploadFile = async (params: FileUploadParams) => {
       url: API_ENDPOINTS.FILE_UPLOAD.POST_FILE.url,
       data: formData,
     },
-    fileUploadInstance,
+    fileUploadInstance
   );
 };

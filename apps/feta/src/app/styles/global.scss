@@ -1,13 +1,13 @@
-@use 'sass:map';
-@use '@/styles/var.scss' as *;
+@use "sass:map";
+@use "@/styles/var.scss" as *;
 
 @font-face {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 45 920;
   font-display: swap;
   src:
-    local('Pretendard Variable'),
-    url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+    local("Pretendard Variable"),
+    url("/fonts/PretendardVariable.woff2") format("woff2-variations");
   font-style: normal;
 }
 
@@ -58,7 +58,7 @@ body {
   line-height: 1.4;
   background-color: var(--background);
   color: var(--text1);
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
 }
 
 #root {
@@ -107,7 +107,7 @@ body {
     }
   }
 
-  .sendbird-channel-list__body > div > div:has([data-channel-type='MY']) {
+  .sendbird-channel-list__body > div > div:has([data-channel-type="MY"]) {
     order: -1 !important;
   }
 }
@@ -130,8 +130,8 @@ body {
 }
 
 // dialog
-[data-slot='dialog-overlay'],
-[data-slot='alert-dialog-overlay'] {
+[data-slot="dialog-overlay"],
+[data-slot="alert-dialog-overlay"] {
   position: fixed;
   top: 0;
   left: 0;
@@ -139,8 +139,8 @@ body {
   height: 100%;
 }
 
-[data-slot='dialog-content'],
-[data-slot='alert-dialog-content'] {
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"] {
   position: fixed;
   top: 50%;
   left: 50%;

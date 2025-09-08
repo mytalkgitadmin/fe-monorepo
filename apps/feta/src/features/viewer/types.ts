@@ -1,4 +1,5 @@
 import { CarouselApi } from '@/components/ui/carousel';
+
 import { Profile, ProfileImg } from '../chat/model';
 
 export interface ImgMsgInData {
@@ -25,7 +26,7 @@ export const isVideoData = (data: ViewerItemData): data is ImgMsgInData => {
   return 'originalUrl' in data && 'originalFileName' in data;
 };
 export const isProfileImgData = (
-  data: ViewerItemData,
+  data: ViewerItemData
 ): data is History | Profile => {
   return 'profileKind' in data && 'profileOriginal' in data;
 };

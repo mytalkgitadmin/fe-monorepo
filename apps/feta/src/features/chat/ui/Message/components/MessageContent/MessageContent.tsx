@@ -1,16 +1,16 @@
-import { CoreMessageType } from '../FileMessage/FileMessage';
-
-import { BubbleMessage } from '../BubbleMessage';
-import { CombinationMessage } from '../CombinationMessage';
-import { FileMessage } from '../FileMessage';
-import { ReplyMessage } from '../ReplyMessage';
-import { TextMessage } from '../TextMessage';
 import { parseData } from '@/features/chat/lib';
 import {
   MessageCustomType,
   MessageInDataType,
   MessageType,
 } from '@/features/chat/model';
+
+import { BubbleMessage } from '../BubbleMessage';
+import { CombinationMessage } from '../CombinationMessage';
+import { FileMessage } from '../FileMessage';
+import { CoreMessageType } from '../FileMessage/FileMessage';
+import { ReplyMessage } from '../ReplyMessage';
+import { TextMessage } from '../TextMessage';
 
 export default function MessageContent({
   messageContent,

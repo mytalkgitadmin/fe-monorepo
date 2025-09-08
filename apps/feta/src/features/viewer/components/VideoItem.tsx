@@ -1,9 +1,11 @@
-import { memo, useCallback, useRef, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
+
 import Icons from '@/shared/ui/Icons';
 import Loading from '@/shared/ui/Loading';
+
+import styles from '../Viewer.module.scss';
 import { ViewerItemData } from '../types';
 import { getOriginalUrl, getThumbnailUrl } from '../utils/mediaUtils';
-import styles from '../Viewer.module.scss';
 
 interface VideoItemProps {
   item: ViewerItemData;
@@ -85,7 +87,7 @@ function VideoItem({
     <>
       {mediaState.error ? (
         <div className={styles.error}>
-          <Icons name="alert" />
+          <Icons name='alert' />
           <p>비디오를 불러올 수 없습니다</p>
         </div>
       ) : (
@@ -95,7 +97,7 @@ function VideoItem({
             <div
               className={styles.videoPoster}
               onClick={handlePosterClick}
-              role="button"
+              role='button'
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -106,7 +108,7 @@ function VideoItem({
             >
               {thumbnailError ? (
                 <div className={styles.thumbnailError}>
-                  <Icons name="alert" />
+                  <Icons name='alert' />
                   <p>썸네일을 불러올 수 없습니다</p>
                 </div>
               ) : (
@@ -125,7 +127,7 @@ function VideoItem({
 
                   {thumbnailLoaded && (
                     <div className={styles.playButton}>
-                      <Icons name="play" />
+                      <Icons name='play' />
                     </div>
                   )}
                 </>

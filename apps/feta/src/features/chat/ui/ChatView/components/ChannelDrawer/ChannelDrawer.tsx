@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import {
   Drawer,
   DrawerClose,
@@ -8,20 +9,21 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
 
-import Icons from '@/shared/ui/Icons';
 import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
-import { Button } from '@/components/ui/button';
 
-import styles from './ChannelDrawer.module.scss';
-import useChannelFilePreview from '@/features/chat/hooks/useChannelFilePreview';
 import { BASE_URL } from '@/shared/api/endpoints';
-import FileCard from '../../../File/FileCard';
-import { useAuth } from '@/features/auth';
-import { IconButton } from '@/shared/ui/IconButton';
 import { useUIStore } from '@/shared/store/useUIStore';
+import { IconButton } from '@/shared/ui/IconButton';
+import Icons from '@/shared/ui/Icons';
+
+import { useAuth } from '@/features/auth';
+import useChannelFilePreview from '@/features/chat/hooks/useChannelFilePreview';
+import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
 import ChatMembersList from '@/features/friend/ui/ChatMembersList';
+
+import FileCard from '../../../File/FileCard';
+import styles from './ChannelDrawer.module.scss';
 
 export default function ChannelDrawer({
   title,
@@ -52,7 +54,7 @@ export default function ChannelDrawer({
 
   return (
     <Drawer
-      direction="right"
+      direction='right'
       open={channelDrawer.isOpen}
       onOpenChange={(open) =>
         open ? openChannelDrawer() : closeChannelDrawer()
@@ -60,8 +62,8 @@ export default function ChannelDrawer({
     >
       <DrawerTrigger asChild>
         <IconButton
-          name="menu"
-          text="대화방 메뉴"
+          name='menu'
+          text='대화방 메뉴'
           onClick={openChannelDrawer}
         />
       </DrawerTrigger>
@@ -80,11 +82,11 @@ export default function ChannelDrawer({
         <div className={styles.drawerBody}>
           <div className={styles.pad}>
             <h3>
-              <button type="button" className={styles.titleBtn}>
+              <button type='button' className={styles.titleBtn}>
                 <span>
-                  <Icons name="photo" /> 사진/동영상
+                  <Icons name='photo' /> 사진/동영상
                 </span>
-                <Icons name="chevronRight" className={styles.right} />
+                <Icons name='chevronRight' className={styles.right} />
               </button>
             </h3>
 
@@ -93,17 +95,17 @@ export default function ChannelDrawer({
                 <li key={img.fileId}>
                   <img
                     src={`${BASE_URL}${img.thumbnailInfo1?.directUrl}`}
-                    alt=""
+                    alt=''
                   />
                 </li>
               ))}
             </ul>
             <h3>
-              <button type="button" className={styles.titleBtn}>
+              <button type='button' className={styles.titleBtn}>
                 <span>
-                  <Icons name="folder" /> 파일
+                  <Icons name='folder' /> 파일
                 </span>
-                <Icons name="chevronRight" className={styles.right} />
+                <Icons name='chevronRight' className={styles.right} />
               </button>
             </h3>
 
@@ -127,7 +129,7 @@ export default function ChannelDrawer({
             {channelCustomType !== 'MY' ? (
               <>
                 <button className={styles.addBtn}>
-                  <Icons name="plus" />
+                  <Icons name='plus' />
                   대화상대 추가
                 </button>
 
@@ -151,38 +153,38 @@ export default function ChannelDrawer({
         {/* footer */}
         <DrawerFooter className={styles.drawerFooter}>
           {channelCustomType !== 'MY' && (
-            <Button variant="ghost">나가기</Button>
+            <Button variant='ghost'>나가기</Button>
           )}
           <div>
             {channelCustomType !== 'MY' && (
               <>
                 {BELL ? (
                   <IconButton
-                    name="bell-filled"
-                    text="알람끄기"
+                    name='bell-filled'
+                    text='알람끄기'
                     className={styles.primary}
                   />
                 ) : (
-                  <IconButton name="bell-filled" text="알림켜기" />
+                  <IconButton name='bell-filled' text='알림켜기' />
                 )}
 
                 {PIN ? (
                   <IconButton
-                    name="pin-filled"
-                    text="핀 고정 해제"
+                    name='pin-filled'
+                    text='핀 고정 해제'
                     className={styles.primary}
                   />
                 ) : (
-                  <IconButton name="pin" text="핀 고정" />
+                  <IconButton name='pin' text='핀 고정' />
                 )}
               </>
             )}
 
-            <IconButton name="settings" text="설정" />
+            <IconButton name='settings' text='설정' />
           </div>
 
           <DrawerClose asChild className={styles.closeBtn}>
-            <IconButton name="x" text="닫기" />
+            <IconButton name='x' text='닫기' />
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

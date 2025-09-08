@@ -1,5 +1,4 @@
 // src/features/profile/ui/ProfileImageUpload/types.ts
-
 import { ProfileImg } from '@/features/chat/model';
 
 export interface ProfileImageFile {

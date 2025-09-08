@@ -36,7 +36,7 @@ export const getUrlLink = (text: string): string => {
 export const checkUrl = (
   urlString: string,
   protocol: string = 'https',
-  host: string = '',
+  host: string = ''
 ): string => {
   if (!urlString) {
     return '';

@@ -1,17 +1,6 @@
 {
+  "extends": "@repo/shared-config/tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "rootDir": "./src",
     "outDir": "./dist",
     "baseUrl": ".",
@@ -19,13 +8,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "**/*.test.*",
-    "**/*.spec.*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.spec.*"]
 }

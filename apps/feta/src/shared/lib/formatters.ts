@@ -6,7 +6,7 @@
  */
 export const truncateMessage = (
   message: string,
-  maxLength?: number,
+  maxLength?: number
 ): string => {
   if (!message) return '';
 

@@ -3,9 +3,12 @@
  * @description 로그인, 로그아웃, 인증 상태 관리 및 토큰 갱신을 처리하는 훅
  */
 import { useCallback, useEffect } from 'react';
+
 import { useRouter } from '@tanstack/react-router';
+
 import { useUserProfile } from '@/features/auth/api';
 import { ResponseLogin } from '@/features/auth/model';
+
 import { useAuthStore } from '../authStore';
 
 /**
@@ -98,7 +101,7 @@ export function useAuth() {
       if (JSON.stringify(newAccountProfile) !== JSON.stringify(userProfile)) {
         console.log(
           '프로필 데이터 변경 감지, store 업데이트:',
-          newAccountProfile,
+          newAccountProfile
         );
         updateUserProfile(newAccountProfile);
       }

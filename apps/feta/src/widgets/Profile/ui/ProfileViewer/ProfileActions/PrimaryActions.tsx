@@ -1,9 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { RelationType } from '@/features/chat/model';
-import Icons from '@/shared/ui/Icons';
+
 import { memo, useState } from 'react';
-import useProfileActions from './useProfileActions';
+
+import Icons from '@/shared/ui/Icons';
+
+import { RelationType } from '@/features/chat/model';
+
 import { EditProfileModal } from '../../../../../features/profile/ui/EditProfileModal';
+import useProfileActions from './useProfileActions';
 
 interface PrimaryActionsProps {
   userData: any;
@@ -43,12 +47,12 @@ const PrimaryActions = memo<PrimaryActionsProps>(
           {/* 프로필 편집 */}
           <>
             <Button
-              className="grow-1"
-              size="lg"
-              variant="outline"
+              className='grow-1'
+              size='lg'
+              variant='outline'
               onClick={() => setIsOpen(true)}
             >
-              <Icons name="edit" />
+              <Icons name='edit' />
               프로필 편집
             </Button>
             <EditProfileModal
@@ -58,11 +62,11 @@ const PrimaryActions = memo<PrimaryActionsProps>(
           </>
 
           <Button
-            className="grow-1"
-            size="lg"
+            className='grow-1'
+            size='lg'
             onClick={() => onStartChat('MY')}
           >
-            <Icons name="message" />
+            <Icons name='message' />
             MY 메모
           </Button>
         </>
@@ -73,8 +77,8 @@ const PrimaryActions = memo<PrimaryActionsProps>(
     if (relationType === 'NONE') {
       return (
         <Button
-          className="grow-1"
-          size="lg"
+          className='grow-1'
+          size='lg'
           onClick={() =>
             handleRequest({
               phoneNumber: userData.phoneNumber,
@@ -83,7 +87,7 @@ const PrimaryActions = memo<PrimaryActionsProps>(
             })
           }
         >
-          <Icons name="user-plus" />
+          <Icons name='user-plus' />
           친구 신청
         </Button>
       );
@@ -96,20 +100,20 @@ const PrimaryActions = memo<PrimaryActionsProps>(
           {phoneNumber && (
             <Button
               onClick={() => onPhoneCall(phoneNumber)}
-              className="grow-1"
-              variant="outline"
-              size="lg"
+              className='grow-1'
+              variant='outline'
+              size='lg'
             >
-              <Icons name="phone" />
+              <Icons name='phone' />
               전화걸기
             </Button>
           )}
           <Button
-            className="grow-1"
-            size="lg"
+            className='grow-1'
+            size='lg'
             onClick={() => onStartChat('DIRECT')}
           >
-            <Icons name="message" />
+            <Icons name='message' />
             1:1 대화
           </Button>
         </>
@@ -124,7 +128,7 @@ const PrimaryActions = memo<PrimaryActionsProps>(
     // 삭제
     if (relationType === 'DELETE') {
       return (
-        <Button className="grow-1" variant="outline" size="lg">
+        <Button className='grow-1' variant='outline' size='lg'>
           친구 추가
         </Button>
       );
@@ -133,7 +137,7 @@ const PrimaryActions = memo<PrimaryActionsProps>(
     // 친구 요청 함
     if (relationType === 'REQUEST') {
       return (
-        <Button className="grow-1" variant="outline" size="lg" disabled>
+        <Button className='grow-1' variant='outline' size='lg' disabled>
           친구 요청됨
         </Button>
       );
@@ -144,14 +148,14 @@ const PrimaryActions = memo<PrimaryActionsProps>(
       return (
         <>
           <Button
-            className="grow-1"
-            variant="outline"
-            size="lg"
+            className='grow-1'
+            variant='outline'
+            size='lg'
             onClick={handleReject}
           >
             거절
           </Button>
-          <Button className="grow-1" size="lg" onClick={handleAccept}>
+          <Button className='grow-1' size='lg' onClick={handleAccept}>
             수락
           </Button>
         </>
@@ -163,14 +167,14 @@ const PrimaryActions = memo<PrimaryActionsProps>(
       return (
         <>
           <Button
-            className="grow-1"
-            variant="outline"
-            size="lg"
+            className='grow-1'
+            variant='outline'
+            size='lg'
             onClick={handleDelete}
           >
-            <Icons name="user-minus" /> 친구 삭제
+            <Icons name='user-minus' /> 친구 삭제
           </Button>
-          <Button className="grow-1" size="lg" onClick={handleHideCancel}>
+          <Button className='grow-1' size='lg' onClick={handleHideCancel}>
             숨김 해제
           </Button>
         </>
@@ -182,20 +186,20 @@ const PrimaryActions = memo<PrimaryActionsProps>(
       return (
         <>
           <Button
-            className="grow-1"
-            variant="outline"
-            size="lg"
+            className='grow-1'
+            variant='outline'
+            size='lg'
             onClick={handleDelete}
           >
-            <Icons name="user-minus" /> 친구 삭제
+            <Icons name='user-minus' /> 친구 삭제
           </Button>
-          <Button className="grow-1" size="lg" onClick={handleBlockCancel}>
+          <Button className='grow-1' size='lg' onClick={handleBlockCancel}>
             차단 해제
           </Button>
         </>
       );
     }
-  },
+  }
 );
 
 export default PrimaryActions;

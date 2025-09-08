@@ -1,11 +1,12 @@
-import { BASE_URL } from '@/shared/api/endpoints';
 import defaultBubble from '@/assets/bubble/Emoji_Bubble_Type01.webp';
 
-import { decryptData } from '@/features/chat/lib';
+import { BASE_URL } from '@/shared/api/endpoints';
 
-import styles from './BubbleMessage.module.scss';
-import { CoreMessageType } from '../FileMessage/FileMessage';
+import { decryptData } from '@/features/chat/lib';
 import { parseData } from '@/features/chat/lib';
+
+import { CoreMessageType } from '../FileMessage/FileMessage';
+import styles from './BubbleMessage.module.scss';
 
 export default function BubbleInner({
   messageContent,
@@ -21,7 +22,7 @@ export default function BubbleInner({
     <>
       {messageContent.message !== 'EMOTICON' && (
         <div className={styles.talkBubble}>
-          <img src={defaultBubble} alt="" />
+          <img src={defaultBubble} alt='' />
           <span className={styles.innerText}>
             {decryptData(messageContent.message)}
           </span>
@@ -30,7 +31,7 @@ export default function BubbleInner({
       <img
         className={styles.emoticon}
         src={`${BASE_URL}${thumbUrl}`}
-        alt=""
+        alt=''
         width={140}
         height={140}
       />

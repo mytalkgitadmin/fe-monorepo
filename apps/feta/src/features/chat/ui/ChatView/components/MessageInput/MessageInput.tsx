@@ -1,21 +1,22 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import type { UserMessageCreateParams } from '@sendbird/chat/message';
 import { useSendbirdStateContext } from '@sendbird/uikit-react';
-import sendbirdSelectors from '@sendbird/uikit-react/sendbirdSelectors';
 import {
   useGroupChannel,
   useGroupChannelContext,
 } from '@sendbird/uikit-react/GroupChannel/context';
-import type { UserMessageCreateParams } from '@sendbird/chat/message';
+import sendbirdSelectors from '@sendbird/uikit-react/sendbirdSelectors';
 
 import Icons from '@/shared/ui/Icons';
-import { MessageCustomType } from '@/features/chat/model';
-import { encryptData } from '@/features/chat/lib';
 
-import styles from './MessageInput.module.scss';
 import { MESSAGE_LIMITS } from '@/features/chat/constants';
+import { encryptData } from '@/features/chat/lib';
 import { isValidMessage } from '@/features/chat/lib/validators/messageValidators';
+import { MessageCustomType } from '@/features/chat/model';
+
 import { FileInput } from '../../../Input';
+import styles from './MessageInput.module.scss';
 
 interface MessageInputProps {
   onSubmit?: (message: string) => void;
@@ -102,7 +103,7 @@ export default function MessageInput({
       e.preventDefault();
       sendMessage();
     },
-    [sendMessage],
+    [sendMessage]
   );
 
   const handleOnKeyDown = useCallback(
@@ -112,7 +113,7 @@ export default function MessageInput({
         sendMessage();
       }
     },
-    [sendMessage],
+    [sendMessage]
   );
   const isInputDisabled = disabled || isSending;
 
@@ -131,12 +132,12 @@ export default function MessageInput({
       <div className={styles.buttons}>
         <FileInput />
         <button
-          type="submit"
+          type='submit'
           className={`${styles.button} ${isSending ? styles.isSending : ''}`}
           disabled={isInputDisabled}
         >
-          <Icons name="arrowUp" />
-          <span className="a11y-hidden"> {isSending ? '전송 중' : '전송'}</span>
+          <Icons name='arrowUp' />
+          <span className='a11y-hidden'> {isSending ? '전송 중' : '전송'}</span>
         </button>
       </div>
     </form>

@@ -5,12 +5,15 @@ import {
   MultipleFilesMessage,
   UserMessage,
 } from '@sendbird/chat/message';
-import styles from './FileMessage.module.scss';
-import File from './File';
-import VideoFile from './VideoFile';
-import ImageFile from './ImageFile';
-import { parseData } from '@/features/chat/lib';
+
 import Icons from '@/shared/ui/Icons';
+
+import { parseData } from '@/features/chat/lib';
+
+import File from './File';
+import styles from './FileMessage.module.scss';
+import ImageFile from './ImageFile';
+import VideoFile from './VideoFile';
 
 export type CoreMessageType =
   | BaseMessage
@@ -52,7 +55,7 @@ export default function FileMessage({
   if (!(messageInData && messageInData[0]))
     return (
       <span className={styles.nodata}>
-        <Icons name="alert" />
+        <Icons name='alert' />
         파일을 찾을 수 없습니다
       </span>
     );

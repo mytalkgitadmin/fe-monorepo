@@ -8,10 +8,11 @@
  *   - IV(Initialization Vector):암호화에서 사용되는 초기화 벡터(랜덤한 숫자 조합)
  */
 import CryptoJS from 'crypto-js';
+
 import { MESSAGE_LIMITS } from '@/features/chat/constants';
 
-import { ENCRYPTION_CONFIG } from './constants';
 import { getUrlLink } from '../utils';
+import { ENCRYPTION_CONFIG } from './constants';
 
 const {
   USE_MESSAGE_ENCRYPTION,

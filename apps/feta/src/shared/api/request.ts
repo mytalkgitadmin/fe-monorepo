@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+
 import { axiosInstance } from './axios';
 import { ApiRequestOptions, Endpoint, RequestParams } from './model';
 
@@ -9,7 +10,7 @@ import { ApiRequestOptions, Endpoint, RequestParams } from './model';
  */
 export const replaceUrlParams = (
   url: string,
-  params?: Record<string, string | number>,
+  params?: Record<string, string | number>
 ) => {
   if (!params) return url;
 
@@ -32,7 +33,7 @@ async function request<T = unknown>(
   data?: unknown,
   params?: RequestParams,
   pathParams?: Record<string, string | number>,
-  customAxios?: AxiosInstance,
+  customAxios?: AxiosInstance
 ): Promise<T> {
   try {
     // URL 경로 파라미터 대체
@@ -75,35 +76,35 @@ async function request<T = unknown>(
 // RESTful API 규약
 export function get<T = unknown>(
   { url, params = {}, pathParams }: ApiRequestOptions,
-  customAxios?: AxiosInstance,
+  customAxios?: AxiosInstance
 ): Promise<T> {
   return request('get', url, undefined, params, pathParams, customAxios);
 }
 
 export function post<T = unknown>(
   { url, data, params = {}, pathParams }: ApiRequestOptions,
-  customAxios?: AxiosInstance,
+  customAxios?: AxiosInstance
 ): Promise<T> {
   return request('post', url, data, params, pathParams, customAxios);
 }
 
 export function put<T = unknown>(
   { url, data, params = {}, pathParams }: ApiRequestOptions,
-  customAxios?: AxiosInstance,
+  customAxios?: AxiosInstance
 ): Promise<T> {
   return request<T>('put', url, data, params, pathParams, customAxios);
 }
 
 export function remove<T = unknown>(
   { url, data, params = {}, pathParams }: ApiRequestOptions,
-  customAxios?: AxiosInstance,
+  customAxios?: AxiosInstance
 ): Promise<T> {
   return request<T>('delete', url, data, params, pathParams, customAxios);
 }
 
 export function patch<T = unknown>(
   { url, data, params = {}, pathParams }: ApiRequestOptions,
-  customAxios?: AxiosInstance,
+  customAxios?: AxiosInstance
 ): Promise<T> {
   return request<T>('patch', url, data, params, pathParams, customAxios);
 }
@@ -119,7 +120,7 @@ export const apiRequest = <T = unknown>(
   endpoint: Endpoint,
   data?: unknown,
   params?: RequestParams,
-  pathParams?: Record<string, string | number>,
+  pathParams?: Record<string, string | number>
 ): Promise<T> => {
   switch (endpoint.method) {
     case 'GET':

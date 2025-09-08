@@ -1,11 +1,13 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { createRouter, RouterProvider } from '@tanstack/react-router';
-import { routeTree } from './routeTree.gen';
-import { Toaster } from 'sonner';
-
 import '@/styles/default.css';
 import '@/styles/global.scss';
+
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { Toaster } from 'sonner';
+
+import { routeTree } from './routeTree.gen';
 import { Alert } from './shared/ui/Alert';
 
 const router = createRouter({ routeTree });
@@ -21,7 +23,7 @@ createRoot(document.getElementById('root')!).render(
     <RouterProvider router={router} />
 
     <Toaster
-      position="top-center"
+      position='top-center'
       richColors
       closeButton
       expand={true}
@@ -35,5 +37,5 @@ createRoot(document.getElementById('root')!).render(
       }}
     />
     <Alert />
-  </StrictMode>,
+  </StrictMode>
 );

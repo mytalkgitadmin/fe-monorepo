@@ -1,5 +1,7 @@
-import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
+import { Outlet, createFileRoute, redirect } from '@tanstack/react-router';
+
 import { useAuthStore } from '@/features/auth/authStore';
+
 import { DefaultLayout } from '@/widgets/layouts/DefaultLayout';
 
 export const Route = createFileRoute('/_public')({

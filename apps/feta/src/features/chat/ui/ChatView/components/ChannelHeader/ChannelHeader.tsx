@@ -1,16 +1,17 @@
 import { Fragment } from 'react';
 
 import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
-import { IconButton } from '@/shared/ui/IconButton';
-import { useChatLayoutStore } from '../../store/useChatLayoutStore';
-import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
-
-import { getMemberName } from '@/features/chat/lib';
-import { ChannelDrawer } from '../ChannelDrawer';
-
-import styles from './ChannelHeader.module.scss';
-import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import { useRouter } from '@tanstack/react-router';
+
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
+import { IconButton } from '@/shared/ui/IconButton';
+
+import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
+import { getMemberName } from '@/features/chat/lib';
+
+import { useChatLayoutStore } from '../../store/useChatLayoutStore';
+import { ChannelDrawer } from '../ChannelDrawer';
+import styles from './ChannelHeader.module.scss';
 
 export default function ChannelHeader() {
   const { currentChannel: channel } = useGroupChannelContext();
@@ -23,14 +24,14 @@ export default function ChannelHeader() {
       <div>
         {isChatListVisible ? (
           <IconButton
-            name="chevronLeft"
-            text="대화목록 접기"
+            name='chevronLeft'
+            text='대화목록 접기'
             onClick={toggleChatList}
           />
         ) : (
           <IconButton
-            name="chevronRight"
-            text="대화목록 열기"
+            name='chevronRight'
+            text='대화목록 열기'
             onClick={() => {
               if (isMobile) {
                 router.navigate({ to: '/chat-list' });
@@ -67,7 +68,7 @@ export default function ChannelHeader() {
       </div>
 
       <div>
-        <IconButton name="stopwatch" text="타이머" />
+        <IconButton name='stopwatch' text='타이머' />
 
         <ChannelDrawer
           title={channelInfoForHeader.channelName}

@@ -1,7 +1,7 @@
+import { Analytics, getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
-import { getAnalytics, Analytics } from 'firebase/analytics';
-import { getMessaging, Messaging } from 'firebase/messaging';
-import { getFirestore, Firestore } from 'firebase/firestore';
+import { Firestore, getFirestore } from 'firebase/firestore';
+import { Messaging, getMessaging } from 'firebase/messaging';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -39,7 +39,7 @@ try {
             {
               type: 'classic', // module이 아닌 classic 타입 사용
               scope: '/',
-            },
+            }
           );
           console.log('FCM 서비스 워커 등록 성공:', registration.scope);
         } catch (error) {

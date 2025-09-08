@@ -17,7 +17,7 @@ export const isValidMessage = (message: string): boolean => {
 export const isAdminMessage = (
   messageType: string,
   customType: string,
-  messageInDataType: string,
+  messageInDataType: string
 ): boolean => {
   return (
     messageType === MessageType.ADMIN ||

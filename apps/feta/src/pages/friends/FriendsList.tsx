@@ -1,21 +1,9 @@
-import { Fragment, useState } from 'react';
-
 import {
-  Friend,
-  useFriendBlock,
-  useFriendBlockCancel,
-  useFriendFavorite,
-  useFriendHide,
-  useFriendHideCancel,
-} from '@/features/friend/api';
-import { ProfileViewer } from '@/widgets/Profile';
-import { ProfileCard } from '@/widgets/Profile/ui/ProfileCard';
-import { ProfileItem } from '@/widgets/Profile/ui/ProfileItem';
-import {
-  AccordionTrigger,
-  AccordionItem,
   AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
 import {
   ContextMenu,
   ContextMenuContent,
@@ -24,13 +12,27 @@ import {
   ContextMenuTrigger,
 } from '@/components/ui/context-menu';
 
-import styles from './Friends.module.scss';
-import { Button } from '@/components/ui/button';
-import { AccountProfile, Member } from '@/features/chat/model';
-import { useAuth } from '@/features/auth';
+import { Fragment, useState } from 'react';
 
 import { IconButton } from '@/shared/ui/IconButton';
+
+import { useAuth } from '@/features/auth';
+import { AccountProfile, Member } from '@/features/chat/model';
+import {
+  Friend,
+  useFriendBlock,
+  useFriendBlockCancel,
+  useFriendFavorite,
+  useFriendHide,
+  useFriendHideCancel,
+} from '@/features/friend/api';
 import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
+
+import { ProfileViewer } from '@/widgets/Profile';
+import { ProfileCard } from '@/widgets/Profile/ui/ProfileCard';
+import { ProfileItem } from '@/widgets/Profile/ui/ProfileItem';
+
+import styles from './Friends.module.scss';
 
 export default function FriendsList({
   friends,
@@ -86,7 +88,7 @@ export default function FriendsList({
                 <Fragment key={friend.accountId}>
                   <AccordionContent className={styles.item}>
                     <ContextMenu>
-                      <ContextMenuTrigger className="w-full">
+                      <ContextMenuTrigger className='w-full'>
                         <ProfileCard
                           profile={friend.profile}
                           profileImageUrl={profileImageUrl}
@@ -190,7 +192,7 @@ export default function FriendsList({
       <div className={horizon ? styles.horizonWrap : 'listWrap'}>
         {friends.map((friend) => {
           return (
-            <div className="flex items-center" key={friend.accountId}>
+            <div className='flex items-center' key={friend.accountId}>
               <ProfileItem
                 profile={friend.profile}
                 accountId={friend?.accountId}
@@ -200,17 +202,17 @@ export default function FriendsList({
               />
 
               {friend.relationType === 'NONE' && (
-                <IconButton name="user-plus" text="친구 추가" />
+                <IconButton name='user-plus' text='친구 추가' />
               )}
 
               {friend.relationType === 'DELETE' && (
-                <IconButton name="user-plus" text="친구 추가" />
+                <IconButton name='user-plus' text='친구 추가' />
               )}
 
               {friend.relationType === 'HIDE' && (
                 <Button
-                  size="sm"
-                  variant="outline"
+                  size='sm'
+                  variant='outline'
                   onClick={() => friendHideCancel.mutate(friend.accountId)}
                 >
                   해제
@@ -218,8 +220,8 @@ export default function FriendsList({
               )}
               {friend.relationType === 'BLOCK' && (
                 <Button
-                  size="sm"
-                  variant="outline"
+                  size='sm'
+                  variant='outline'
                   onClick={() => friendBlockCancel.mutate(friend.accountId)}
                 >
                   해제

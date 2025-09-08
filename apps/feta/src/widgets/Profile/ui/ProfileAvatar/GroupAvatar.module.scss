@@ -1,4 +1,4 @@
-@use '@/styles/var.scss' as *;
+@use "@/styles/var.scss" as *;
 .circle {
   position: relative;
   flex-shrink: 0;
@@ -27,7 +27,7 @@
   .circle {
     outline: 2px solid var(--background);
 
-    [class*='item'][class*='active'] & {
+    [class*="item"][class*="active"] & {
       outline: 2px solid var(--primary-bg1);
     }
   }

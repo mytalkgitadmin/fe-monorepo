@@ -1,10 +1,12 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+
+import { BASE_URL } from '@/shared/api/endpoints';
 
 import { useAuth } from '@/features/auth';
 import { useProfile } from '@/features/profile/api';
-import { BASE_URL } from '@/shared/api/endpoints';
-import { ProcessedHistory } from '../types/viewer.types';
 import { getEmoticonImageUrl } from '@/features/viewer/utils/mediaUtils';
+
+import { ProcessedHistory } from '../types/viewer.types';
 
 export default function useProfileViewer({ accountId }: { accountId: number }) {
   const { userProfile } = useAuth();
@@ -16,7 +18,7 @@ export default function useProfileViewer({ accountId }: { accountId: number }) {
   // 나의 프로필 여부 확인
   const isMyProfile = useMemo(
     () => userProfile?.accountId === accountId,
-    [userProfile?.accountId, accountId],
+    [userProfile?.accountId, accountId]
   );
 
   // 프로필 히스토리

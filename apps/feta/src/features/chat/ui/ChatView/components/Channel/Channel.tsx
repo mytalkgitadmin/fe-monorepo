@@ -1,16 +1,17 @@
+// import { ThreadReplySelectType } from '@sendbird/uikit-react/Channel/context';
+import { ReplyType } from '@sendbird/chat/message';
+import GroupChannel from '@sendbird/uikit-react/GroupChannel';
 import {
   MessageListQueryParamsType,
   useGroupChannelContext,
 } from '@sendbird/uikit-react/GroupChannel/context';
-import GroupChannel from '@sendbird/uikit-react/GroupChannel';
-// import { ThreadReplySelectType } from '@sendbird/uikit-react/Channel/context';
-import { ReplyType } from '@sendbird/chat/message';
 
 import { Message } from '@/features/chat/ui/Message';
+
+import { ChannelHeader } from '../ChannelHeader';
 import { DateSeparator } from '../DateSeparator';
 import { MessageInput } from '../MessageInput';
 import { ScrollController } from '../ScrollController';
-import { ChannelHeader } from '../ChannelHeader';
 
 export default function Channel() {
   const { channelUrl } = useGroupChannelContext();
@@ -20,7 +21,7 @@ export default function Channel() {
       {/* <GroupChannel channelUrl={channelUrl || ''} /> */}
       <GroupChannel
         channelUrl={channelUrl || ''}
-        scrollBehavior="smooth" // 스크롤 부드럽게 이동
+        scrollBehavior='smooth' // 스크롤 부드럽게 이동
         isMultipleFilesMessageEnabled={true} // 다중 파일 메시지 기능 활성화
         // replyType="QUOTE_REPLY" // 'NONE' | 'QUOTE_REPLY' | 'THREAD';
         // threadReplySelectType={ThreadReplySelectType.THREAD}

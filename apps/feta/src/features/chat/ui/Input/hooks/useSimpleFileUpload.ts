@@ -1,8 +1,10 @@
 import { useState } from 'react';
+
 import {
   FileUploadParams,
   uploadFile,
 } from '@/features/chat/api/fileUploadApi';
+
 import { UploadResult } from '../types';
 
 export interface SimpleUploadOptions {

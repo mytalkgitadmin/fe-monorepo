@@ -1,5 +1,6 @@
-import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
 import { useEffect } from 'react';
+
+import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
 
 export function ScrollController() {
   const { isScrollBottomReached } = useGroupChannelContext();
@@ -7,7 +8,7 @@ export function ScrollController() {
   useEffect(() => {
     // CSS 클래스로 버튼 제어
     const channelElement = document.querySelector(
-      '.sendbird-conversation__scroll-bottom-button',
+      '.sendbird-conversation__scroll-bottom-button'
     );
     if (channelElement) {
       if (isScrollBottomReached) {

@@ -1,4 +1,4 @@
-@use '@/styles/var.scss' as *;
+@use "@/styles/var.scss" as *;
 
 .formWrap {
   width: calc(100% - (convertRem(20) * 2));
@@ -77,7 +77,7 @@
 
     // 배경에 펄스 효과 추가
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;

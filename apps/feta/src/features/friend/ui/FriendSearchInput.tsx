@@ -1,12 +1,15 @@
 import { Input } from '@/components/ui/input';
+
 import Icons from '@/shared/ui/Icons';
+
+import styles from './FriendSearchInput.module.scss';
+
 interface FriendSearchInputProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
 }
-import styles from './FriendSearchInput.module.scss';
 
 export default function FriendSearchInput({
   value,
@@ -16,7 +19,7 @@ export default function FriendSearchInput({
 }: FriendSearchInputProps) {
   return (
     <div className={`${styles.searchWrap} ${className || ''}`}>
-      <Icons name="search" className={styles.searchIcon} />
+      <Icons name='search' className={styles.searchIcon} />
       <Input
         placeholder={placeholder}
         value={value}
@@ -25,7 +28,7 @@ export default function FriendSearchInput({
       />
       {value && (
         <button onClick={() => onChange('')} className={styles.clearBtn}>
-          <Icons name="x" />
+          <Icons name='x' />
         </button>
       )}
     </div>

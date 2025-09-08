@@ -8,11 +8,11 @@ export const categorizeFiles = (processedFiles: ProcessedFile[]) => {
   const successFiles = processedFiles.filter((f) => f.status === 'SUCCESS');
 
   const imageFiles = successFiles.filter((f) =>
-    f.processedFile.type.startsWith('image/'),
+    f.processedFile.type.startsWith('image/')
   );
 
   const nonImageFiles = successFiles.filter(
-    (f) => !f.processedFile.type.startsWith('image/'),
+    (f) => !f.processedFile.type.startsWith('image/')
   );
 
   return { successFiles, imageFiles, nonImageFiles };
@@ -23,7 +23,7 @@ export const categorizeFiles = (processedFiles: ProcessedFile[]) => {
  */
 export const getUploadStrategy = (
   successFiles: ProcessedFile[],
-  imageFiles: ProcessedFile[],
+  imageFiles: ProcessedFile[]
 ) => {
   if (successFiles.length === 1) {
     return 'SINGLE';
@@ -37,7 +37,7 @@ export const getUploadStrategy = (
 };
 
 export const createFileRatioMap = (
-  files: ProcessedFile[],
+  files: ProcessedFile[]
 ): { [fileName: string]: number } => {
   const fileRatios: { [fileName: string]: number } = {};
 

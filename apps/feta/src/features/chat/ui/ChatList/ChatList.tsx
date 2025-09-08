@@ -1,10 +1,11 @@
-import { GroupChannelListProvider } from '@sendbird/uikit-react/GroupChannelList/context';
 import GroupChannelListUI from '@sendbird/uikit-react/GroupChannelList/components/GroupChannelListUI';
+import { GroupChannelListProvider } from '@sendbird/uikit-react/GroupChannelList/context';
+import { useRouter } from '@tanstack/react-router';
 
 import { useChannelStore } from '@/features/chat/store';
+
 import { ChatListHeader } from './components/ChatListHeader';
 import { ChatListItem } from './components/ChatListItem';
-import { useRouter } from '@tanstack/react-router';
 
 export default function ChatList() {
   const { currentChannelUrl, setCurrentChannelUrl } = useChannelStore();

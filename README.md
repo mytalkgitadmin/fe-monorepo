@@ -54,7 +54,6 @@ function MyComponent() {
 }
 ```
 
-
 ## 📚 문서
 
 - [monorepo-guide.md](./docs/monorepo-guide.md)

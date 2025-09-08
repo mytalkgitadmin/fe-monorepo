@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+
 import { Friend } from '../api';
 
 export default function useFriendSearch({ friends }: { friends: Friend[] }) {
@@ -10,7 +11,7 @@ export default function useFriendSearch({ friends }: { friends: Friend[] }) {
 
     const query = searchQuery.toLocaleLowerCase().trim();
     return friends.filter((friend) =>
-      friend.profile.profileName.toLowerCase().includes(query),
+      friend.profile.profileName.toLowerCase().includes(query)
     );
   }, [friends, searchQuery]);
 

@@ -1,5 +1,6 @@
-import { ApiResponse } from '@/shared/api';
 import { BaseMessage } from '@sendbird/chat/message';
+
+import { ApiResponse } from '@/shared/api';
 
 export interface TotalNotificationState {
   // 읽지 않은 채팅 메시지

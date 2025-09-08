@@ -1,11 +1,14 @@
 import '@/styles/sendbird.css';
-import styles from './ChatPage.module.scss';
+
+import { useCallback, useEffect, useRef } from 'react';
+
+import { IconButton } from '@/shared/ui/IconButton';
 
 import { ChatList } from '@/features/chat/ui/ChatList';
 import { ChatView } from '@/features/chat/ui/ChatView';
 import { useChatLayoutStore } from '@/features/chat/ui/ChatView/store/useChatLayoutStore';
-import { useCallback, useEffect, useRef } from 'react';
-import { IconButton } from '@/shared/ui/IconButton';
+
+import styles from './ChatPage.module.scss';
 
 export default function ChatPage() {
   const { isChatListVisible, closeChatList, initializeChatList } =
@@ -69,9 +72,9 @@ export default function ChatPage() {
         <ChatList />
 
         <IconButton
-          name="x"
+          name='x'
           className={styles.close}
-          text="닫기"
+          text='닫기'
           onClick={closeChatList}
         />
       </div>

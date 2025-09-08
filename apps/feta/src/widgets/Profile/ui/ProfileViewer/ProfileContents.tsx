@@ -1,8 +1,3 @@
-import { memo } from 'react';
-import { ProcessedHistory } from '../../types/viewer.types';
-
-import { ProfileBody } from './ProfileBody';
-import ProfileActions from '@/widgets/Profile/ui/ProfileViewer/ProfileActions/ProfileActions';
 import {
   DialogDescription,
   DialogFooter,
@@ -10,8 +5,15 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
-import styles from './ProfileViewer.module.scss';
+import { memo } from 'react';
+
 import { ProfileUserData } from '@/features/profile/types';
+
+import ProfileActions from '@/widgets/Profile/ui/ProfileViewer/ProfileActions/ProfileActions';
+
+import { ProcessedHistory } from '../../types/viewer.types';
+import { ProfileBody } from './ProfileBody';
+import styles from './ProfileViewer.module.scss';
 
 interface ProfileComponentProps {
   userData: ProfileUserData; // 실제 타입으로 교체 필요
@@ -46,7 +48,7 @@ const ProfileContents = memo(
     return (
       <>
         {/* 접근성용: 숨겨진 헤더 */}
-        <DialogHeader className="sr-only">
+        <DialogHeader className='sr-only'>
           <DialogTitle>{profileName}의 프로필</DialogTitle>
           <DialogDescription>
             사용자 프로필 정보를 확인하고 액션을 수행할 수 있습니다.
@@ -79,7 +81,7 @@ const ProfileContents = memo(
         </DialogFooter>
       </>
     );
-  },
+  }
 );
 
 export default ProfileContents;

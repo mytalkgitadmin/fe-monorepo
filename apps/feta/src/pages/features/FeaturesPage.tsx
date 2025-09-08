@@ -1,7 +1,11 @@
 import { Link } from '@tanstack/react-router';
-import styles from './FeaturesPage.module.scss';
+
 import { useMobileDevice } from '@/shared/hooks/useMobileDevice';
+
 import { DefaultLayout } from '@/widgets/layouts/DefaultLayout';
+
+import styles from './FeaturesPage.module.scss';
+
 export default function Features() {
   const { isMobile, isIOS, isAndroid, appStoreUrl } = useMobileDevice();
 
@@ -10,7 +14,7 @@ export default function Features() {
       <main className={`max-width ${styles.features}`}>
         <div className={styles.mainText}>
           <p className={styles.title}>
-            <img src="/logo_feta.png" alt="" />
+            <img src='/logo_feta.png' alt='' />
             FETA
           </p>
           <p className={styles.contents}>
@@ -22,12 +26,12 @@ export default function Features() {
 
         <div className={styles.btn_group}>
           {isMobile && (
-            <a href={appStoreUrl} target="_blank">
+            <a href={appStoreUrl} target='_blank'>
               {isIOS ? 'Apple App Store' : isAndroid ? 'Google Play' : null}
             </a>
           )}
 
-          <Link to="/friends" className={styles.btn_web}>
+          <Link to='/friends' className={styles.btn_web}>
             웹 브라우저에서 FETA 열기
           </Link>
         </div>

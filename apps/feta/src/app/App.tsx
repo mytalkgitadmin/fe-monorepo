@@ -1,8 +1,8 @@
-import { Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
-
 // import ReloadPrompt from '@fsd/widgets/ReloadPrompt';
 import { useEffect } from 'react';
+
+import { Outlet } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 export default function App() {
   // const isOnline = useOnlineStatus();

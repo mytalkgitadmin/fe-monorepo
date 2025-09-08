@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+
 import { TotalNotificationState } from '../model';
 
 export const useTotalNotificationStore = create<TotalNotificationState>()(
@@ -81,6 +82,6 @@ export const useTotalNotificationStore = create<TotalNotificationState>()(
           state.calculateTotalCount();
         }
       },
-    },
-  ),
+    }
+  )
 );

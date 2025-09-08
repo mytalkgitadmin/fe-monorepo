@@ -1,9 +1,10 @@
+import { isUpdatedProfile } from '@/shared/lib/dateFormatter';
+import Icons from '@/shared/ui/Icons';
+
 import { Profile, RelationType } from '@/features/chat/model';
 
 import { SingleAvatar } from '../ProfileAvatar';
 import styles from './ProfileCard.module.scss';
-import { isUpdatedProfile } from '@/shared/lib/dateFormatter';
-import Icons from '@/shared/ui/Icons';
 
 // 친구
 export interface ItemProps {
@@ -37,7 +38,7 @@ export default function ProfileCard({
   return (
     <>
       <button
-        type="button"
+        type='button'
         className={`${styles.profileCard} ${horizon ? styles.horizon : ''}`}
         onClick={onClick}
       >
@@ -56,8 +57,8 @@ export default function ProfileCard({
           <p className={`${styles.nickName} ${styles[type]}`}>
             {isMaster && (
               <span className={styles.master}>
-                <Icons name="crown" />
-                <span className="sr-only">방장</span>
+                <Icons name='crown' />
+                <span className='sr-only'>방장</span>
               </span>
             )}{' '}
             {editedName || syncName || profile.profileName}

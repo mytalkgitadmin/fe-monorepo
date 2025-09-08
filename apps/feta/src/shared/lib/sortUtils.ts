@@ -14,7 +14,7 @@ const CHARACTER_REGEXPS = {
  * @returns 문자 타입 ('korean' | 'english' | 'number' | 'emoticon')
  */
 export const getFirstCharacterType = (
-  str: string,
+  str: string
 ): 'korean' | 'english' | 'number' | 'emoticon' => {
   if (!str || str.length === 0) return 'emoticon';
 

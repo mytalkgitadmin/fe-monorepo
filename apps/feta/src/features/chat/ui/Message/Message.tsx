@@ -1,9 +1,11 @@
 import { MessageContentProps } from '@sendbird/uikit-react/ui/MessageContent';
+
 import { parseData } from '@/features/chat/lib';
 import { isAdminMessage } from '@/features/chat/lib/validators/messageValidators';
+
 import { AdminMessage } from './components/AdminMessage';
-import { MessageLayout } from './components/MessageLayout';
 import { MessageContent } from './components/MessageContent';
+import { MessageLayout } from './components/MessageLayout';
 
 export default function Message({
   messageContent,

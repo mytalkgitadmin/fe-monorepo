@@ -1,5 +1,4 @@
-import { memo, useState } from 'react';
-import Icons from '@/shared/ui/Icons';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -9,7 +8,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
+
+import { memo, useState } from 'react';
+
+import Icons from '@/shared/ui/Icons';
+
 import { getEmoticonImageUrl } from '@/features/viewer/utils/mediaUtils';
 
 import styles from './FamilyFriendsModal.module.scss';
@@ -24,7 +27,7 @@ interface FamilyFriendsModalProps {
 const FamilyFriendsModal = memo<FamilyFriendsModalProps>(
   ({ open, onOpenChange, id, onEmoticonSelect }) => {
     const [selectedEmoticonId, setSelectedEmoticonId] = useState<number | null>(
-      id,
+      id
     );
 
     const EMOTICON_COUNT = 15;
@@ -79,7 +82,7 @@ const FamilyFriendsModal = memo<FamilyFriendsModalProps>(
           {/* footer */}
           <DialogFooter className={styles.dialogFooter}>
             <DialogClose asChild>
-              <Button variant="outline" size="lg">
+              <Button variant='outline' size='lg'>
                 닫기
               </Button>
             </DialogClose>
@@ -93,7 +96,7 @@ const FamilyFriendsModal = memo<FamilyFriendsModalProps>(
         </DialogContent>
       </Dialog>
     );
-  },
+  }
 );
 
 interface EmoticonButtonProps {
@@ -108,7 +111,7 @@ const EmoticonButton = ({
 }: EmoticonButtonProps) => {
   return (
     <button
-      type="button"
+      type='button'
       className={isSelected ? styles.selected : ''}
       onClick={onClick}
     >
@@ -116,7 +119,7 @@ const EmoticonButton = ({
         src={getEmoticonImageUrl(emoticonId)}
         alt={`패밀리 프렌즈 ${emoticonId}`}
       />
-      {isSelected && <Icons name="circle-check" className={styles.check} />}
+      {isSelected && <Icons name='circle-check' className={styles.check} />}
     </button>
   );
 };

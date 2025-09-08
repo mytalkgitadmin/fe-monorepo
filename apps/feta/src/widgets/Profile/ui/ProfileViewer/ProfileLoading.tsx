@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import Loading from '@/shared/ui/Loading';
 
 import styles from './ProfileViewer.module.scss';

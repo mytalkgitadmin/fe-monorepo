@@ -1,17 +1,18 @@
+import { FileMessageCreateParams } from '@sendbird/chat/message';
 import {
   sendbirdSelectors,
   useSendbirdStateContext,
 } from '@sendbird/uikit-react';
 import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
-import { FileMessageCreateParams } from '@sendbird/chat/message';
 
 import { MessageCustomType, MessageInDataType } from '@/features/chat/model';
+
 import { FileInfo, MessageData, UploadResult } from '../types';
 
 const createMessageData = (
   uploadResult: UploadResult,
   fileRatio?: number,
-  type: string = MessageInDataType.MESSAGE_FILE,
+  type: string = MessageInDataType.MESSAGE_FILE
 ) => {
   const fileInfo = uploadResult.resultData.info;
   const thumbnailInfo = uploadResult.resultData.thumbnailInfo1;
@@ -40,7 +41,7 @@ const createMessageData = (
 const createFileMessageParams = (
   fileInfo: FileInfo,
   fileName: string,
-  messageData: MessageData,
+  messageData: MessageData
 ): FileMessageCreateParams => ({
   fileUrl: fileInfo.directUrl, // 업로드된 파일 URL
   fileName,
@@ -60,7 +61,7 @@ export default function useSendbirdMessage() {
    */
   const sendFileMessage = async (
     uploadResult: UploadResult,
-    fileRatio?: number,
+    fileRatio?: number
   ) => {
     if (!currentChannel) {
       throw new Error('채널을 찾을 수 없습니다.');
@@ -85,7 +86,7 @@ export default function useSendbirdMessage() {
       const params = createFileMessageParams(
         fileInfo,
         fileInfo.fileName,
-        messageData,
+        messageData
       );
 
       return new Promise((resolve, reject) => {
@@ -113,7 +114,7 @@ export default function useSendbirdMessage() {
       groupId: string;
       uploadResults: UploadResult[];
     },
-    fileRatios?: { [fileName: string]: number },
+    fileRatios?: { [fileName: string]: number }
   ) => {
     if (!currentChannel) {
       throw new Error('채널을 찾을 수 없습니다.');
@@ -157,7 +158,7 @@ export default function useSendbirdMessage() {
       const params = createFileMessageParams(
         firstFile,
         `${groupId}_${uploadResults.length}개_이미지`,
-        messageData,
+        messageData
       );
 
       console.log('그룹 메시지 파라미터:', params);
@@ -168,7 +169,7 @@ export default function useSendbirdMessage() {
           .onSucceeded((message) => {
             console.log(
               `✅ 그룹 메시지 전송 완료 (${resourceArray.length}개 파일):`,
-              message,
+              message
             );
             resolve(message);
           })

@@ -1,5 +1,6 @@
-import { AccountProfile } from '@/features/chat/model';
 import { ApiResponse } from '@/shared/api';
+
+import { AccountProfile } from '@/features/chat/model';
 
 // 로그인 요청
 export interface RequestLogin {

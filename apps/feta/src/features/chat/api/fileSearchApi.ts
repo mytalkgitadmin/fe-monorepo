@@ -1,5 +1,7 @@
-import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 import { useMutation } from '@tanstack/react-query';
+
+import { API_ENDPOINTS, apiRequest } from '@/shared/api';
+
 import { FileSearchResponse } from '../hooks/useChannelFilePreview';
 
 export enum FileCategoryList {
@@ -45,7 +47,7 @@ export interface FileSearchParams {
 }
 
 export const searchChannelFiles = (
-  data: FileSearchParams,
+  data: FileSearchParams
 ): Promise<FileSearchResponse> => {
   return apiRequest(API_ENDPOINTS.CHANNEL.POST_FILE_INFO, data);
 };

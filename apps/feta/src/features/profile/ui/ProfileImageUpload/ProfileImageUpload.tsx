@@ -1,20 +1,23 @@
 // 프로필 이미지 업로드 - 파일 선택 OR 이모티콘 선택
-import { useRef, useState } from 'react';
-import { useFileUploadAcceptList } from '@/features/chat/api';
-import { IconButton } from '@/shared/ui/IconButton';
-
+import defaultImg from '@/assets/profile/bemilyDefaultProfile.webp';
 import {
   DropdownMenu,
+  DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuContent,
 } from '@/components/ui/dropdown-menu';
 
-import defaultImg from '@/assets/profile/bemilyDefaultProfile.webp';
-import FamilyFriendsModal from '../FamilyFriendsModal/FamilyFriendsModal';
-import { ProfileImageUploadProps } from '../../model/fileTypes';
-import styles from './ProfileImageUpload.module.scss';
+import { useRef, useState } from 'react';
+
+import { IconButton } from '@/shared/ui/IconButton';
+
+import { useFileUploadAcceptList } from '@/features/chat/api';
 import { getEmoticonImageUrl } from '@/features/viewer/utils/mediaUtils';
+
+import { ProfileImageUploadProps } from '../../model/fileTypes';
+import FamilyFriendsModal from '../FamilyFriendsModal/FamilyFriendsModal';
+import styles from './ProfileImageUpload.module.scss';
+
 export default function ProfileImageUpload({
   currentImage,
   onImageChange,
@@ -76,7 +79,7 @@ export default function ProfileImageUpload({
     <div>
       <input
         ref={fileInputRef}
-        type="file"
+        type='file'
         accept={acceptFileExtensions}
         onChange={handleFileSelect}
         disabled={disabled}
@@ -84,18 +87,18 @@ export default function ProfileImageUpload({
       />
 
       <div className={styles.wrap}>
-        <img src={displayImage} alt="" />
+        <img src={displayImage} alt='' />
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <IconButton
               className={styles.imageBtn}
-              name="photo"
-              text="이미지 변경"
+              name='photo'
+              text='이미지 변경'
               disabled={disabled}
             />
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
+          <DropdownMenuContent align='start'>
             <DropdownMenuItem
               onClick={handlePhotoMenuClick}
               disabled={disabled}

@@ -1,9 +1,7 @@
 #!/usr/bin/env node
-
 /* eslint-disable no-console */
-
-import * as readline from 'readline';
 import { execSync } from 'child_process';
+import * as readline from 'readline';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -45,7 +43,7 @@ const scopes: Record<string, CommitScope> = {
 };
 
 function question(query: string): Promise<string> {
-  return new Promise(resolve => rl.question(query, resolve));
+  return new Promise((resolve) => rl.question(query, resolve));
 }
 
 async function main(): Promise<void> {

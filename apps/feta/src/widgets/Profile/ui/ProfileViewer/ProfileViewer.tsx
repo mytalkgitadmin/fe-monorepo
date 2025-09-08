@@ -1,15 +1,15 @@
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+
 import { memo } from 'react';
 
-import useProfileViewer from '@/widgets/Profile/hooks/useProfileViewer';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Viewer } from '@/features/viewer';
 
+import useProfileViewer from '@/widgets/Profile/hooks/useProfileViewer';
+
 import { ProfileViewerProps } from '../../types/viewer.types';
-
-import ProfileLoading from './ProfileLoading';
-import ProfileError from './ProfileError';
 import ProfileContents from './ProfileContents';
-
+import ProfileError from './ProfileError';
+import ProfileLoading from './ProfileLoading';
 import styles from './ProfileViewer.module.scss';
 
 const ProfileViewer = memo<ProfileViewerProps>(
@@ -62,7 +62,7 @@ const ProfileViewer = memo<ProfileViewerProps>(
         />
       </>
     );
-  },
+  }
 );
 ProfileViewer.displayName = 'ProfileViewer';
 

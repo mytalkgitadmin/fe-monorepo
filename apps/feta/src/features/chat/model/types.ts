@@ -1,4 +1,8 @@
+import { BaseMessage } from '@sendbird/chat/message';
+
 import { ApiResponse } from '@/shared/api';
+
+import { RelationType } from './enums';
 
 export interface ProfileImg {
   profileKind: 'basic' | 'normal' | 'emoticon';
@@ -87,9 +91,6 @@ export interface ChannelState {
   currentChannelUrl: string | undefined;
   setCurrentChannelUrl: (url: string | undefined) => void;
 }
-
-import { BaseMessage } from '@sendbird/chat/message';
-import { RelationType } from './enums';
 
 export type UnreadCountState = {
   totalUnreadCount: number;

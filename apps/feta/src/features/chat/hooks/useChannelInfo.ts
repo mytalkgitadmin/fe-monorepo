@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
+
 import type { GroupChannel } from '@sendbird/chat/groupChannel';
+
 import { Channel, Member } from '@/features/chat/model';
 
 import { useChannelList } from '../api';
@@ -17,7 +19,7 @@ interface ChannelInfo {
 
 export default function useChannelInfo(
   channel: GroupChannel | null,
-  includesMyProfile: boolean = false,
+  includesMyProfile: boolean = false
 ): ChannelInfo {
   // 채널 상세 정보를 가져오는 API 호출
   const { data } = useChannelList(channel?.url || '');
@@ -26,7 +28,7 @@ export default function useChannelInfo(
   const bChannel = useMemo(() => {
     if (!data?.resultData || !channel?.url) return null;
     return (data.resultData as Channel[]).find(
-      (item) => item.channelUrl === channel.url,
+      (item) => item.channelUrl === channel.url
     );
   }, [data, channel?.url]);
 
@@ -38,13 +40,13 @@ export default function useChannelInfo(
       ? bChannel.members.filter(
           (member: Member) =>
             member.accountStatus !== 'EXIT' &&
-            member.participantType !== 'KICKED',
+            member.participantType !== 'KICKED'
         )
       : bChannel.members.filter(
           (member: Member) =>
             member.relationType !== 'ME' &&
             member.accountStatus !== 'EXIT' &&
-            member.participantType !== 'KICKED',
+            member.participantType !== 'KICKED'
         );
     return filtered;
   }, [bChannel, includesMyProfile]);
@@ -74,7 +76,7 @@ export default function useChannelInfo(
           // DIRECT 채널에서는 나 → 상대방 순서로 정렬
           const sortedMembers = sortMembersByPriority(
             filteredMembers,
-            'DIRECT',
+            'DIRECT'
           );
           return {
             channelName: getMemberName(filteredMembers[0]),
@@ -90,7 +92,7 @@ export default function useChannelInfo(
           // GROUP/FAMILY 채널에서는 방장 → 나 → 일반 멤버 순서로 정렬
           const sortedMembers = sortMembersByPriority(
             filteredMembers,
-            customType,
+            customType
           );
           const channelName = generateChannelName(sortedMembers);
 

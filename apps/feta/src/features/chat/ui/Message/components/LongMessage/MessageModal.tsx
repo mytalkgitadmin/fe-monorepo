@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -8,13 +9,15 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
-import styles from './MessageModal.module.scss';
+import { useState } from 'react';
+
+import { toast } from 'sonner';
 
 import Icons from '@/shared/ui/Icons';
-import { Button } from '@/components/ui/button';
+
 import { copyToClipboard } from '@/features/chat/lib';
-import { useState } from 'react';
-import { toast } from 'sonner';
+
+import styles from './MessageModal.module.scss';
 
 export default function MessageModal({
   message,
@@ -55,7 +58,7 @@ export default function MessageModal({
         {/* footer */}
         <DialogFooter className={styles.dialogFooter}>
           <DialogClose asChild>
-            <Button variant="outline" size="lg">
+            <Button variant='outline' size='lg'>
               닫기
             </Button>
           </DialogClose>
@@ -63,7 +66,7 @@ export default function MessageModal({
             onClick={() => handleCopy(message)}
             className={`${styles.btn} ${showCopySuccess ? styles.success : ''}`}
           >
-            {showCopySuccess ? <Icons name="check" /> : <Icons name="copy" />}
+            {showCopySuccess ? <Icons name='check' /> : <Icons name='copy' />}
             전체 복사
           </Button>
         </DialogFooter>

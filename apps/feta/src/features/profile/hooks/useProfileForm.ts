@@ -1,6 +1,7 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import { AccountProfile } from '@/features/chat/model';
+
 import { ProfileFormData } from '../types';
 
 interface UseProfileFormProps {
@@ -28,14 +29,14 @@ export const useProfileForm = ({ initialData }: UseProfileFormProps) => {
   const handleInputChange = useCallback(
     (
       field: keyof ProfileFormData,
-      value: ProfileFormData[keyof ProfileFormData],
+      value: ProfileFormData[keyof ProfileFormData]
     ) => {
       setFormData((prev: ProfileFormData) => ({
         ...prev,
         [field]: value,
       }));
     },
-    [],
+    []
   );
 
   // 생일 선택 핸들러

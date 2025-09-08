@@ -1,9 +1,11 @@
 import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
-import styles from './NotificationCard.module.scss';
-import { Notification } from '@/features/notifications/model';
-import Icons from '@/shared/ui/Icons';
-import { useDeleteNoti, useMarkNotiAsRead } from '@/features/notifications/api';
 import { useUIStore } from '@/shared/store/useUIStore';
+import Icons from '@/shared/ui/Icons';
+
+import { useDeleteNoti, useMarkNotiAsRead } from '@/features/notifications/api';
+import { Notification } from '@/features/notifications/model';
+
+import styles from './NotificationCard.module.scss';
 
 export default function NotificationCard({ noti }: { noti: Notification }) {
   const { openAlertDialog } = useUIStore();
@@ -47,19 +49,19 @@ export default function NotificationCard({ noti }: { noti: Notification }) {
       <div className={styles.buttons}>
         {!noti.isRead && (
           <button
-            type="button"
+            type='button'
             onClick={handleMarkAsRead}
             disabled={markAsReadMutation.isPending}
           >
-            <Icons name="check" />
+            <Icons name='check' />
           </button>
         )}
         <button
-          type="button"
+          type='button'
           onClick={handleDeleteClick}
           disabled={deleteNotiMutation.isPending}
         >
-          <Icons name="x" />
+          <Icons name='x' />
         </button>
       </div>
     </li>

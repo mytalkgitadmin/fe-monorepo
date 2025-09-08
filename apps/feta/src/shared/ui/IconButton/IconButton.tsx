@@ -1,4 +1,5 @@
-import { forwardRef, ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
+
 import Icons, { IconName } from '../Icons';
 import styles from './IconButton.module.scss';
 
@@ -22,9 +23,9 @@ const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         {...props}
       >
         <Icons name={name} size={size} />
-        <span className="sr-only">{text}</span>
+        <span className='sr-only'>{text}</span>
       </button>
     );
-  },
+  }
 );
 export default IconButton;

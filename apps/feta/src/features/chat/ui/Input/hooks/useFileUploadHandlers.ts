@@ -1,15 +1,13 @@
 import { useGroupChannelContext } from '@sendbird/uikit-react/GroupChannel/context';
 
-import { createFileRatioMap, needsRatio, showFileUploadError } from '../utils';
-
-import {
-  useSimpleFileUpload,
-  useSendbirdMessage,
-  useImageGroupUpload,
-} from '../hooks';
-
-import { ProcessedFile, UploadResult } from '../types';
 import { FILE_INPUT_CONFIG } from '../constants';
+import {
+  useImageGroupUpload,
+  useSendbirdMessage,
+  useSimpleFileUpload,
+} from '../hooks';
+import { ProcessedFile, UploadResult } from '../types';
+import { createFileRatioMap, needsRatio, showFileUploadError } from '../utils';
 
 export default function useFileUploadHandlers() {
   const { channelUrl } = useGroupChannelContext();
@@ -38,7 +36,7 @@ export default function useFileUploadHandlers() {
 
     if (imageFiles.length > maxCount) {
       showFileUploadError(
-        `이미지는 최대 ${maxCount}개까지만 업로드할 수 있습니다.`,
+        `이미지는 최대 ${maxCount}개까지만 업로드할 수 있습니다.`
       );
       return;
     }
@@ -53,7 +51,7 @@ export default function useFileUploadHandlers() {
         } catch (error) {
           console.error('❌ 그룹 메시지 전송 실패:', error);
           showFileUploadError(
-            '파일은 업로드되었지만 메시지 전송에 실패했습니다.',
+            '파일은 업로드되었지만 메시지 전송에 실패했습니다.'
           );
         }
       },

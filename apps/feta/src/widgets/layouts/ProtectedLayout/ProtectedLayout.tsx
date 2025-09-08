@@ -1,9 +1,10 @@
-import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
-import ProtectedHeader from './ProtectedHeader';
-
-import styles from './ProtectedLayout.module.scss';
-import MobileHeader from './MobileHeader';
 import { useLocation } from '@tanstack/react-router';
+
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
+
+import MobileHeader from './MobileHeader';
+import ProtectedHeader from './ProtectedHeader';
+import styles from './ProtectedLayout.module.scss';
 
 export default function ProtectedLayout({
   children,

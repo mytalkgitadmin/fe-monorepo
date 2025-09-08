@@ -92,7 +92,7 @@ const processDefaultFile = async (file: File): Promise<ProcessedFile> => {
  * 이미지 메타데이터 추출
  */
 const extractImageMetadata = (
-  file: File,
+  file: File
 ): Promise<{
   width: number;
   height: number;
@@ -125,7 +125,7 @@ const extractImageMetadata = (
  * 비디오 메타데이터 추출
  */
 const extractVideoMetadata = (
-  file: File,
+  file: File
 ): Promise<{
   width: number;
   height: number;
@@ -173,17 +173,17 @@ const processSingleFile = async (file: File) => {
 };
 
 export const processValidFiles = async (
-  validFiles: File[],
+  validFiles: File[]
 ): Promise<FileProcessResult> => {
   try {
     const processPromises = validFiles.map((file) => processSingleFile(file));
     const processedFiles = await Promise.all(processPromises);
 
     const successCount = processedFiles.filter(
-      (f) => f.status === 'SUCCESS',
+      (f) => f.status === 'SUCCESS'
     ).length;
     const failureCount = processedFiles.filter(
-      (f) => f.status === 'FAILED',
+      (f) => f.status === 'FAILED'
     ).length;
     const totalSize = processedFiles
       .filter((f) => f.status === 'SUCCESS')

@@ -1,6 +1,7 @@
-import styles from './BubbleMessage.module.scss';
-import BubbleInner from './BubbleInner';
 import { CoreMessageType } from '../FileMessage/FileMessage';
+import BubbleInner from './BubbleInner';
+import styles from './BubbleMessage.module.scss';
+
 export default function BubbleMessage({
   messageContent,
 }: {

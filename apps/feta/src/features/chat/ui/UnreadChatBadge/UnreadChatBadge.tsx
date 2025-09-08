@@ -1,6 +1,8 @@
 import { memo } from 'react';
-import styles from './UnreadChatBadge.module.scss';
+
 import { useTotalNotificationStore } from '@/features/notifications/store/useTotalNotificationStore';
+
+import styles from './UnreadChatBadge.module.scss';
 
 const UnreadChatBadge = ({
   className,

@@ -1,25 +1,23 @@
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+
 import { memo } from 'react';
 
 import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-  DialogClose,
-} from '@/components/ui/dialog';
 
-import { useProfileForm } from '../../hooks/useProfileForm';
-
-import { ProfileImageUpload } from '../ProfileImageUpload';
-
-import FormFields from './FormFields';
-import { Button } from '@/components/ui/button';
-
-import styles from './EditProfileModal.module.scss';
 import useEditProfile from '../../hooks/useEditProfile';
+import { useProfileForm } from '../../hooks/useProfileForm';
+import { ProfileImageUpload } from '../ProfileImageUpload';
+import styles from './EditProfileModal.module.scss';
+import FormFields from './FormFields';
 
 interface EditProfileModalProps {
   open: boolean;
@@ -114,7 +112,7 @@ const EditProfileModal = memo<EditProfileModalProps>(
           {/* footer */}
           <DialogFooter className={styles.dialogFooter}>
             <DialogClose asChild>
-              <Button variant="outline" size="lg" disabled={isLoading}>
+              <Button variant='outline' size='lg' disabled={isLoading}>
                 닫기
               </Button>
             </DialogClose>
@@ -125,7 +123,7 @@ const EditProfileModal = memo<EditProfileModalProps>(
         </DialogContent>
       </Dialog>
     );
-  },
+  }
 );
 
 EditProfileModal.displayName = 'EditProfileModal';

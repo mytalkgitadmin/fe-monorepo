@@ -1,4 +1,4 @@
-@use 'sass:color';
+@use "sass:color";
 
 @function convertRem($number) {
   @return $number * 0.625 * 0.1rem;
@@ -69,9 +69,9 @@ $pad: fcSize(40, 60);
 $text: #333;
 $darkText: #fff;
 $primary: rgb(59, 130, 246);
-$primaryRGB: '59, 130, 246';
+$primaryRGB: "59, 130, 246";
 $darkPrimary: rgb(130, 160, 246);
-$darkPrimaryRGB: '130, 160, 246';
+$darkPrimaryRGB: "130, 160, 246";
 
 $light: (
   background: $darkText,
@@ -112,7 +112,7 @@ $light: (
   master: #fe515c,
 
   // 그림자
-  shadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+  shadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
 );
 
 $dark: (
@@ -155,7 +155,7 @@ $dark: (
 
 @media (prefers-color-scheme: dark) {
   :root,
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     @each $name, $value in $dark {
       --#{'' + $name}: #{$value};
     }

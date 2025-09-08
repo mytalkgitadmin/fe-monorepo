@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useTotalNotificationStore } from '../store/useTotalNotificationStore';
+
 import { useNotiList } from '../api';
 import { Notification } from '../model';
+import { useTotalNotificationStore } from '../store/useTotalNotificationStore';
 
 export default function useInitialNotificationLoader() {
   const { setFriendRequestCount } = useTotalNotificationStore();
@@ -18,11 +19,11 @@ export default function useInitialNotificationLoader() {
 
       // 읽지 않은 알림만 필터링
       const unreadNotifications = notifications.filter(
-        (message: Notification) => !message.isRead,
+        (message: Notification) => !message.isRead
       );
 
       const friendRequests = unreadNotifications.filter(
-        (msg: Notification) => msg.category === 'FRIEND',
+        (msg: Notification) => msg.category === 'FRIEND'
       );
 
       setFriendRequestCount(friendRequests.length);
@@ -45,7 +46,7 @@ export default function useInitialNotificationLoader() {
     isError,
     friendRequestCount:
       notiData?.filter(
-        (msg: Notification) => msg.category === 'FRIEND' && !msg.isRead,
+        (msg: Notification) => msg.category === 'FRIEND' && !msg.isRead
       ).length || 0,
   };
 }

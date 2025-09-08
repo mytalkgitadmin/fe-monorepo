@@ -1,7 +1,7 @@
 import Icons from '@/shared/ui/Icons';
 
-import styles from './FilePreview.module.scss';
 import { useFilePreview } from '../hooks';
+import styles from './FilePreview.module.scss';
 
 interface FilePreviewProps {
   file: File;
@@ -19,7 +19,7 @@ export default function FilePreview({
   if (!preview) {
     return (
       <div className={`${styles.preview} ${styles.nodata} ${className}`}>
-        <Icons name="file" />
+        <Icons name='file' />
       </div>
     );
   }
@@ -32,7 +32,7 @@ export default function FilePreview({
         <div className={`${styles.preview} ${styles.image} ${className}`}>
           <img
             src={url}
-            alt=""
+            alt=''
             onError={(e) => {
               // 이미지 로드 실패 시 기본 아이콘 표시
               const target = e.target as HTMLImageElement;
@@ -51,13 +51,13 @@ export default function FilePreview({
     case 'document':
       return (
         <div className={`${styles.preview} ${styles.document} ${className}`}>
-          <Icons name="fileText" />
+          <Icons name='fileText' />
         </div>
       );
     default:
       return (
         <div className={`${styles.preview} ${className}`}>
-          <Icons name="file" />
+          <Icons name='file' />
         </div>
       );
   }

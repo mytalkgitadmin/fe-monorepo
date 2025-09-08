@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
+
 dayjs.locale('ko');
 
 export const DATE_FORMATS = {
@@ -26,7 +27,7 @@ export const DATE_FORMATS = {
  */
 export const formatDate = (
   timestamp: number | string,
-  format: string = DATE_FORMATS.DEFAULT,
+  format: string = DATE_FORMATS.DEFAULT
 ): string => {
   if (!timestamp) return '';
   return dayjs(Number(timestamp)).format(format);
