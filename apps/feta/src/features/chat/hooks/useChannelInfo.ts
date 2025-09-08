@@ -70,32 +70,34 @@ export default function useChannelInfo(
         return { channelName: 'MY 메모', membersList: [] };
 
       case 'DIRECT':
-        if (!filteredMembers || filteredMembers.length === 0) {
-          return { channelName: '대화 상대 없음', membersList: [] };
-        } else {
-          // DIRECT 채널에서는 나 → 상대방 순서로 정렬
-          const sortedMembers = sortMembersByPriority(
-            filteredMembers,
-            'DIRECT'
-          );
-          return {
-            channelName: getMemberName(filteredMembers[0]),
-            membersList: [...sortedMembers],
-          };
-        }
+          if (!filteredMembers || filteredMembers.length === 0) {
+            return { channelName: '대화 상대 없음', membersList: [] };
+          }
+          {
+            // DIRECT 채널에서는 나 → 상대방 순서로 정렬
+            const sortedMembers = sortMembersByPriority(
+              filteredMembers,
+              'DIRECT'
+            );
+            return {
+              channelName: getMemberName(filteredMembers[0]),
+              membersList: [...sortedMembers],
+            };
+          }
+        
 
       case 'GROUP':
       case 'FAMILY':
         if (!filteredMembers || filteredMembers.length === 0) {
           return { channelName: '대화 상대 없음', membersList: [] };
-        } else {
+        }
+        {
           // GROUP/FAMILY 채널에서는 방장 → 나 → 일반 멤버 순서로 정렬
           const sortedMembers = sortMembersByPriority(
             filteredMembers,
             customType
           );
           const channelName = generateChannelName(sortedMembers);
-
           return { channelName, membersList: [...sortedMembers] };
         }
       default:
