@@ -30,34 +30,54 @@ shared → entities → features → widgets → views → app
 
 ### 예시 코드 패턴
 
-#### Import 예시
+#### 외부에서 슬라이스 접근
+
+- 반드시 Public API만 import
 
 ```typescript
-// ❌ 내부 파일 직접 접근
+// ❌ 내부 파일 직접 import (비추천)
 import { FriendList } from "@/features/friend-list/ui/FriendList";
 
-// ✅ 외부에서 슬라이스 사용: Public API로만
-import { ProfileItem, type Profile } from "@/entities/profile";
+// ✅ 반드시 Public API만 import
 import { FriendList } from "@/features/friend-list";
+import { ProfileItem, type Profile } from "@/entities/profile";
+```
 
-// ❌ 슬라이스 내부에서 자기 Public API 참조 (순환참조 위험)
-import { useFriends } from "@/features/friend-list"; // 슬라이스 내부에서
+#### 슬라이스 내부 import
 
-// ✅ 슬라이스 내부: 상대경로로 직접 이동
-import { ProfileItem } from "./ui/ProfileItem";
-import { useProfileStore } from "./model/use-profile-store";
+- 슬라이스 내부는 상대경로로 import
 
-// ❌ 와일드카드 사용 (모든 걸 다 내보내기)
-export * from "./ui/FriendList";
+```typescript
+// ❌ 자기 Public API import (순환참조 위험)
+import { useFriends } from '@/features/friend-list';
 
-// ✅ Public API: 필요한 것만 명시적으로 내보내기
-export { ProfileItem } from "./ui/ProfileItem";
-export { type Profile } from "./model/types";
+import { useProfileStore } from './model/use-profile-store';
+// ✅ 슬라이스 내부는 상대경로로 import
+import { ProfileItem } from './ui/ProfileItem';
+```
 
-// ❌ shared/ui 전체 가져오기 (번들 크기 증가)
+#### re-export 규칙
+
+- 필요한 것만 명시적으로 export
+
+```typescript
+// ❌ 와일드카드 export 금지
+export * from './ui/FriendList';
+
+// ✅ 필요한 것만 명시적으로 export
+export { ProfileItem } from './ui/ProfileItem';
+export { type Profile } from './model/types';
+```
+
+#### shared/ui import
+
+- 컴포넌트 그룹별로 import
+
+```typescript
+// ❌ 전체 배럴 import (번들 크기 증가)
 import { Button, Input } from "@/shared/ui";
 
-// ✅ shared/ui: 컴포넌트 그룹별로 가져오기
+// ✅ 컴포넌트 그룹별로 import
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 ```
@@ -153,7 +173,6 @@ import { Input } from "@/shared/ui/input";
 
 ```typescript
 // 1. React 관련
-import React from 'react';
 import { useState } from 'react';
 
 // 2. Next.js 관련

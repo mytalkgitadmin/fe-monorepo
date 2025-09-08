@@ -1,4 +1,52 @@
-# 📦 모노레포 패키지 시스템 이해하기
+# 📦 모노레포 패키지 시스템 - 빠른 시작 & 상세 가이드
+
+## 🏃‍♂️ 빠른 시작
+
+### 1. 새 패키지 만들기
+
+```bash
+mkdir packages/my-package
+cd packages/my-package
+npm init -y
+```
+
+### 2. 패키지를 앱에서 사용하기
+
+```json
+// apps/feta/package.json
+{
+  "dependencies": {
+    "@repo/my-package": "workspace:*"
+  }
+}
+```
+
+```typescript
+import { MyComponent } from '@repo/my-package';
+```
+
+### 3. 주요 명령어
+
+```bash
+npm run build                  # 전체 빌드
+npm run build --filter=@repo/shared-ui    # 특정 패키지만 빌드
+npm run dev --filter=feta      # 앱 개발 서버 실행
+npm install                    # 새 의존성 설치
+```
+
+### 4. 개발 팁
+
+- 패키지 수정 후 `npm run build --filter=@repo/패키지명`
+- 타입 에러: 타입 추가/빌드/경로 확인
+
+### 5. 사용 예시
+
+```typescript
+import { Icon, IconName } from '@repo/shared-ui';
+<Icon name="home" size={24} color="blue" />
+```
+
+---
 
 ## 🏗️ 모노레포 구조 개념
 
@@ -56,9 +104,9 @@ packages/shared-ui/
 
 ```typescript
 // 🎯 이 파일이 다른 앱에서 import할 때 실행되는 파일
-export { default as Icon } from "./Icons"; // Icons.tsx에서 Icon 컴포넌트 내보내기
-export type { IconName } from "./Icons"; // TypeScript 타입 내보내기
-export { cn } from "./utils"; // 유틸리티 함수 내보내기
+export { default as Icon } from './Icons'; // Icons.tsx에서 Icon 컴포넌트 내보내기
+export type { IconName } from './Icons'; // TypeScript 타입 내보내기
+export { cn } from './utils'; // 유틸리티 함수 내보내기
 ```
 
 ### 2. 패키지 빌드 과정
@@ -124,8 +172,8 @@ graph TD
 
 ### tsup이란?
 
-**tsup**은 TypeScript 프로젝트를 위한 **초간단 번들러**입니다!
-복잡한 webpack 설정 없이도 TypeScript 패키지를 쉽게 빌드할 수 있어요.
+**tsup**은 TypeScript 프로젝트를 위한 **초간단 번들러**입니다! 복잡한 webpack 설정 없이도 TypeScript
+패키지를 쉽게 빌드할 수 있어요.
 
 ### 🎯 tsup의 역할
 
@@ -162,11 +210,11 @@ export declare const formatDate: (date: Date) => string;
 ### ⚙️ tsup.config.ts 설정
 
 ```typescript
-import { defineConfig } from "tsup";
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ["src/index.ts"], // 진입점
-  format: ["cjs", "esm"], // CommonJS + ES Module 동시 생성
+  entry: ['src/index.ts'], // 진입점
+  format: ['cjs', 'esm'], // CommonJS + ES Module 동시 생성
   dts: true, // .d.ts 타입 파일 생성
   sourcemap: true, // 디버깅용 소스맵
   clean: true, // 빌드 전 dist/ 폴더 정리
