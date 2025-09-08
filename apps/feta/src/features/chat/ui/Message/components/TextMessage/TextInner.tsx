@@ -9,9 +9,7 @@ export default function TextInner({ message }: { message: string }) {
       {convertMessage.length > MESSAGE_LIMITS.LONG_MESSAGE ? (
         <LongMessage message={convertMessage} />
       ) : (
-        <>
-          <p>{convertMessage}</p>
-        </>
+        <p>{convertMessage}</p>
       )}
     </>
   );

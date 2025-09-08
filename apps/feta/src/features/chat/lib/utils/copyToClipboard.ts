@@ -30,9 +30,9 @@ export async function copyToClipboard(text: string): Promise<{
 
     if (success) {
       return { success: true };
-    } else {
+    } 
       return { success: false, error: 'EXEC_COMMAND_FAILED' };
-    }
+    
   } catch (error) {
     console.error('클립보드 복사 실패:', error);
     return { success: false, error: 'CLIPBOARD_API_FAILED' };

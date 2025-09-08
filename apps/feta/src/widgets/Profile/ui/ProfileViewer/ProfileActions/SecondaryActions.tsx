@@ -32,7 +32,7 @@ const FavoriteBtn = ({ relationType }: { relationType: RelationType }) => {
         <span className='sr-only'>즐겨찾기 해제</span>
       </>
     );
-  } else {
+  } 
     if (relationType === 'NORMAL') {
       return (
         <>
@@ -41,5 +41,5 @@ const FavoriteBtn = ({ relationType }: { relationType: RelationType }) => {
         </>
       );
     }
-  }
+  
 };

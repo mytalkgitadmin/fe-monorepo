@@ -234,14 +234,14 @@ export default function useProfileActions({
       const data = {
         friends: [
           {
-            editedName: editedName,
-            friendId: friendId,
+            editedName,
+            friendId,
             nationalNumber: '82',
-            phoneNumber: phoneNumber,
-            syncName: syncName,
+            phoneNumber,
+            syncName,
           },
         ],
-        groupId: groupId,
+        groupId,
         isSync: false,
       };
 

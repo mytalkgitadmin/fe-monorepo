@@ -158,9 +158,9 @@ export const refreshTokenSilently = async (): Promise<boolean> => {
         sessionToken: response.resultData.sessionToken,
       });
       return true;
-    } else {
+    } 
       throw new Error('토큰 갱신 응답 실패');
-    }
+    
   } catch (error) {
     console.error('자동 토큰 갱신 실패:', error);
     useAuthStore.getState().logout();

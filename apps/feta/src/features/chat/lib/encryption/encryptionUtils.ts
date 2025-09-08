@@ -57,7 +57,7 @@ export const encryptData = (text: string): string => {
 
     // AES-256-CBC 암호화 (PKCS7 패딩 자동 적용)
     const encrypted = CryptoJS.AES.encrypt(availableText, KEY, {
-      iv: iv,
+      iv,
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     });
@@ -69,9 +69,9 @@ export const encryptData = (text: string): string => {
     // URL이 있는 경우 Sendbird OG 태그 프리뷰를 위해 암호화 결과 뒤에 원본 URL 추가
     if (urlLink && urlLink.length > 0) {
       return `${ivBase64}:${encryptedText}${SUFFIX_TEXT}${urlLink}`;
-    } else {
+    } 
       return `${ivBase64}:${encryptedText}`;
-    }
+    
   } catch (error) {
     console.log('메시지 암호화 실패', error);
     return text;
@@ -111,7 +111,7 @@ export const decryptData = (text: string): string => {
 
     // AES-256-CBC 복호화 (PKCS7 패딩 자동 처리)
     const decrypted = CryptoJS.AES.decrypt(encrypted, KEY, {
-      iv: iv,
+      iv,
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     });

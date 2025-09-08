@@ -53,8 +53,7 @@ export default function ReplyMessage({
   };
 
   return (
-    <>
-      <div className={`reply ${styles.messageWrap}`}>
+    <div className={`reply ${styles.messageWrap}`}>
         {/* 원본 메시지 */}
         <div className={styles.top}>
           <button
@@ -88,6 +87,5 @@ export default function ReplyMessage({
           )}
         </div>
       </div>
-    </>
   );
 }

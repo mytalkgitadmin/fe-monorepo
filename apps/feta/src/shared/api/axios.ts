@@ -90,9 +90,9 @@ const refreshToken = async (): Promise<boolean> => {
           });
           console.log('토큰 갱신 성공');
           return true;
-        } else {
+        } 
           throw new Error('토큰 갱신 응답 실패');
-        }
+        
       } catch (error) {
         console.error('토큰 갱신 실패: ', error);
         authStore.logout();

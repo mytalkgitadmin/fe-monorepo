@@ -17,12 +17,10 @@ export default function GroupAvatar({ members, customType }: GroupAvatarProps) {
 
   if (customType === 'MY') {
     return (
-      <>
-        <SingleAvatar
+      <SingleAvatar
           imageUrl={getThumbnailUrl(userProfile?.profile as Profile)}
           isMyProfile
         />
-      </>
     );
   }
 

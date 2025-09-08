@@ -34,9 +34,9 @@ export function formatPhoneNumber(phone: string): string {
     case 10: // 02-1234-5678 (서울 지역번호) 또는 031-123-4567
       if (numbersOnly.startsWith('02')) {
         return `${numbersOnly.slice(0, 2)}-${numbersOnly.slice(2, 6)}-${numbersOnly.slice(6)}`;
-      } else {
+      } 
         return `${numbersOnly.slice(0, 3)}-${numbersOnly.slice(3, 6)}-${numbersOnly.slice(6)}`;
-      }
+      
 
     case 9: // 02-123-4567 (서울 지역번호 짧은 형태)
       if (numbersOnly.startsWith('02')) {

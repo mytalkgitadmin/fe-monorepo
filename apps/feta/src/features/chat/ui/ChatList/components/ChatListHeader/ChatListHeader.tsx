@@ -13,14 +13,12 @@ export default function ChatListHeader() {
       <h2>대화</h2>
       <div>
         {/* 대화방 만들기 */}
-        <>
-          <IconButton
+        <IconButton
             name='message-circle-plus'
             text='대화방 만들기'
             onClick={() => setIsOpen(true)}
           />
           <SelectFriends open={isOpen} onOpenChange={() => setIsOpen(false)} />
-        </>
 
         {/* 대화방 검색 */}
         <IconButton name='search' text='대화방 검색' />

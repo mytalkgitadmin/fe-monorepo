@@ -74,8 +74,7 @@ export default function FriendsList({
   };
   if (index) {
     return (
-      <>
-        <AccordionItem value={`item${index}`}>
+      <AccordionItem value={`item${index}`}>
           {title && (
             <AccordionTrigger className={styles.title2}>
               <Title title={title} length={friends.length} />
@@ -182,7 +181,6 @@ export default function FriendsList({
             />
           </div>
         </AccordionItem>
-      </>
     );
   }
 

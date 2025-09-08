@@ -36,8 +36,7 @@ export default function ProfileCard({
   relationType,
 }: ItemProps) {
   return (
-    <>
-      <button
+    <button
         type='button'
         className={`${styles.profileCard} ${horizon ? styles.horizon : ''}`}
         onClick={onClick}
@@ -70,6 +69,5 @@ export default function ProfileCard({
           )}
         </div>
       </button>
-    </>
   );
 }

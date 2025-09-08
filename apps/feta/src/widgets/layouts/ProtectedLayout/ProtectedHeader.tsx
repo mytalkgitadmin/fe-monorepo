@@ -21,14 +21,14 @@ function ProtectedHeader() {
           <span className='a11y-hidden'>로그아웃</span>
         </button>
       );
-    } else {
+    } 
       return (
         <Link to='/login'>
           <Icon name='user' color={'var(--text1)'} />
           <span className='a11y-hidden'>로그인</span>
         </Link>
       );
-    }
+    
   }, [isAuthenticated, handleLogout]);
 
   return (
