@@ -56,8 +56,8 @@ export default function NotificationList({
             <>알림이 없습니다</>
           ) : (
             <ul className='flex flex-col gap-3'>
-              {unReadData.map((noti) => (
-                <NotificationCard noti={noti} />
+              {unReadData.map((noti, index) => (
+                <NotificationCard key={index} noti={noti} />
               ))}
             </ul>
           )}

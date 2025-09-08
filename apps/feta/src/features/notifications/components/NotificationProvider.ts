@@ -4,13 +4,10 @@ import { useSendbird } from '@sendbird/uikit-react';
 import GroupChannelHandler from '@sendbird/uikit-react/handlers/GroupChannelHandler';
 import UserEventHandler from '@sendbird/uikit-react/handlers/UserEventHandler';
 
-import { useAppBadge } from '../hooks/useAppBadge';
-// import type { BaseChannel } from '@sendbird/chat';
-
-import { useFaviconBadge } from '../hooks/useFaviconBadge';
-// import { ExtendedBaseMessage } from '../model';
-import useInitialNotificationLoader from '../hooks/useInitialNotificationLoader';
-import { useTotalNotificationStore } from '../store/useTotalNotificationStore';
+import useInitialNotificationLoader from '@/features/notifications//hooks/useInitialNotificationLoader';
+import { useTotalNotificationStore } from '@/features/notifications//store/useTotalNotificationStore';
+import { useAppBadge } from '@/features/notifications/hooks/useAppBadge';
+import { useFaviconBadge } from '@/features/notifications/hooks/useFaviconBadge';
 
 const HANDLER_ID = 'UNREAD_COUNT_HANDLER';
 

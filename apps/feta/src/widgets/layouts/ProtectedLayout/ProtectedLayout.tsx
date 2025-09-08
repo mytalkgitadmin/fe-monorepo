@@ -10,10 +10,10 @@ export default function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): React.ReactNode {
   const isMobile = useMediaQuery(500);
   const location = useLocation();
-  const renderHeader = () => {
+  const renderHeader = (): React.ReactNode | null => {
     if (isMobile && location.pathname === '/chat') {
       return null;
     }

@@ -5,8 +5,8 @@ import { useRouter } from '@tanstack/react-router';
 import { useUIStore } from '@/shared/store/useUIStore';
 
 import { useAuth } from '@/features/auth';
+import { useCreateChannel } from '@/features/chat/api/createChannel';
 
-import { useCreateChannel } from '../api/createChannel';
 import { useChannelStore } from '../store';
 
 interface UseCreateChatProps {

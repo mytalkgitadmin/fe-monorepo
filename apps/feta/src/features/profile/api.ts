@@ -2,7 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 
 import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 
-import { uploadFile } from '../chat/api/fileUploadApi';
+import { uploadFile } from '@/features/chat/api/fileUploadApi';
+
 import {
   GroupProfileParams,
   UpdateGroupProfileResponse,

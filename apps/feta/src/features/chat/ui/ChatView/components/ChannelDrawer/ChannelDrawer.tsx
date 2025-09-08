@@ -20,9 +20,9 @@ import Icons from '@/shared/ui/Icons';
 import { useAuth } from '@/features/auth';
 import useChannelFilePreview from '@/features/chat/hooks/useChannelFilePreview';
 import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
+import FileCard from '@/features/chat/ui/File/FileCard';
 import ChatMembersList from '@/features/friend/ui/ChatMembersList';
 
-import FileCard from '../../../File/FileCard';
 import styles from './ChannelDrawer.module.scss';
 
 export default function ChannelDrawer({

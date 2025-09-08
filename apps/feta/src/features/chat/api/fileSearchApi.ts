@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 
 import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 
-import { FileSearchResponse } from '../hooks/useChannelFilePreview';
+import { FileSearchResponse } from '@/features/chat/hooks/useChannelFilePreview';
 
 export enum FileCategoryList {
   ALBUM = 'ALBUM',

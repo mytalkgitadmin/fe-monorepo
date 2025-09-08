@@ -8,8 +8,8 @@ import { IconButton } from '@/shared/ui/IconButton';
 
 import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
 import { getMemberName } from '@/features/chat/lib';
+import { useChatLayoutStore } from '@/features/chat/ui/ChatView/store/useChatLayoutStore';
 
-import { useChatLayoutStore } from '../../store/useChatLayoutStore';
 import { ChannelDrawer } from '../ChannelDrawer';
 import styles from './ChannelHeader.module.scss';
 

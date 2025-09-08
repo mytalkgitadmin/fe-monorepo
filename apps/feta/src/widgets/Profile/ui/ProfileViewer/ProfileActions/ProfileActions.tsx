@@ -13,13 +13,14 @@ import Icons from '@/shared/ui/Icons';
 
 import useCreateChat from '@/features/chat/hooks/useCreateChat';
 import { RelationType } from '@/features/chat/model';
+import { ProfileUserData } from '@/features/profile/types';
 
 import PrimaryActions from './PrimaryActions';
 import styles from './ProfileActions.module.scss';
 import useProfileActions from './useProfileActions';
 
 interface ProfileActionsProps {
-  userData: any;
+  userData: ProfileUserData;
   friendId: number;
   isMyProfile: boolean;
   phoneNumber?: string;

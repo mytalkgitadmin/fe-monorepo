@@ -5,12 +5,13 @@ import { memo, useState } from 'react';
 import Icons from '@/shared/ui/Icons';
 
 import { RelationType } from '@/features/chat/model';
+import { ProfileUserData } from '@/features/profile/types';
+import { EditProfileModal } from '@/features/profile/ui/EditProfileModal';
 
-import { EditProfileModal } from '../../../../../features/profile/ui/EditProfileModal';
 import useProfileActions from './useProfileActions';
 
 interface PrimaryActionsProps {
-  userData: any;
+  userData: ProfileUserData;
   friendId: number;
   phoneNumber?: string;
   relationType?: RelationType;
@@ -81,9 +82,9 @@ const PrimaryActions = memo<PrimaryActionsProps>(
           size='lg'
           onClick={() =>
             handleRequest({
-              phoneNumber: userData.phoneNumber,
-              editedName: userData.editName,
-              syncName: userData.syncName,
+              phoneNumber: userData.accountProfile.phoneNumber,
+              editedName: userData.accountProfile.editedName,
+              syncName: userData.accountProfile.syncName,
             })
           }
         >

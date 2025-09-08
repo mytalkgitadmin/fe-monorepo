@@ -2,8 +2,7 @@ import Icons from '@/shared/ui/Icons';
 
 import { convertEditMessage, decryptData } from '@/features/chat/lib';
 import { MessageType } from '@/features/chat/model';
-
-import { CoreMessageType } from '../components/FileMessage/FileMessage';
+import { CoreMessageType } from '@/features/chat/ui/Message/components/FileMessage/FileMessage';
 
 /* 
 기본 - 긴/짧

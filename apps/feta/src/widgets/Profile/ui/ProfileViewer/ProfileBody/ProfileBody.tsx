@@ -3,7 +3,8 @@ import { memo } from 'react';
 import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
 import Icons from '@/shared/ui/Icons';
 
-import { ProcessedHistory } from '../../../types/viewer.types';
+import { ProcessedHistory } from '@/widgets/Profile/types/viewer.types';
+
 import { ProfileGallery } from '../ProfileGallery';
 import styles from './ProfileBody.module.scss';
 

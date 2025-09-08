@@ -12,10 +12,10 @@ import { useRef, useState } from 'react';
 import { IconButton } from '@/shared/ui/IconButton';
 
 import { useFileUploadAcceptList } from '@/features/chat/api';
+import { ProfileImageUploadProps } from '@/features/profile/model/fileTypes';
+import FamilyFriendsModal from '@/features/profile/ui/FamilyFriendsModal/FamilyFriendsModal';
 import { getEmoticonImageUrl } from '@/features/viewer/utils/mediaUtils';
 
-import { ProfileImageUploadProps } from '../../model/fileTypes';
-import FamilyFriendsModal from '../FamilyFriendsModal/FamilyFriendsModal';
 import styles from './ProfileImageUpload.module.scss';
 
 export default function ProfileImageUpload({

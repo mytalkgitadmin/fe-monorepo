@@ -1,6 +1,6 @@
 import { parseData } from '@/features/chat/lib';
+import { CoreMessageType } from '@/features/chat/ui/Message/components/FileMessage/FileMessage';
 
-import { CoreMessageType } from '../FileMessage/FileMessage';
 import { ContactMessage } from './ContactMessage';
 import { ScheduleMessage } from './ScheduleMessage';
 

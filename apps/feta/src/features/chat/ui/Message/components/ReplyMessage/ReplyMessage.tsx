@@ -7,10 +7,10 @@ import Icons from '@/shared/ui/Icons';
 import { useAuth } from '@/features/auth';
 import { parseData } from '@/features/chat/lib';
 import { MessageInDataType } from '@/features/chat/model';
+import { CoreMessageType } from '@/features/chat/ui/Message/components/FileMessage/FileMessage';
+import { renderMessageContent } from '@/features/chat/ui/Message/shared/MessageRenderer';
 
-import { renderMessageContent } from '../../shared/MessageRenderer';
 import { BubbleInner } from '../BubbleMessage';
-import { CoreMessageType } from '../FileMessage/FileMessage';
 import { TextInner } from '../TextMessage';
 import styles from './ReplyMessage.module.scss';
 

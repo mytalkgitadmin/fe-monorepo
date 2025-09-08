@@ -9,9 +9,9 @@ import { memo } from 'react';
 
 import { ProfileUserData } from '@/features/profile/types';
 
+import { ProcessedHistory } from '@/widgets/Profile/types/viewer.types';
 import ProfileActions from '@/widgets/Profile/ui/ProfileViewer/ProfileActions/ProfileActions';
 
-import { ProcessedHistory } from '../../types/viewer.types';
 import { ProfileBody } from './ProfileBody';
 import styles from './ProfileViewer.module.scss';
 

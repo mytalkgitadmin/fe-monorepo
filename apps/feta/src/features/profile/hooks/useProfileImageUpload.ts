@@ -1,8 +1,10 @@
 import { useCallback, useRef, useState } from 'react';
 
 import { showFileUploadError } from '@/features/chat/ui/Input/utils';
-
-import { FileValidationError, ProfileImageFile } from '../model/fileTypes';
+import {
+  FileValidationError,
+  ProfileImageFile,
+} from '@/features/profile/model/fileTypes';
 
 export default function useProfileImageUpload({
   acceptedTypes,

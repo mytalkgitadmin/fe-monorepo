@@ -1,5 +1,6 @@
-import FileCard from '../../../File/FileCard';
-import { MessageInData } from '../../../Input/types';
+import FileCard from '@/features/chat/ui/File/FileCard';
+import { MessageInData } from '@/features/chat/ui/Input/types';
+
 import styles from './FileMessage.module.scss';
 
 export default function File({

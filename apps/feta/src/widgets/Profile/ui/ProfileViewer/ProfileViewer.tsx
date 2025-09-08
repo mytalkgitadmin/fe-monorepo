@@ -5,8 +5,9 @@ import { memo } from 'react';
 import { Viewer } from '@/features/viewer';
 
 import useProfileViewer from '@/widgets/Profile/hooks/useProfileViewer';
+import { ProfileViewerProps } from '@/widgets/Profile/types/viewer.types';
 
-import { ProfileViewerProps } from '../../types/viewer.types';
+// import { ProfileViewerProps } from '../../types/viewer.types';
 import ProfileContents from './ProfileContents';
 import ProfileError from './ProfileError';
 import ProfileLoading from './ProfileLoading';

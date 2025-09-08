@@ -4,7 +4,8 @@ import { VideoThumbnail } from '@/shared/ui/VideoThumbnail';
 
 import { getMediaType } from '@/features/viewer/utils/mediaUtils';
 
-import { ProfileGalleryProps } from '../../../types/viewer.types';
+import { ProfileGalleryProps } from '@/widgets/Profile/types/viewer.types';
+
 import styles from './ProfileGallery.module.scss';
 
 const ProfileGallery = memo<ProfileGalleryProps>(

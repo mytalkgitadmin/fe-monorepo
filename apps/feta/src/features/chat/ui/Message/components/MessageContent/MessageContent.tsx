@@ -4,11 +4,11 @@ import {
   MessageInDataType,
   MessageType,
 } from '@/features/chat/model';
+import { CoreMessageType } from '@/features/chat/ui/Message/components/FileMessage/FileMessage';
 
 import { BubbleMessage } from '../BubbleMessage';
 import { CombinationMessage } from '../CombinationMessage';
 import { FileMessage } from '../FileMessage';
-import { CoreMessageType } from '../FileMessage/FileMessage';
 import { ReplyMessage } from '../ReplyMessage';
 import { TextMessage } from '../TextMessage';
 

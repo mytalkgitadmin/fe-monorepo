@@ -7,9 +7,9 @@ import { DATE_FORMATS, formatDate } from '@/shared/lib/dateFormatter';
 
 import { useAuth } from '@/features/auth';
 import { checkEditMessage, decryptData } from '@/features/chat/lib';
+import OgCard from '@/features/chat/ui/Message/shared/OgCard';
+import Reactions from '@/features/chat/ui/Message/shared/Reactions';
 
-import OgCard from '../../shared/OgCard';
-import Reactions from '../../shared/Reactions';
 import { MessageAvatar } from '../MessageAvatar';
 import styles from './MessageLayout.module.scss';
 

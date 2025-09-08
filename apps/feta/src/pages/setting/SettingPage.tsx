@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
+import FriendsList from '@/pages/friends/FriendsList';
 
 import Icons from '@/shared/ui/Icons';
 
@@ -11,7 +12,6 @@ import { useCategorizedFriends } from '@/features/friend/hooks/useCategorizedFri
 
 import { ProfileItem } from '@/widgets/Profile/ui/ProfileItem';
 
-import FriendsList from '../friends/FriendsList';
 import styles from './SettingPage.module.scss';
 
 export default function SettingPage() {

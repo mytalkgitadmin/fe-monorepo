@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { useTotalNotificationStore } from '@/features/notifications/store/useTotalNotificationStore';
+
 import { useNotiList } from '../api';
 import { Notification } from '../model';
-import { useTotalNotificationStore } from '../store/useTotalNotificationStore';
 
 export default function useInitialNotificationLoader() {
   const { setFriendRequestCount } = useTotalNotificationStore();

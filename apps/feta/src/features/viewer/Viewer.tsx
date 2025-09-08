@@ -13,14 +13,15 @@ import { useEffect, useState } from 'react';
 
 import Icons from '@/shared/ui/Icons';
 
-import styles from './Viewer.module.scss';
-import ViewerContent from './components/ViewerContent';
-import { MediaViewerProps } from './types';
+import ViewerContent from '@/features/viewer/components/ViewerContent';
 import {
   getFileName,
   getOriginalUrl,
   isDownloadable,
-} from './utils/mediaUtils';
+} from '@/features/viewer/utils/mediaUtils';
+
+import styles from './Viewer.module.scss';
+import { MediaViewerProps } from './types';
 
 export default function Viewer({
   open,

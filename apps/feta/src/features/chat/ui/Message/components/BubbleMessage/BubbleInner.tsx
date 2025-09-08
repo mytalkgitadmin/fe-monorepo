@@ -2,10 +2,9 @@ import defaultBubble from '@/assets/bubble/Emoji_Bubble_Type01.webp';
 
 import { BASE_URL } from '@/shared/api/endpoints';
 
-import { decryptData } from '@/features/chat/lib';
-import { parseData } from '@/features/chat/lib';
+import { decryptData, parseData } from '@/features/chat/lib';
+import { CoreMessageType } from '@/features/chat/ui/Message/components/FileMessage/FileMessage';
 
-import { CoreMessageType } from '../FileMessage/FileMessage';
 import styles from './BubbleMessage.module.scss';
 
 export default function BubbleInner({

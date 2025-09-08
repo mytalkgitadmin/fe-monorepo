@@ -1,5 +1,5 @@
-import { AccountProfile } from '../chat/model';
-import { History } from '../viewer/types';
+import { AccountProfile } from '@/features/chat/model';
+import { History } from '@/features/viewer/types';
 
 export interface UserSendbirdProfileResponse {
   result: boolean;

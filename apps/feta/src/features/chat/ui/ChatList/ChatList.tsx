@@ -3,9 +3,8 @@ import { GroupChannelListProvider } from '@sendbird/uikit-react/GroupChannelList
 import { useRouter } from '@tanstack/react-router';
 
 import { useChannelStore } from '@/features/chat/store';
-
-import { ChatListHeader } from './components/ChatListHeader';
-import { ChatListItem } from './components/ChatListItem';
+import { ChatListHeader } from '@/features/chat/ui/ChatList/components/ChatListHeader';
+import { ChatListItem } from '@/features/chat/ui/ChatList/components/ChatListItem';
 
 export default function ChatList() {
   const { currentChannelUrl, setCurrentChannelUrl } = useChannelStore();

@@ -2,8 +2,9 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { API_ENDPOINTS, apiRequest } from '@/shared/api';
 
+import { useTotalNotificationStore } from '@/features/notifications/store/useTotalNotificationStore';
+
 import { RequestNotification, ResponseNotification } from './model';
-import { useTotalNotificationStore } from './store/useTotalNotificationStore';
 
 export const getNotiApi = async (params?: { category?: string }) => {
   const response = await apiRequest<ResponseNotification>(

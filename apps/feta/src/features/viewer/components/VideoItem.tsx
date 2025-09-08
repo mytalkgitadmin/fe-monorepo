@@ -3,9 +3,13 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import Icons from '@/shared/ui/Icons';
 import Loading from '@/shared/ui/Loading';
 
+import {
+  getOriginalUrl,
+  getThumbnailUrl,
+} from '@/features/viewer/utils/mediaUtils';
+
 import styles from '../Viewer.module.scss';
 import { ViewerItemData } from '../types';
-import { getOriginalUrl, getThumbnailUrl } from '../utils/mediaUtils';
 
 interface VideoItemProps {
   item: ViewerItemData;

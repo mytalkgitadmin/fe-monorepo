@@ -1,4 +1,5 @@
-import { CoreMessageType } from '../FileMessage/FileMessage';
+import { CoreMessageType } from '@/features/chat/ui/Message/components/FileMessage/FileMessage';
+
 import BubbleInner from './BubbleInner';
 import styles from './BubbleMessage.module.scss';
 

@@ -3,9 +3,10 @@ import { memo } from 'react';
 import Icons from '@/shared/ui/Icons';
 import Loading from '@/shared/ui/Loading';
 
+import { getOriginalUrl } from '@/features/viewer/utils/mediaUtils';
+
 import styles from '../Viewer.module.scss';
 import { ViewerItemData } from '../types';
-import { getOriginalUrl } from '../utils/mediaUtils';
 
 interface ImageItemProps {
   item: ViewerItemData;

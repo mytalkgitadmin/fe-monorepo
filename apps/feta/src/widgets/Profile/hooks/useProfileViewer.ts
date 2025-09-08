@@ -6,7 +6,7 @@ import { useAuth } from '@/features/auth';
 import { useProfile } from '@/features/profile/api';
 import { getEmoticonImageUrl } from '@/features/viewer/utils/mediaUtils';
 
-import { ProcessedHistory } from '../types/viewer.types';
+import { ProcessedHistory } from '@/widgets/Profile/types/viewer.types';
 
 export default function useProfileViewer({ accountId }: { accountId: number }) {
   const { userProfile } = useAuth();

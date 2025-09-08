@@ -8,9 +8,10 @@ import {
 
 import { useCallback, useEffect, useState } from 'react';
 
+import { getMediaType } from '@/features/viewer/utils/mediaUtils';
+
 import styles from '../Viewer.module.scss';
 import { ViewerContentProps } from '../types';
-import { getMediaType } from '../utils/mediaUtils';
 import ImageItem from './ImageItem';
 import VideoItem from './VideoItem';
 

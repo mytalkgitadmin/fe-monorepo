@@ -23,12 +23,12 @@ import Icons from '@/shared/ui/Icons';
 
 import useCreateChat from '@/features/chat/hooks/useCreateChat';
 import { Friend } from '@/features/friend/api';
+import { useCategorizedFriends } from '@/features/friend/hooks/useCategorizedFriends';
+import useFriendSearch from '@/features/friend/hooks/useFriendSearch';
 import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
 
 import { ProfileCard } from '@/widgets/Profile/ui/ProfileCard';
 
-import { useCategorizedFriends } from '../hooks/useCategorizedFriends';
-import useFriendSearch from '../hooks/useFriendSearch';
 import FriendSearchInput from './FriendSearchInput';
 import styles from './SelectFriends.module.scss';
 

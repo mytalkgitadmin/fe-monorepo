@@ -18,7 +18,7 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 // 기본 서비스 워커 이벤트
-self.addEventListener('install', (event) => {
+self.addEventListener('install', () => {
   console.log('Service Worker installed');
   self.skipWaiting();
 });

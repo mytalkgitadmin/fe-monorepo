@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { FileSearchParams, useChannelFileSearch } from '../api/fileSearchApi';
+import {
+  FileSearchParams,
+  useChannelFileSearch,
+} from '@/features/chat/api/fileSearchApi';
+
 import { FileCategoryList, FileKind, FileSubCategoryList } from '../model';
 
 export interface File {

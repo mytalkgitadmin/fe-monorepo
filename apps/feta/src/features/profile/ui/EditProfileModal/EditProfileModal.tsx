@@ -11,10 +11,10 @@ import {
 
 import { memo } from 'react';
 
+import useEditProfile from '@/features/profile/hooks/useEditProfile';
+import { useProfileForm } from '@/features/profile/hooks/useProfileForm';
 import { getThumbnailUrl } from '@/features/viewer/utils/mediaUtils';
 
-import useEditProfile from '../../hooks/useEditProfile';
-import { useProfileForm } from '../../hooks/useProfileForm';
 import { ProfileImageUpload } from '../ProfileImageUpload';
 import styles from './EditProfileModal.module.scss';
 import FormFields from './FormFields';

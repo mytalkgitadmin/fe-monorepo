@@ -5,11 +5,11 @@ import Icons from '@/shared/ui/Icons';
 
 import { MESSAGE_LIMITS } from '@/features/chat/constants';
 import useChannelInfo from '@/features/chat/hooks/useChannelInfo';
+import { useChatLayoutStore } from '@/features/chat/ui/ChatView/store/useChatLayoutStore';
 import { renderMessageContent } from '@/features/chat/ui/Message/shared/MessageRenderer';
 
 import { GroupAvatar } from '@/widgets/Profile/ui/ProfileAvatar';
 
-import { useChatLayoutStore } from '../../../ChatView/store/useChatLayoutStore';
 import styles from './ChatListItem.module.scss';
 
 export default function ChatListItem({

@@ -1,6 +1,6 @@
 import { CarouselApi } from '@/components/ui/carousel';
 
-import { Profile, ProfileImg } from '../chat/model';
+import { Profile, ProfileImg } from '@/features/chat/model';
 
 export interface ImgMsgInData {
   fileType: string;
